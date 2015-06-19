@@ -203,7 +203,3 @@ FakesAssemblies/
 *.log
 *.pdb
 *.pch
-
-Theasian_Diplomacy.h.pch
-Theasian_Diplomacy/*
-Theasian_Diplomacy/
