@@ -13,7 +13,7 @@ namespace Theasian_Diplomacy
 
         Faction faction;
 
-        public void Character(string _firstName, Faction _faction)
+        public Character(string _firstName, Faction _faction)
         {
             firstName = _firstName;
             faction = _faction;

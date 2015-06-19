@@ -12,12 +12,25 @@ namespace Theasian_Diplomacy
         private string factionName;
         List<Character> members;
 
-        public void Faction(string _factionName)
+        public Faction(string _factionName)
         {
             factionName = _factionName;
             members = new List<Character>();
         }
 
+        public void addMember(Character _newMember)
+        {
+            members.Add(_newMember);
+        }
 
+        public string FactionName
+        {
+            get { return factionName; }
+        }
+
+        public override string ToString()
+        {
+            return factionName;
+        }
     }
 }
