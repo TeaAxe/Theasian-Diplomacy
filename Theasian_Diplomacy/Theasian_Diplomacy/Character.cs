@@ -15,8 +15,8 @@ namespace Theasian_Diplomacy
 
         public Character(string _firstName, Faction _faction)
         {
-            firstName = _firstName;
-            faction = _faction;
+            this.firstName = _firstName;
+            this.faction = _faction;
         }
 
         public override string ToString()
