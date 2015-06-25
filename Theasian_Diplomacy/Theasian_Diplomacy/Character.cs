@@ -19,6 +19,11 @@ namespace Theasian_Diplomacy
             faction = _faction;
         }
 
+        public override string ToString()
+        {
+            return firstName + " " + faction.ToString();
+        }
+
 
     }
 }

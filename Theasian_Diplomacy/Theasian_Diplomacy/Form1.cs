@@ -30,8 +30,12 @@ namespace Theasian_Diplomacy
             foreach (Faction element in game.Factions)
             {
                 lstFaction.Items.Add(element);
+                
+                foreach (Character el in element.Members)
+                {
+                    lstCharacter.Items.Add(el);
+                }
             }
-            
         }
 
         

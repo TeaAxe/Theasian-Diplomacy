@@ -30,6 +30,7 @@
         {
             this.lstFaction = new System.Windows.Forms.ListBox();
             this.btnListFaction = new System.Windows.Forms.Button();
+            this.lstCharacter = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // lstFaction
@@ -42,7 +43,7 @@
             // 
             // btnListFaction
             // 
-            this.btnListFaction.Location = new System.Drawing.Point(1270, 272);
+            this.btnListFaction.Location = new System.Drawing.Point(1207, 272);
             this.btnListFaction.Name = "btnListFaction";
             this.btnListFaction.Size = new System.Drawing.Size(120, 23);
             this.btnListFaction.TabIndex = 1;
@@ -50,11 +51,20 @@
             this.btnListFaction.UseVisualStyleBackColor = true;
             this.btnListFaction.Click += new System.EventHandler(this.btnListFaction_Click);
             // 
+            // lstCharacter
+            // 
+            this.lstCharacter.FormattingEnabled = true;
+            this.lstCharacter.Location = new System.Drawing.Point(1144, 301);
+            this.lstCharacter.Name = "lstCharacter";
+            this.lstCharacter.Size = new System.Drawing.Size(120, 264);
+            this.lstCharacter.TabIndex = 2;
+            // 
             // frmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1402, 577);
+            this.Controls.Add(this.lstCharacter);
             this.Controls.Add(this.btnListFaction);
             this.Controls.Add(this.lstFaction);
             this.Name = "frmMainMenu";
@@ -68,6 +78,7 @@
 
         private System.Windows.Forms.ListBox lstFaction;
         private System.Windows.Forms.Button btnListFaction;
+        private System.Windows.Forms.ListBox lstCharacter;
     }
 }
 

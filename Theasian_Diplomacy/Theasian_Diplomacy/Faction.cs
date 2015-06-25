@@ -32,5 +32,12 @@ namespace Theasian_Diplomacy
         {
             return factionName;
         }
+
+        public List<Character> Members
+        {
+            get { return members; }
+        }
+
+
     }
 }
