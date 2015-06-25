@@ -183,7 +183,6 @@ UpgradeLog*.htm
 FakesAssemblies/
 
 *.slo
-*.sln
 *.lo
 *.o
 *.obj
