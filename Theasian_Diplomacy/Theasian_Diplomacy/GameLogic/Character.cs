@@ -11,6 +11,7 @@ namespace Theasian_Diplomacy.GameLogic
         #region variable
         private string firstName;
         //No need for last names, it comes from faction
+        private int age = 25;
 
         private Faction faction;
         #endregion
