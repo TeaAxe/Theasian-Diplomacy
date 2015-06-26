@@ -32,9 +32,9 @@
             this.btnListFaction = new System.Windows.Forms.Button();
             this.lstCharacter = new System.Windows.Forms.ListBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.mainMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuMainMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuNewGame = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuQuit = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,33 +67,35 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mainMenuToolStripMenuItem});
+            this.menuMainMenu});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1402, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // mainMenuToolStripMenuItem
+            // menuMainMenu
             // 
-            this.mainMenuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newGameToolStripMenuItem,
-            this.quitToolStripMenuItem});
-            this.mainMenuToolStripMenuItem.Name = "mainMenuToolStripMenuItem";
-            this.mainMenuToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
-            this.mainMenuToolStripMenuItem.Text = "Main Menu";
+            this.menuMainMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuNewGame,
+            this.menuQuit});
+            this.menuMainMenu.Name = "menuMainMenu";
+            this.menuMainMenu.Size = new System.Drawing.Size(80, 20);
+            this.menuMainMenu.Text = "Main Menu";
             // 
-            // newGameToolStripMenuItem
+            // menuNewGame
             // 
-            this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.newGameToolStripMenuItem.Text = "New Game!";
+            this.menuNewGame.Name = "menuNewGame";
+            this.menuNewGame.Size = new System.Drawing.Size(152, 22);
+            this.menuNewGame.Text = "New Game!";
+            this.menuNewGame.Click += new System.EventHandler(this.menuNewGame_Click);
             // 
-            // quitToolStripMenuItem
+            // menuQuit
             // 
-            this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.quitToolStripMenuItem.Text = "Quit";
+            this.menuQuit.Name = "menuQuit";
+            this.menuQuit.Size = new System.Drawing.Size(152, 22);
+            this.menuQuit.Text = "Quit";
+            this.menuQuit.Click += new System.EventHandler(this.menuQuit_Click);
             // 
             // frmMainMenu
             // 
@@ -121,9 +123,9 @@
         private System.Windows.Forms.Button btnListFaction;
         private System.Windows.Forms.ListBox lstCharacter;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem mainMenuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newGameToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuMainMenu;
+        private System.Windows.Forms.ToolStripMenuItem menuNewGame;
+        private System.Windows.Forms.ToolStripMenuItem menuQuit;
     }
 }
 

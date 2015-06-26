@@ -41,6 +41,24 @@ namespace Theasian_Diplomacy
             }
         }
 
+        private void menuNewGame_Click(object sender, EventArgs e)
+        {
+            game.NewGame();
+        }
+
+        private void menuQuit_Click(object sender, EventArgs e)
+        {
+            CloseGame();
+        }
+
+        /// <summary>
+        /// Close everything
+        /// </summary>
+        public void CloseGame()
+        {
+            game.Close();
+            this.Close();
+        }
         
     }
 }

@@ -37,6 +37,20 @@ namespace Theasian_Diplomacy
             get { return factions; }
         }
 
+        /// <summary>
+        /// Start a completly new game
+        /// </summary>
+        public void NewGame()
+        {
 
+        }
+
+        /// <summary>
+        /// Close everything
+        /// </summary>
+        public void Close()
+        {
+
+        }
     }
 }
