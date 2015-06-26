@@ -12,6 +12,19 @@ namespace Theasian_Diplomacy
 
         public Game()
         {
+            NewGame();
+        }
+
+        public List<Faction> Factions
+        {
+            get { return factions; }
+        }
+
+        /// <summary>
+        /// Start a completely new game
+        /// </summary>
+        public void NewGame()
+        {
             factions = new List<Faction>();
 
             //Adds factions to the list, needs to come from a list
@@ -30,19 +43,6 @@ namespace Theasian_Diplomacy
             newFaction = new Faction("Foreign_Nation");
             newFaction.addMember(new Character("swEG", newFaction));
             factions.Add(newFaction);
-        }
-
-        public List<Faction> Factions
-        {
-            get { return factions; }
-        }
-
-        /// <summary>
-        /// Start a completly new game
-        /// </summary>
-        public void NewGame()
-        {
-
         }
 
         /// <summary>
