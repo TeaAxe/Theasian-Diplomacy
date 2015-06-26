@@ -89,5 +89,10 @@ namespace Theasian_Diplomacy
 
         }
         #endregion
+
+        private void menuMainMenu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

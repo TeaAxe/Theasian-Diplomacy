@@ -41,6 +41,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,21 +89,22 @@
             this.menuNewGame,
             this.menuQuit});
             this.menuMainMenu.Name = "menuMainMenu";
-            this.menuMainMenu.Size = new System.Drawing.Size(80, 20);
-            this.menuMainMenu.Text = "Main Menu";
+            this.menuMainMenu.Size = new System.Drawing.Size(99, 20);
+            this.menuMainMenu.Text = "Menu principal";
+            this.menuMainMenu.Click += new System.EventHandler(this.menuMainMenu_Click);
             // 
             // menuNewGame
             // 
             this.menuNewGame.Name = "menuNewGame";
-            this.menuNewGame.Size = new System.Drawing.Size(152, 22);
-            this.menuNewGame.Text = "New Game!";
+            this.menuNewGame.Size = new System.Drawing.Size(157, 22);
+            this.menuNewGame.Text = "Nouvelle partie!";
             this.menuNewGame.Click += new System.EventHandler(this.menuNewGame_Click);
             // 
             // menuQuit
             // 
             this.menuQuit.Name = "menuQuit";
-            this.menuQuit.Size = new System.Drawing.Size(152, 22);
-            this.menuQuit.Text = "Quit";
+            this.menuQuit.Size = new System.Drawing.Size(157, 22);
+            this.menuQuit.Text = "Quitter";
             this.menuQuit.Click += new System.EventHandler(this.menuQuit_Click);
             // 
             // lstCity
@@ -155,11 +159,41 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Factions";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 35);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(64, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Or: 0 pièces";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 57);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(108, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Niveau de sécurité: 0";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(12, 80);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(93, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Points d\'actions: 0";
+            // 
             // frmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1402, 577);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -199,6 +233,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }
 
