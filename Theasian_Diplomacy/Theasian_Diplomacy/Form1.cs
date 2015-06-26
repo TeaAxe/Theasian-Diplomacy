@@ -27,6 +27,9 @@ namespace Theasian_Diplomacy
 
         private void btnListFaction_Click(object sender, EventArgs e)
         {
+            lstFaction.Items.Clear();
+            lstCharacter.Items.Clear();
+
             foreach (Faction element in game.Factions)
             {
                 lstFaction.Items.Add(element);
