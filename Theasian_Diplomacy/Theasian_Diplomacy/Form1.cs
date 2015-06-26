@@ -61,7 +61,7 @@ namespace Theasian_Diplomacy
 
         private void menuQuit_Click(object sender, EventArgs e)
         {
-            CloseGame();
+            this.Close();
         }
 
         /// <summary>
@@ -70,7 +70,11 @@ namespace Theasian_Diplomacy
         public void CloseGame()
         {
             game.Close();
-            this.Close();
+        }
+
+        private void frmMainMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CloseGame();
         }
         
     }

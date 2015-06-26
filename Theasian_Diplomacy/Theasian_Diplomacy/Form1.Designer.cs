@@ -175,6 +175,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMainMenu";
             this.Text = "Theasian Diplomacy";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMainMenu_FormClosing);
             this.Load += new System.EventHandler(this.frmMainMenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
