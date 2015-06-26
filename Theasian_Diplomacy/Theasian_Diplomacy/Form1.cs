@@ -26,34 +26,12 @@ namespace Theasian_Diplomacy
         private void frmMainMenu_Load(object sender, EventArgs e)
         {
             game = new Game();
+            Refresh();
         }
 
         private void btnListFaction_Click(object sender, EventArgs e)
         {
-            lstFaction.Items.Clear();
-            lstCharacter.Items.Clear();
-            lstCity.Items.Clear();
-            lstFactionLeaders.Items.Clear();
-
-            foreach (Faction faction in game.Factions)
-            {
-                lstFaction.Items.Add(faction);
-
-                foreach (Character character in faction.Members)
-                {
-                    lstCharacter.Items.Add(character);
-                }
-            }
-
-            foreach (City city in game.Cities)
-            {
-                lstCity.Items.Add(city);
-            }
-
-            foreach (Faction faction in game.Factions)
-            {
-                lstFactionLeaders.Items.Add(faction.Leader);
-            }
+            Refresh();
         }
 
         private void menuNewGame_Click(object sender, EventArgs e)
@@ -86,13 +64,32 @@ namespace Theasian_Diplomacy
         /// </summary>
         public void Refresh()
         {
+            lstFaction.Items.Clear();
+            lstCharacter.Items.Clear();
+            lstCity.Items.Clear();
+            lstFactionLeaders.Items.Clear();
 
+            foreach (Faction faction in game.Factions)
+            {
+                lstFaction.Items.Add(faction);
+
+                foreach (Character character in faction.Members)
+                {
+                    lstCharacter.Items.Add(character);
+                }
+            }
+
+            foreach (City city in game.Cities)
+            {
+                lstCity.Items.Add(city);
+            }
+
+            foreach (Faction faction in game.Factions)
+            {
+                lstFactionLeaders.Items.Add(faction.Leader);
+            }
         }
         #endregion
 
-        private void menuMainMenu_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
