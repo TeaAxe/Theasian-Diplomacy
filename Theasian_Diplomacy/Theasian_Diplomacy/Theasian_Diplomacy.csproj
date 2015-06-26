@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameLogic\Character.cs" />
+    <Compile Include="GameLogic\City.cs" />
     <Compile Include="GameLogic\Faction.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

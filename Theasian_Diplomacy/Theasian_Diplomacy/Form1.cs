@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Theasian_Diplomacy.GameLogic;
 
 namespace Theasian_Diplomacy
 {
@@ -29,6 +30,7 @@ namespace Theasian_Diplomacy
         {
             lstFaction.Items.Clear();
             lstCharacter.Items.Clear();
+            lstCity.Items.Clear();
 
             foreach (Faction element in game.Factions)
             {
@@ -38,6 +40,11 @@ namespace Theasian_Diplomacy
                 {
                     lstCharacter.Items.Add(el);
                 }
+            }
+
+            foreach (City city in game.Cities)
+            {
+                lstCity.Items.Add(city);
             }
         }
 
