@@ -92,14 +92,14 @@
             // menuNewGame
             // 
             this.menuNewGame.Name = "menuNewGame";
-            this.menuNewGame.Size = new System.Drawing.Size(135, 22);
+            this.menuNewGame.Size = new System.Drawing.Size(152, 22);
             this.menuNewGame.Text = "New Game!";
             this.menuNewGame.Click += new System.EventHandler(this.menuNewGame_Click);
             // 
             // menuQuit
             // 
             this.menuQuit.Name = "menuQuit";
-            this.menuQuit.Size = new System.Drawing.Size(135, 22);
+            this.menuQuit.Size = new System.Drawing.Size(152, 22);
             this.menuQuit.Text = "Quit";
             this.menuQuit.Click += new System.EventHandler(this.menuQuit_Click);
             // 
@@ -160,7 +160,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1402, 577);
-            this.ControlBox = false;
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -173,6 +172,7 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "frmMainMenu";
             this.Text = "Theasian Diplomacy";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMainMenu_FormClosing);
