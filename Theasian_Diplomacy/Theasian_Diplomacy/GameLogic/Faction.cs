@@ -48,8 +48,6 @@ namespace Theasian_Diplomacy.GameLogic
             get { return factionName; }
         }
 
-
-
         public List<Character> Members
         {
             get { return members; }
@@ -60,6 +58,5 @@ namespace Theasian_Diplomacy.GameLogic
             get { return leader; }
         }
         #endregion
-
     }
 }
