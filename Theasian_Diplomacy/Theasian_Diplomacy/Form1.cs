@@ -80,6 +80,14 @@ namespace Theasian_Diplomacy
         {
             game.Close();
         }
+
+        /// <summary>
+        /// Refresh all showed data on the screen
+        /// </summary>
+        public void Refresh()
+        {
+
+        }
         #endregion
     }
 }
