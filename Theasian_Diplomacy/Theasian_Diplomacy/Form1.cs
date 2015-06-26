@@ -13,9 +13,11 @@ namespace Theasian_Diplomacy
 {
     public partial class frmMainMenu : Form
     {
-
+        #region variable
         private Game game;
+        #endregion
 
+        #region genarated methode
         public frmMainMenu()
         {
             InitializeComponent();
@@ -64,6 +66,13 @@ namespace Theasian_Diplomacy
             this.Close();
         }
 
+        private void frmMainMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CloseGame();
+        }
+        #endregion
+
+        #region our methodes
         /// <summary>
         /// Close everything
         /// </summary>
@@ -71,11 +80,6 @@ namespace Theasian_Diplomacy
         {
             game.Close();
         }
-
-        private void frmMainMenu_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            CloseGame();
-        }
-        
+        #endregion
     }
 }

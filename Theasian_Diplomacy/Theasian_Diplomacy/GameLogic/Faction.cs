@@ -8,11 +8,13 @@ namespace Theasian_Diplomacy.GameLogic
 {
     class Faction
     {
-
+        #region variable
         private string factionName;
         private List<Character> members;
         private Character leader;
+        #endregion
 
+        #region general methods
         public Faction(string _factionName)
         {
             factionName = _factionName;
@@ -34,15 +36,19 @@ namespace Theasian_Diplomacy.GameLogic
             }
         }
 
+        public override string ToString()
+        {
+            return factionName;
+        }
+        #endregion
+
+        #region properties
         public string FactionName
         {
             get { return factionName; }
         }
 
-        public override string ToString()
-        {
-            return factionName;
-        }
+
 
         public List<Character> Members
         {
@@ -53,7 +59,7 @@ namespace Theasian_Diplomacy.GameLogic
         {
             get { return leader; }
         }
-
+        #endregion
 
     }
 }

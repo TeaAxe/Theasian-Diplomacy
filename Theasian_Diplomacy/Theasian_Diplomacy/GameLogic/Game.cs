@@ -8,22 +8,15 @@ namespace Theasian_Diplomacy.GameLogic
 {
     class Game
     {
+        #region variable
         private List<Faction> factions;
         private List<City> cities;
+        #endregion
 
+        #region general methode
         public Game()
         {
             NewGame();
-        }
-
-        public List<Faction> Factions
-        {
-            get { return factions; }
-        }
-
-        public List<City> Cities
-        {
-            get { return cities; }
         }
 
         /// <summary>
@@ -72,5 +65,18 @@ namespace Theasian_Diplomacy.GameLogic
         {
 
         }
+        #endregion
+
+        #region properties
+        public List<Faction> Factions
+        {
+            get { return factions; }
+        }
+
+        public List<City> Cities
+        {
+            get { return cities; }
+        }
+        #endregion
     }
 }

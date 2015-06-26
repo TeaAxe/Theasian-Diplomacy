@@ -8,13 +8,12 @@ namespace Theasian_Diplomacy.GameLogic
 {
     class City
     {
+        #region variable
         private Faction owner;
         private string name;
-        
-        public City(string _name)
-        {
-            name = _name;
-        }
+        #endregion
+
+        #region general methods
 
         public Faction Owner
         {
@@ -26,5 +25,13 @@ namespace Theasian_Diplomacy.GameLogic
         {
             return name + ", " + owner.ToString();
         }
+        #endregion
+
+        #region properties
+        public City(string _name)
+        {
+            name = _name;
+        }
+        #endregion
     }
 }
