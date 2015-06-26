@@ -36,28 +36,28 @@ namespace Theasian_Diplomacy.GameLogic
 
             //Adds factions to the list, needs to come from a list
             Faction newFaction = new Faction("Barbarians");
-            newFaction.addMember(new Character("John", newFaction));
+            newFaction.addMember(new Character("John", newFaction), true);
             City newCity = new City("La ville des chats!");
             newCity.Owner = newFaction;
             cities.Add(newCity);
             factions.Add(newFaction);
 
             newFaction = new Faction("Player_House");
-            newFaction.addMember(new Character("Generic", newFaction));
+            newFaction.addMember(new Character("Generic", newFaction), true);
             newCity = new City("La ville des Souris!");
             newCity.Owner = newFaction;
             cities.Add(newCity);
             factions.Add(newFaction);
 
             newFaction = new Faction("People");
-            newFaction.addMember(new Character("Yolo", newFaction));
+            newFaction.addMember(new Character("Yolo", newFaction), true);
             newCity = new City("La ville des Marmottes!");
             newCity.Owner = newFaction;
             cities.Add(newCity);
             factions.Add(newFaction);
 
             newFaction = new Faction("Foreign_Nation");
-            newFaction.addMember(new Character("swEG", newFaction));
+            newFaction.addMember(new Character("swEG", newFaction), true);
             newCity = new City("La ville des chiens!");
             newCity.Owner = newFaction;
             cities.Add(newCity);

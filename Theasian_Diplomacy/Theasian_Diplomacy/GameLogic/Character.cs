@@ -11,7 +11,7 @@ namespace Theasian_Diplomacy.GameLogic
         private string firstName;
         //No need for last names, it comes from faction
 
-        Faction faction;
+        private Faction faction;
 
         public Character(string _firstName, Faction _faction)
         {
@@ -21,7 +21,7 @@ namespace Theasian_Diplomacy.GameLogic
 
         public override string ToString()
         {
-            return firstName + " " + faction.ToString();
+            return firstName + ", " + faction.ToString();
         }
 
 

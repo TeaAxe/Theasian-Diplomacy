@@ -8,8 +8,8 @@ namespace Theasian_Diplomacy.GameLogic
 {
     class City
     {
-        Faction owner;
-        string name;
+        private Faction owner;
+        private string name;
         
         public City(string _name)
         {
@@ -24,7 +24,7 @@ namespace Theasian_Diplomacy.GameLogic
 
         public override string ToString()
         {
-            return name + " " + owner.ToString();
+            return name + ", " + owner.ToString();
         }
     }
 }

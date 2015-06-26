@@ -36,6 +36,11 @@
             this.menuNewGame = new System.Windows.Forms.ToolStripMenuItem();
             this.menuQuit = new System.Windows.Forms.ToolStripMenuItem();
             this.lstCity = new System.Windows.Forms.ListBox();
+            this.lstFactionLeaders = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +54,7 @@
             // 
             // btnListAll
             // 
-            this.btnListAll.Location = new System.Drawing.Point(1123, 272);
+            this.btnListAll.Location = new System.Drawing.Point(1036, 210);
             this.btnListAll.Name = "btnListAll";
             this.btnListAll.Size = new System.Drawing.Size(164, 23);
             this.btnListAll.TabIndex = 1;
@@ -106,11 +111,60 @@
             this.lstCity.Size = new System.Drawing.Size(200, 264);
             this.lstCity.TabIndex = 4;
             // 
+            // lstFactionLeaders
+            // 
+            this.lstFactionLeaders.FormattingEnabled = true;
+            this.lstFactionLeaders.Location = new System.Drawing.Point(812, 301);
+            this.lstFactionLeaders.Name = "lstFactionLeaders";
+            this.lstFactionLeaders.Size = new System.Drawing.Size(120, 264);
+            this.lstFactionLeaders.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(809, 282);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(117, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Faction leaders, faction";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(935, 282);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Cities, owners";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(1141, 282);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(104, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Characters, Factions";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(1267, 282);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Factions";
+            // 
             // frmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1402, 577);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lstFactionLeaders);
             this.Controls.Add(this.lstCity);
             this.Controls.Add(this.lstCharacter);
             this.Controls.Add(this.btnListAll);
@@ -137,6 +191,11 @@
         private System.Windows.Forms.ToolStripMenuItem menuNewGame;
         private System.Windows.Forms.ToolStripMenuItem menuQuit;
         private System.Windows.Forms.ListBox lstCity;
+        private System.Windows.Forms.ListBox lstFactionLeaders;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
 

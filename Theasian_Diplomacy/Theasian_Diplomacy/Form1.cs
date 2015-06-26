@@ -31,20 +31,26 @@ namespace Theasian_Diplomacy
             lstFaction.Items.Clear();
             lstCharacter.Items.Clear();
             lstCity.Items.Clear();
+            lstFactionLeaders.Items.Clear();
 
-            foreach (Faction element in game.Factions)
+            foreach (Faction faction in game.Factions)
             {
-                lstFaction.Items.Add(element);
-                
-                foreach (Character el in element.Members)
+                lstFaction.Items.Add(faction);
+
+                foreach (Character character in faction.Members)
                 {
-                    lstCharacter.Items.Add(el);
+                    lstCharacter.Items.Add(character);
                 }
             }
 
             foreach (City city in game.Cities)
             {
                 lstCity.Items.Add(city);
+            }
+
+            foreach (Faction faction in game.Factions)
+            {
+                lstFactionLeaders.Items.Add(faction.Leader);
             }
         }
 

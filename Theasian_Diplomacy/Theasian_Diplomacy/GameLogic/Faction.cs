@@ -10,7 +10,8 @@ namespace Theasian_Diplomacy.GameLogic
     {
 
         private string factionName;
-        List<Character> members;
+        private List<Character> members;
+        private Character leader;
 
         public Faction(string _factionName)
         {
@@ -18,9 +19,19 @@ namespace Theasian_Diplomacy.GameLogic
             members = new List<Character>();
         }
 
-        public void addMember(Character _newMember)
+        /// <summary>
+        /// Adds a member to the list
+        /// </summary>
+        /// <param name="_newMember"> The member to add </param>
+        /// <param name="_isNewLeader"> If the added member should be set as the new leader </param>
+        public void addMember(Character _newMember, bool _isNewLeader = false)
         {
             members.Add(_newMember);
+
+            if (_isNewLeader)
+            {
+                leader = _newMember;
+            }
         }
 
         public string FactionName
@@ -36,6 +47,11 @@ namespace Theasian_Diplomacy.GameLogic
         public List<Character> Members
         {
             get { return members; }
+        }
+
+        public Character Leader
+        {
+            get { return leader; }
         }
 
 
