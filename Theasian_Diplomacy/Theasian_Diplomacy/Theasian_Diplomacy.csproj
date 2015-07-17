@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgentOperationSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgentOperationSetup.Designer.cs">
+      <DependentUpon>AgentOperationSetup.cs</DependentUpon>
+    </Compile>
     <Compile Include="GameLogic\Army.cs" />
     <Compile Include="GameLogic\Character.cs" />
     <Compile Include="GameLogic\City.cs" />
@@ -57,6 +63,9 @@
     <Compile Include="GameLogic\Game.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AgentOperationSetup.resx">
+      <DependentUpon>AgentOperationSetup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

@@ -35,6 +35,20 @@
             this.menuMainMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuNewGame = new System.Windows.Forms.ToolStripMenuItem();
             this.menuQuit = new System.Windows.Forms.ToolStripMenuItem();
+            this.dialoguesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultezLesVisitesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consulterLesLettresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nouvellesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lireLeJournalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rapportDespionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.trésorerieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changerLesLoisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consulterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changerLesImpôtsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gèrerLeTauxDeRecrutementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.servicesSecretsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.effectuerUneOpérationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gérerSaGardesPersonnellesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lstCity = new System.Windows.Forms.ListBox();
             this.lstFactionLeaders = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,23 +58,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.dialoguesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultezLesVisitesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consulterLesLettresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nouvellesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lireLeJournalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpPlayer = new System.Windows.Forms.GroupBox();
-            this.txtPlayerName = new System.Windows.Forms.TextBox();
-            this.trésorerieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changerLesLoisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consulterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changerLesImpôtsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rapportDespionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.servicesSecretsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.effectuerUneOpérationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gérerSaGardesPersonnellesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gèrerLeTauxDeRecrutementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblPlayerAge = new System.Windows.Forms.Label();
+            this.txtPlayerName = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.grpPlayer.SuspendLayout();
             this.SuspendLayout();
@@ -101,7 +101,7 @@
             this.servicesSecretsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1402, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1434, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -127,6 +127,104 @@
             this.menuQuit.Size = new System.Drawing.Size(157, 22);
             this.menuQuit.Text = "Quitter";
             this.menuQuit.Click += new System.EventHandler(this.menuQuit_Click);
+            // 
+            // dialoguesToolStripMenuItem
+            // 
+            this.dialoguesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.consultezLesVisitesToolStripMenuItem,
+            this.consulterLesLettresToolStripMenuItem});
+            this.dialoguesToolStripMenuItem.Name = "dialoguesToolStripMenuItem";
+            this.dialoguesToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.dialoguesToolStripMenuItem.Text = "Dialogues";
+            // 
+            // consultezLesVisitesToolStripMenuItem
+            // 
+            this.consultezLesVisitesToolStripMenuItem.Name = "consultezLesVisitesToolStripMenuItem";
+            this.consultezLesVisitesToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.consultezLesVisitesToolStripMenuItem.Text = "Rencontrer des visiteurs";
+            // 
+            // consulterLesLettresToolStripMenuItem
+            // 
+            this.consulterLesLettresToolStripMenuItem.Name = "consulterLesLettresToolStripMenuItem";
+            this.consulterLesLettresToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.consulterLesLettresToolStripMenuItem.Text = "Consulter les lettres";
+            // 
+            // nouvellesToolStripMenuItem
+            // 
+            this.nouvellesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lireLeJournalToolStripMenuItem,
+            this.rapportDespionsToolStripMenuItem});
+            this.nouvellesToolStripMenuItem.Name = "nouvellesToolStripMenuItem";
+            this.nouvellesToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.nouvellesToolStripMenuItem.Text = "Nouvelles";
+            // 
+            // lireLeJournalToolStripMenuItem
+            // 
+            this.lireLeJournalToolStripMenuItem.Name = "lireLeJournalToolStripMenuItem";
+            this.lireLeJournalToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.lireLeJournalToolStripMenuItem.Text = "Lire le journal";
+            // 
+            // rapportDespionsToolStripMenuItem
+            // 
+            this.rapportDespionsToolStripMenuItem.Name = "rapportDespionsToolStripMenuItem";
+            this.rapportDespionsToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.rapportDespionsToolStripMenuItem.Text = "Rapport d\'espions";
+            // 
+            // trésorerieToolStripMenuItem
+            // 
+            this.trésorerieToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.changerLesLoisToolStripMenuItem,
+            this.consulterToolStripMenuItem,
+            this.changerLesImpôtsToolStripMenuItem,
+            this.gèrerLeTauxDeRecrutementToolStripMenuItem});
+            this.trésorerieToolStripMenuItem.Name = "trésorerieToolStripMenuItem";
+            this.trésorerieToolStripMenuItem.Size = new System.Drawing.Size(126, 20);
+            this.trésorerieToolStripMenuItem.Text = "Gestion du royaume";
+            // 
+            // changerLesLoisToolStripMenuItem
+            // 
+            this.changerLesLoisToolStripMenuItem.Name = "changerLesLoisToolStripMenuItem";
+            this.changerLesLoisToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.changerLesLoisToolStripMenuItem.Text = "Changer les lois";
+            // 
+            // consulterToolStripMenuItem
+            // 
+            this.consulterToolStripMenuItem.Name = "consulterToolStripMenuItem";
+            this.consulterToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.consulterToolStripMenuItem.Text = "Consulter la trésorerie";
+            // 
+            // changerLesImpôtsToolStripMenuItem
+            // 
+            this.changerLesImpôtsToolStripMenuItem.Name = "changerLesImpôtsToolStripMenuItem";
+            this.changerLesImpôtsToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.changerLesImpôtsToolStripMenuItem.Text = "Changer les impôts/taxes";
+            // 
+            // gèrerLeTauxDeRecrutementToolStripMenuItem
+            // 
+            this.gèrerLeTauxDeRecrutementToolStripMenuItem.Name = "gèrerLeTauxDeRecrutementToolStripMenuItem";
+            this.gèrerLeTauxDeRecrutementToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.gèrerLeTauxDeRecrutementToolStripMenuItem.Text = "Gèrer le taux de recrutement";
+            // 
+            // servicesSecretsToolStripMenuItem
+            // 
+            this.servicesSecretsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.effectuerUneOpérationToolStripMenuItem,
+            this.gérerSaGardesPersonnellesToolStripMenuItem});
+            this.servicesSecretsToolStripMenuItem.Name = "servicesSecretsToolStripMenuItem";
+            this.servicesSecretsToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
+            this.servicesSecretsToolStripMenuItem.Text = "Services secrets";
+            // 
+            // effectuerUneOpérationToolStripMenuItem
+            // 
+            this.effectuerUneOpérationToolStripMenuItem.Name = "effectuerUneOpérationToolStripMenuItem";
+            this.effectuerUneOpérationToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.effectuerUneOpérationToolStripMenuItem.Text = "Effectuer une opération";
+            // 
+            // gérerSaGardesPersonnellesToolStripMenuItem
+            // 
+            this.gérerSaGardesPersonnellesToolStripMenuItem.Name = "gérerSaGardesPersonnellesToolStripMenuItem";
+            this.gérerSaGardesPersonnellesToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.gérerSaGardesPersonnellesToolStripMenuItem.Text = "Gérer sa garde personnelles";
             // 
             // lstCity
             // 
@@ -207,42 +305,6 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Points d\'actions: 0";
             // 
-            // dialoguesToolStripMenuItem
-            // 
-            this.dialoguesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.consultezLesVisitesToolStripMenuItem,
-            this.consulterLesLettresToolStripMenuItem});
-            this.dialoguesToolStripMenuItem.Name = "dialoguesToolStripMenuItem";
-            this.dialoguesToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
-            this.dialoguesToolStripMenuItem.Text = "Dialogues";
-            // 
-            // consultezLesVisitesToolStripMenuItem
-            // 
-            this.consultezLesVisitesToolStripMenuItem.Name = "consultezLesVisitesToolStripMenuItem";
-            this.consultezLesVisitesToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-            this.consultezLesVisitesToolStripMenuItem.Text = "Rencontrer des visiteurs";
-            // 
-            // consulterLesLettresToolStripMenuItem
-            // 
-            this.consulterLesLettresToolStripMenuItem.Name = "consulterLesLettresToolStripMenuItem";
-            this.consulterLesLettresToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-            this.consulterLesLettresToolStripMenuItem.Text = "Consulter les lettres";
-            // 
-            // nouvellesToolStripMenuItem
-            // 
-            this.nouvellesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lireLeJournalToolStripMenuItem,
-            this.rapportDespionsToolStripMenuItem});
-            this.nouvellesToolStripMenuItem.Name = "nouvellesToolStripMenuItem";
-            this.nouvellesToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
-            this.nouvellesToolStripMenuItem.Text = "Nouvelles";
-            // 
-            // lireLeJournalToolStripMenuItem
-            // 
-            this.lireLeJournalToolStripMenuItem.Name = "lireLeJournalToolStripMenuItem";
-            this.lireLeJournalToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
-            this.lireLeJournalToolStripMenuItem.Text = "Lire le journal";
-            // 
             // grpPlayer
             // 
             this.grpPlayer.Controls.Add(this.lblPlayerAge);
@@ -254,76 +316,6 @@
             this.grpPlayer.TabStop = false;
             this.grpPlayer.Text = "Informations personnelles";
             // 
-            // txtPlayerName
-            // 
-            this.txtPlayerName.Location = new System.Drawing.Point(7, 20);
-            this.txtPlayerName.Name = "txtPlayerName";
-            this.txtPlayerName.Size = new System.Drawing.Size(145, 20);
-            this.txtPlayerName.TabIndex = 0;
-            this.txtPlayerName.Text = "NomJoueurParDéfaut";
-            // 
-            // trésorerieToolStripMenuItem
-            // 
-            this.trésorerieToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.changerLesLoisToolStripMenuItem,
-            this.consulterToolStripMenuItem,
-            this.changerLesImpôtsToolStripMenuItem,
-            this.gèrerLeTauxDeRecrutementToolStripMenuItem});
-            this.trésorerieToolStripMenuItem.Name = "trésorerieToolStripMenuItem";
-            this.trésorerieToolStripMenuItem.Size = new System.Drawing.Size(126, 20);
-            this.trésorerieToolStripMenuItem.Text = "Gestion du royaume";
-            // 
-            // changerLesLoisToolStripMenuItem
-            // 
-            this.changerLesLoisToolStripMenuItem.Name = "changerLesLoisToolStripMenuItem";
-            this.changerLesLoisToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
-            this.changerLesLoisToolStripMenuItem.Text = "Changer les lois";
-            // 
-            // consulterToolStripMenuItem
-            // 
-            this.consulterToolStripMenuItem.Name = "consulterToolStripMenuItem";
-            this.consulterToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
-            this.consulterToolStripMenuItem.Text = "Consulter le trésor";
-            // 
-            // changerLesImpôtsToolStripMenuItem
-            // 
-            this.changerLesImpôtsToolStripMenuItem.Name = "changerLesImpôtsToolStripMenuItem";
-            this.changerLesImpôtsToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
-            this.changerLesImpôtsToolStripMenuItem.Text = "Changer les impôts/taxes";
-            // 
-            // rapportDespionsToolStripMenuItem
-            // 
-            this.rapportDespionsToolStripMenuItem.Name = "rapportDespionsToolStripMenuItem";
-            this.rapportDespionsToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
-            this.rapportDespionsToolStripMenuItem.Text = "Rapport d\'espions";
-            // 
-            // servicesSecretsToolStripMenuItem
-            // 
-            this.servicesSecretsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.effectuerUneOpérationToolStripMenuItem,
-            this.gérerSaGardesPersonnellesToolStripMenuItem});
-            this.servicesSecretsToolStripMenuItem.Name = "servicesSecretsToolStripMenuItem";
-            this.servicesSecretsToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
-            this.servicesSecretsToolStripMenuItem.Text = "Services secrets";
-            // 
-            // effectuerUneOpérationToolStripMenuItem
-            // 
-            this.effectuerUneOpérationToolStripMenuItem.Name = "effectuerUneOpérationToolStripMenuItem";
-            this.effectuerUneOpérationToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
-            this.effectuerUneOpérationToolStripMenuItem.Text = "Effectuer une opération";
-            // 
-            // gérerSaGardesPersonnellesToolStripMenuItem
-            // 
-            this.gérerSaGardesPersonnellesToolStripMenuItem.Name = "gérerSaGardesPersonnellesToolStripMenuItem";
-            this.gérerSaGardesPersonnellesToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
-            this.gérerSaGardesPersonnellesToolStripMenuItem.Text = "Gérer sa garde personnelles";
-            // 
-            // gèrerLeTauxDeRecrutementToolStripMenuItem
-            // 
-            this.gèrerLeTauxDeRecrutementToolStripMenuItem.Name = "gèrerLeTauxDeRecrutementToolStripMenuItem";
-            this.gèrerLeTauxDeRecrutementToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
-            this.gèrerLeTauxDeRecrutementToolStripMenuItem.Text = "Gèrer le taux de recrutement";
-            // 
             // lblPlayerAge
             // 
             this.lblPlayerAge.AutoSize = true;
@@ -333,11 +325,19 @@
             this.lblPlayerAge.TabIndex = 14;
             this.lblPlayerAge.Text = "Âge: over 9000";
             // 
+            // txtPlayerName
+            // 
+            this.txtPlayerName.Location = new System.Drawing.Point(7, 20);
+            this.txtPlayerName.Name = "txtPlayerName";
+            this.txtPlayerName.Size = new System.Drawing.Size(145, 20);
+            this.txtPlayerName.TabIndex = 0;
+            this.txtPlayerName.Text = "NomJoueurParDéfaut";
+            // 
             // frmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1402, 577);
+            this.ClientSize = new System.Drawing.Size(1434, 612);
             this.Controls.Add(this.grpPlayer);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
