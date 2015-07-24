@@ -12,6 +12,7 @@ namespace Theasian_Diplomacy.GameLogic
         private string factionName;
         private List<Character> members;
         private Character leader;
+        private int gold;
         #endregion
 
         #region general methods
@@ -19,6 +20,7 @@ namespace Theasian_Diplomacy.GameLogic
         {
             factionName = _factionName;
             members = new List<Character>();
+            gold = 0;
         }
 
         /// <summary>
@@ -56,6 +58,12 @@ namespace Theasian_Diplomacy.GameLogic
         public Character Leader
         {
             get { return leader; }
+        }
+
+        public int Gold
+        {
+            get { return gold; }
+            set { gold += value; }
         }
         #endregion
     }

@@ -32,6 +32,10 @@ namespace Theasian_Diplomacy.GameLogic
         #endregion
 
         #region properties
+        public Faction Faction
+        {
+            get { return faction; }
+        }
         #endregion
 
     }

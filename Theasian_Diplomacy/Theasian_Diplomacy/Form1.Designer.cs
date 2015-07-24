@@ -55,12 +55,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblPlayerGold = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.grpPlayer = new System.Windows.Forms.GroupBox();
             this.lblPlayerAge = new System.Windows.Forms.Label();
             this.txtPlayerName = new System.Windows.Forms.TextBox();
+            this.btnEndTurn = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.grpPlayer.SuspendLayout();
             this.SuspendLayout();
@@ -278,14 +279,14 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Factions";
             // 
-            // label5
+            // lblPlayerGold
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 35);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Or: 0 pièces";
+            this.lblPlayerGold.AutoSize = true;
+            this.lblPlayerGold.Location = new System.Drawing.Point(12, 35);
+            this.lblPlayerGold.Name = "lblPlayerGold";
+            this.lblPlayerGold.Size = new System.Drawing.Size(64, 13);
+            this.lblPlayerGold.TabIndex = 10;
+            this.lblPlayerGold.Text = "Or: 0 pièces";
             // 
             // label6
             // 
@@ -333,15 +334,26 @@
             this.txtPlayerName.TabIndex = 0;
             this.txtPlayerName.Text = "NomJoueurParDéfaut";
             // 
+            // btnEndTurn
+            // 
+            this.btnEndTurn.Location = new System.Drawing.Point(24, 380);
+            this.btnEndTurn.Name = "btnEndTurn";
+            this.btnEndTurn.Size = new System.Drawing.Size(75, 23);
+            this.btnEndTurn.TabIndex = 14;
+            this.btnEndTurn.Text = "Finir le tour";
+            this.btnEndTurn.UseVisualStyleBackColor = true;
+            this.btnEndTurn.Click += new System.EventHandler(this.btnEndTurn_Click);
+            // 
             // frmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1434, 612);
+            this.Controls.Add(this.btnEndTurn);
             this.Controls.Add(this.grpPlayer);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblPlayerGold);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -383,7 +395,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblPlayerGold;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ToolStripMenuItem dialoguesToolStripMenuItem;
@@ -403,6 +415,7 @@
         private System.Windows.Forms.ToolStripMenuItem gérerSaGardesPersonnellesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gèrerLeTauxDeRecrutementToolStripMenuItem;
         private System.Windows.Forms.Label lblPlayerAge;
+        private System.Windows.Forms.Button btnEndTurn;
     }
 }
 

@@ -9,11 +9,12 @@ namespace Theasian_Diplomacy.GameLogic
     class Game
     {
         #region variable
+        private Character player;
         private List<Faction> factions;
         private List<City> cities;
         #endregion
 
-        #region general methode
+        #region general methods
         public Game()
         {
             NewGame();
@@ -30,40 +31,67 @@ namespace Theasian_Diplomacy.GameLogic
             //Adds factions to the list, needs to come from a list
             Faction newFaction = new Faction("Barbarians");
             newFaction.addMember(new Character("John", newFaction), true);
-            City newCity = new City("La ville des chats");
+            City newCity = new City("La ville des chats", 100);
             newCity.Owner = newFaction;
             cities.Add(newCity);
             factions.Add(newFaction);
 
             newFaction = new Faction("Player_House");
             newFaction.addMember(new Character("Generic", newFaction), true);
-            newCity = new City("La ville des Souris");
+            player = newFaction.Members.ElementAt(0);
+            newCity = new City("La ville des Souris", 100);
             newCity.Owner = newFaction;
             cities.Add(newCity);
             factions.Add(newFaction);
 
             newFaction = new Faction("People");
             newFaction.addMember(new Character("Yolo", newFaction), true);
-            newCity = new City("La ville des Marmottes");
+            newCity = new City("La ville des Marmottes", 100);
             newCity.Owner = newFaction;
             cities.Add(newCity);
             factions.Add(newFaction);
 
             newFaction = new Faction("Foreign_Nation");
             newFaction.addMember(new Character("swEG", newFaction), true);
-            newCity = new City("La ville des chiens");
+            newCity = new City("La ville des chiens", 100);
             newCity.Owner = newFaction;
             cities.Add(newCity);
             factions.Add(newFaction);
-
         }
 
         /// <summary>
-        /// Close everything
+        /// Closes everything
         /// </summary>
         public void Close()
         {
 
+        }
+
+        /// <summary>
+        /// Ends the turn, simulates AI turns and starts a new turn
+        /// </summary>
+        public void endTurn()
+        {
+            foreach (Faction faction in factions)
+            {
+                addIncome(faction);
+            }
+
+            //move units? or do they have move points and move when you click? maybe a mix with Civ system?
+            //advance spy operations
+            //doAI
+            //
+        }
+
+        private void addIncome(Faction _faction)
+        {
+            foreach (City city in cities)
+            {
+                if (city.Owner == _faction)
+                {
+                    _faction.Gold += city.Income;
+                }
+            }
         }
         #endregion
 
@@ -77,6 +105,12 @@ namespace Theasian_Diplomacy.GameLogic
         {
             get { return cities; }
         }
+
+        public Character Player
+        {
+            get { return player; }
+        }
         #endregion
+
     }
 }

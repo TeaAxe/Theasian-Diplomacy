@@ -17,7 +17,7 @@ namespace Theasian_Diplomacy
         private Game game;
         #endregion
 
-        #region genarated methode
+        #region generated methode
         public frmMainMenu()
         {
             InitializeComponent();
@@ -42,6 +42,11 @@ namespace Theasian_Diplomacy
         private void menuQuit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnEndTurn_Click(object sender, EventArgs e)
+        {
+            game.endTurn();
         }
 
         private void frmMainMenu_FormClosing(object sender, FormClosingEventArgs e)
@@ -88,6 +93,8 @@ namespace Theasian_Diplomacy
             {
                 lstFactionLeaders.Items.Add(faction.Leader);
             }
+
+            lblPlayerGold.Text = "Or: " + game.Player.Faction.Gold.ToString() + " pièce(s).";
         }
         #endregion
 
