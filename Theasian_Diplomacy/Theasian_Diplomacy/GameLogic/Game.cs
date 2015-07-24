@@ -76,11 +76,9 @@ namespace Theasian_Diplomacy.GameLogic
             {
                 addIncome(faction);
             }
-
             //move units? or do they have move points and move when you click? maybe a mix with Civ system?
             //advance spy operations
             //doAI
-            //
         }
 
         private void addIncome(Faction _faction)
