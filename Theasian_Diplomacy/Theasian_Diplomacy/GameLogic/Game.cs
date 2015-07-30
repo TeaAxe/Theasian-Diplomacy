@@ -72,24 +72,14 @@ namespace Theasian_Diplomacy.GameLogic
         /// </summary>
         public void endTurn()
         {
-            foreach (Faction faction in factions)
+            foreach (City city in cities)
             {
-                addIncome(faction);
+                    city.Owner.Gold += city.Income;
             }
+
             //move units? or do they have move points and move when you click? maybe a mix with Civ system?
             //advance spy operations
             //doAI
-        }
-
-        private void addIncome(Faction _faction)
-        {
-            foreach (City city in cities)
-            {
-                if (city.Owner == _faction)
-                {
-                    _faction.Gold += city.Income;
-                }
-            }
         }
         #endregion
 
