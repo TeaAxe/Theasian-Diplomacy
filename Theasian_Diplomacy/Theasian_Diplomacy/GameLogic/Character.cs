@@ -41,6 +41,12 @@ namespace Theasian_Diplomacy.GameLogic
         {
             get { return faction; }
         }
+
+        public string FirstName
+        {
+            get { return firstName; }
+            set { firstName = value; }
+        }
         #endregion
 
     }

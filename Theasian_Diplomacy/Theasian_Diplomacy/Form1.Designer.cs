@@ -333,6 +333,7 @@
             this.txtPlayerName.Size = new System.Drawing.Size(145, 20);
             this.txtPlayerName.TabIndex = 0;
             this.txtPlayerName.Text = "NomJoueurParDéfaut";
+            this.txtPlayerName.TextChanged += new System.EventHandler(this.txtPlayerName_TextChanged);
             // 
             // btnEndTurn
             // 
