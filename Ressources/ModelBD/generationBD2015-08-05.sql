@@ -5,7 +5,7 @@
     Nom de la base de données : "Base de données"
     Fichier source : "F:\Projets\ProjetUnrealAvecSamEtMax\Theasian-Diplomacy\Ressources\ModelBD\Theasian_Diplomacy.sms"
 
-    Généré le : 5 août 2015 22:30:30
+    Généré le : 5 août 2015 22:38:03
     Généré par Open ModelSphere Version 3.2"
 ***********************************************************
 
@@ -344,140 +344,65 @@ ALTER TABLE RelationTypeDB
 ALTER TABLE SkillDB 
   ADD CONSTRAINT CP_SkillDB_Cle_primaire PRIMARY KEY (
     SkillDBID)  ;
+ALTER TABLE ArmyDB
+  ADD CONSTRAINT CE_aCharacterDBID 
+    FOREIGN KEY (aCharacterDBID)
+      REFERENCES CharacterDB;
+
+ALTER TABLE AgentDB
+  ADD CONSTRAINT CE_aCharacterDBID 
+    FOREIGN KEY (aCharacterDBID)
+      REFERENCES CharacterDB;
+
+ALTER TABLE ArmyDB
+  ADD CONSTRAINT CE_aFactionDBID 
+    FOREIGN KEY (aFactionDBID)
+      REFERENCES FactionDB;
+
+ALTER TABLE ArmyDB
+  ADD CONSTRAINT CE_aLocationDBID 
+    FOREIGN KEY (aLocationDBID)
+      REFERENCES LocationDB;
+
+ALTER TABLE AgentDBSkillDB
+  ADD CONSTRAINT CE_asAgentDBID 
+    FOREIGN KEY (asAgentDBID)
+      REFERENCES AgentDB;
+
+ALTER TABLE AgentDBSkillDB
+  ADD CONSTRAINT CE_asSkillDBID 
+    FOREIGN KEY (asSkillDBID)
+      REFERENCES SkillDB;
+
 ALTER TABLE CharacterDB
   ADD CONSTRAINT CE_cArmyDBID 
     FOREIGN KEY (cArmyDBID)
       REFERENCES ArmyDB;
 
-ALTER TABLE AgentDBSkillDB
-  ADD CONSTRAINT CE_Cle_etrangere 
-    FOREIGN KEY (asSkillDBID)
-      REFERENCES SkillDB;
-
-ALTER TABLE AgentDBSkillDB
-  ADD CONSTRAINT CE_Cle_etrangere 
-    FOREIGN KEY (asAgentDBID)
-      REFERENCES AgentDB;
-
-ALTER TABLE OperationDBSkillDB
-  ADD CONSTRAINT CE_Cle_etrangere 
-    FOREIGN KEY (osOperationDBID)
-      REFERENCES OperationDB;
-
-ALTER TABLE OperationDBSkillDB
-  ADD CONSTRAINT CE_Cle_etrangere 
-    FOREIGN KEY (osSkillDBID)
-      REFERENCES SkillDB;
-
-ALTER TABLE FactionDBLawDB
-  ADD CONSTRAINT CE_Cle_etrangere 
-    FOREIGN KEY (flLawDBID)
-      REFERENCES LawDB;
-
-ALTER TABLE FactionDBLawDB
-  ADD CONSTRAINT CE_Cle_etrangere 
-    FOREIGN KEY (flFactionDBID)
-      REFERENCES FactionDB;
-
-ALTER TABLE CharacterDBSkillDB
-  ADD CONSTRAINT CE_Cle_etrangere 
-    FOREIGN KEY (csCharacterDBID)
-      REFERENCES CharacterDB;
-
-ALTER TABLE CharacterDBSkillDB
-  ADD CONSTRAINT CE_Cle_etrangere 
-    FOREIGN KEY (csSkillDBID)
-      REFERENCES SkillDB;
-
-ALTER TABLE FactionDB
-  ADD CONSTRAINT CE_Cle_etrangere 
-    FOREIGN KEY (fFactionGoalID)
-      REFERENCES FactionGoalDB;
-
-ALTER TABLE FactionDB
-  ADD CONSTRAINT CE_Cle_etrangere 
-    FOREIGN KEY (fCharacterDBID)
-      REFERENCES CharacterDB;
-
 ALTER TABLE CityDB
-  ADD CONSTRAINT CE_Cle_etrangere 
+  ADD CONSTRAINT CE_cFactionDBID 
     FOREIGN KEY (cFactionDBID)
       REFERENCES FactionDB;
 
-ALTER TABLE CityDB
-  ADD CONSTRAINT CE_Cle_etrangere 
-    FOREIGN KEY (cLocationDBID)
-      REFERENCES LocationDB;
-
-ALTER TABLE ArmyDB
-  ADD CONSTRAINT CE_Cle_etrangere 
-    FOREIGN KEY (aFactionDBID)
-      REFERENCES FactionDB;
-
-ALTER TABLE ArmyDB
-  ADD CONSTRAINT CE_Cle_etrangere 
-    FOREIGN KEY (aLocationDBID)
-      REFERENCES LocationDB;
-
-ALTER TABLE ArmyDB
-  ADD CONSTRAINT CE_Cle_etrangere 
-    FOREIGN KEY (aCharacterDBID)
-      REFERENCES CharacterDB;
-
-ALTER TABLE LocationDB
-  ADD CONSTRAINT CE_Cle_etrangere 
-    FOREIGN KEY (lCityDBID)
-      REFERENCES CityDB;
-
-ALTER TABLE AgentDB
-  ADD CONSTRAINT CE_Cle_etrangere 
-    FOREIGN KEY (aCharacterDBID)
-      REFERENCES CharacterDB;
-
-ALTER TABLE RelationModifierDB
-  ADD CONSTRAINT CE_Cle_etrangere 
-    FOREIGN KEY (rmRelationDBID)
-      REFERENCES RelationDB;
-
-ALTER TABLE RelationModifierDB
-  ADD CONSTRAINT CE_Cle_etrangere 
-    FOREIGN KEY (rmEventDBID)
-      REFERENCES EventDB;
-
-ALTER TABLE LetterDB
-  ADD CONSTRAINT CE_Cle_etrangere 
-    FOREIGN KEY (lCharacterDBID)
-      REFERENCES CharacterDB;
-
 ALTER TABLE CharacterDBLetterDB
-  ADD CONSTRAINT CE_Cle_etrangere 
+  ADD CONSTRAINT CE_clCharacterDBID 
     FOREIGN KEY (clCharacterDBID)
       REFERENCES CharacterDB;
-
-ALTER TABLE CharacterDBLetterDB
-  ADD CONSTRAINT CE_Cle_etrangere 
-    FOREIGN KEY (clLetterDBID)
-      REFERENCES LetterDB;
-
-ALTER TABLE GoalDB
-  ADD CONSTRAINT CE_Cle_etrangere 
-    FOREIGN KEY (gCharacterDBID)
-      REFERENCES CharacterDB;
-
-ALTER TABLE EventDBGoalDB
-  ADD CONSTRAINT CE_Cle_etrangere 
-    FOREIGN KEY (egGoalDBID)
-      REFERENCES GoalDB;
-
-ALTER TABLE EventDBGoalDB
-  ADD CONSTRAINT CE_Cle_etrangere 
-    FOREIGN KEY (egEventDBID)
-      REFERENCES EventDB;
 
 ALTER TABLE CharacterDB
   ADD CONSTRAINT CE_cleaderFactionDBID 
     FOREIGN KEY (cleaderFactionDBID)
       REFERENCES FactionDB;
+
+ALTER TABLE CharacterDBLetterDB
+  ADD CONSTRAINT CE_clLetterDBID 
+    FOREIGN KEY (clLetterDBID)
+      REFERENCES LetterDB;
+
+ALTER TABLE CityDB
+  ADD CONSTRAINT CE_cLocationDBID 
+    FOREIGN KEY (cLocationDBID)
+      REFERENCES LocationDB;
 
 ALTER TABLE CharacterDB
   ADD CONSTRAINT CE_cLocationDBID 
@@ -489,6 +414,16 @@ ALTER TABLE CharacterDB
     FOREIGN KEY (cmemberFactionDBID)
       REFERENCES FactionDB;
 
+ALTER TABLE CharacterDBSkillDB
+  ADD CONSTRAINT CE_csCharacterDBID 
+    FOREIGN KEY (csCharacterDBID)
+      REFERENCES CharacterDB;
+
+ALTER TABLE CharacterDBSkillDB
+  ADD CONSTRAINT CE_csSkillDBID 
+    FOREIGN KEY (csSkillDBID)
+      REFERENCES SkillDB;
+
 ALTER TABLE DialogueDBLetterDB
   ADD CONSTRAINT CE_dlDialogueDBID 
     FOREIGN KEY (dlDialogueDBID)
@@ -499,6 +434,61 @@ ALTER TABLE DialogueDBLetterDB
     FOREIGN KEY (dlLetterDBID)
       REFERENCES LetterDB;
 
+ALTER TABLE EventDBGoalDB
+  ADD CONSTRAINT CE_egEventDBID 
+    FOREIGN KEY (egEventDBID)
+      REFERENCES EventDB;
+
+ALTER TABLE EventDBGoalDB
+  ADD CONSTRAINT CE_egGoalDBID 
+    FOREIGN KEY (egGoalDBID)
+      REFERENCES GoalDB;
+
+ALTER TABLE FactionDB
+  ADD CONSTRAINT CE_fCharacterDBID 
+    FOREIGN KEY (fCharacterDBID)
+      REFERENCES CharacterDB;
+
+ALTER TABLE FactionDB
+  ADD CONSTRAINT CE_fFactionGoalID 
+    FOREIGN KEY (fFactionGoalID)
+      REFERENCES FactionGoalDB;
+
+ALTER TABLE FactionDBLawDB
+  ADD CONSTRAINT CE_flFactionDBID 
+    FOREIGN KEY (flFactionDBID)
+      REFERENCES FactionDB;
+
+ALTER TABLE FactionDBLawDB
+  ADD CONSTRAINT CE_flLawDBID 
+    FOREIGN KEY (flLawDBID)
+      REFERENCES LawDB;
+
+ALTER TABLE GoalDB
+  ADD CONSTRAINT CE_gCharacterDBID 
+    FOREIGN KEY (gCharacterDBID)
+      REFERENCES CharacterDB;
+
+ALTER TABLE LetterDB
+  ADD CONSTRAINT CE_lCharacterDBID 
+    FOREIGN KEY (lCharacterDBID)
+      REFERENCES CharacterDB;
+
+ALTER TABLE LocationDB
+  ADD CONSTRAINT CE_lCityDBID 
+    FOREIGN KEY (lCityDBID)
+      REFERENCES CityDB;
+
+ALTER TABLE OperationDBSkillDB
+  ADD CONSTRAINT CE_osOperationDBID 
+    FOREIGN KEY (osOperationDBID)
+      REFERENCES OperationDB;
+
+ALTER TABLE OperationDBSkillDB
+  ADD CONSTRAINT CE_osSkillDBID 
+    FOREIGN KEY (osSkillDBID)
+      REFERENCES SkillDB;
+
 ALTER TABLE RelationDB
   ADD CONSTRAINT CE_rfirstCharacterDBID 
     FOREIGN KEY (rfirstCharacterDBID)
@@ -508,6 +498,16 @@ ALTER TABLE RelationLevelDB
   ADD CONSTRAINT CE_rlDialogueDBID 
     FOREIGN KEY (rlDialogueDBID)
       REFERENCES DialogueDB;
+
+ALTER TABLE RelationModifierDB
+  ADD CONSTRAINT CE_rmEventDBID 
+    FOREIGN KEY (rmEventDBID)
+      REFERENCES EventDB;
+
+ALTER TABLE RelationModifierDB
+  ADD CONSTRAINT CE_rmRelationDBID 
+    FOREIGN KEY (rmRelationDBID)
+      REFERENCES RelationDB;
 
 ALTER TABLE RelationDB
   ADD CONSTRAINT CE_rRelationTypeDBID 
