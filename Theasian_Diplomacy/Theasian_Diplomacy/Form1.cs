@@ -29,6 +29,26 @@ namespace Theasian_Diplomacy
             Refresh();
         }
 
+        private void btnVille_des_Chats_info_Click(object sender, EventArgs e)
+        {
+            //open dialogue avec ville des chats
+        }
+
+        private void btnVille_des_Chiens_info_Click(object sender, EventArgs e)
+        {
+            //open dialogue avec ville des chiens
+        }
+
+        private void btnVille_des_marmottes_info_Click(object sender, EventArgs e)
+        {
+            //open dialogue avec ville des marmottes
+        }
+
+        private void btnVille_des_souris_info_Click(object sender, EventArgs e)
+        {
+            //open dialogue avec ville des souris
+        }
+
         private void btnListFaction_Click(object sender, EventArgs e)
         {
             Refresh();
