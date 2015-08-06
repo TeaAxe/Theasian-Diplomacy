@@ -4,7 +4,69 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="db86b480bfa1402aacfa6ef2bed50ec1" Name="Diagram1" />
+      <Diagram DiagramId="db86b480bfa1402aacfa6ef2bed50ec1" Name="Diagram1" >
+        <EntityTypeShape EntityType="TheasianDiplomacyDBModel.AgentDB" Width="1.5" PointX="13" PointY="12.625" />
+        <EntityTypeShape EntityType="TheasianDiplomacyDBModel.AgentDBSkillDB" Width="1.5" PointX="15.25" PointY="12.875" />
+        <EntityTypeShape EntityType="TheasianDiplomacyDBModel.ArmyDB" Width="1.5" PointX="5.25" PointY="8.5" />
+        <EntityTypeShape EntityType="TheasianDiplomacyDBModel.CharacterDB" Width="1.5" PointX="10.75" PointY="11.125" />
+        <EntityTypeShape EntityType="TheasianDiplomacyDBModel.CharacterDBLetterDB" Width="1.5" PointX="15.25" PointY="18.125" />
+        <EntityTypeShape EntityType="TheasianDiplomacyDBModel.CharacterDBSkillDB" Width="1.5" PointX="18" PointY="12.875" />
+        <EntityTypeShape EntityType="TheasianDiplomacyDBModel.CityDB" Width="1.5" PointX="5.25" PointY="12.5" />
+        <EntityTypeShape EntityType="TheasianDiplomacyDBModel.DialogueDB" Width="1.5" PointX="13" PointY="28.125" />
+        <EntityTypeShape EntityType="TheasianDiplomacyDBModel.DialogueDBLetterDB" Width="1.5" PointX="15.25" PointY="25" />
+        <EntityTypeShape EntityType="TheasianDiplomacyDBModel.EventDB" Width="1.5" PointX="13" PointY="5.625" />
+        <EntityTypeShape EntityType="TheasianDiplomacyDBModel.EventDBGoalDB" Width="1.5" PointX="15.25" PointY="9.75" />
+        <EntityTypeShape EntityType="TheasianDiplomacyDBModel.FactionDB" Width="1.5" PointX="3" PointY="12.25" />
+        <EntityTypeShape EntityType="TheasianDiplomacyDBModel.FactionDBLawDB" Width="1.5" PointX="8.25" PointY="13" />
+        <EntityTypeShape EntityType="TheasianDiplomacyDBModel.FactionGoalDB" Width="1.5" PointX="0.75" PointY="13" />
+        <EntityTypeShape EntityType="TheasianDiplomacyDBModel.GameDB" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TheasianDiplomacyDBModel.GoalDB" Width="1.5" PointX="13" PointY="9.75" />
+        <EntityTypeShape EntityType="TheasianDiplomacyDBModel.LawDB" Width="1.5" PointX="6" PointY="4.875" />
+        <EntityTypeShape EntityType="TheasianDiplomacyDBModel.LetterDB" Width="1.5" PointX="13" PointY="24.875" />
+        <EntityTypeShape EntityType="TheasianDiplomacyDBModel.LocationDB" Width="1.5" PointX="7.5" PointY="16.625" />
+        <EntityTypeShape EntityType="TheasianDiplomacyDBModel.OperationDB" Width="1.5" PointX="13" PointY="31.5" />
+        <EntityTypeShape EntityType="TheasianDiplomacyDBModel.OperationDBSkillDB" Width="1.5" PointX="15.25" PointY="20.875" />
+        <EntityTypeShape EntityType="TheasianDiplomacyDBModel.RelationDB" Width="1.5" PointX="13" PointY="16.625" />
+        <EntityTypeShape EntityType="TheasianDiplomacyDBModel.RelationLevelDB" Width="1.5" PointX="15.25" PointY="27.875" />
+        <EntityTypeShape EntityType="TheasianDiplomacyDBModel.RelationModifierDB" Width="1.5" PointX="18.25" PointY="16.625" />
+        <EntityTypeShape EntityType="TheasianDiplomacyDBModel.RelationTypeDB" Width="1.5" PointX="10.75" PointY="18" />
+        <EntityTypeShape EntityType="TheasianDiplomacyDBModel.SkillDB" Width="1.5" PointX="13" PointY="20.875" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_aCharacterDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_asAgentDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_asSkillDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_arCharacterDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_arFactionDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_arLocationDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_cArmyDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_clCharacterDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_cleaderFactionDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_cLocationDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_cmemberFactionDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_csCharacterDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_fCharacterDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_gCharacterDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_lCharacterDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_rfirstCharacterDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_rsecondCharacterDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_clLetterDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_csSkillDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_ciFactionDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_ciLocationDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_lCityDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_dlDialogueDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_rlDialogueDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_dlLetterDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_egEventDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_rmEventDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_egGoalDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_fFactionGoalID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_flFactionDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_flLawDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_osOperationDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_osSkillDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_rmRelationDBID" />
+        <AssociationConnector Association="TheasianDiplomacyDBModel.CE_rRelationTypeDBID" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>
