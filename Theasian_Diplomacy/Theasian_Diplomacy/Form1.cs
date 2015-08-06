@@ -31,22 +31,30 @@ namespace Theasian_Diplomacy
 
         private void btnVille_des_Chats_info_Click(object sender, EventArgs e)
         {
-            //open dialogue avec ville des chats
+            City catCity = game.Cities.Find(x => x.Name == "La ville des Chats");
+            CityInfoForm cityInfoBox = new CityInfoForm(catCity.Income, catCity.Name, catCity.FortificationLevel, catCity.FortificationLevelmax, catCity.LinkedLocation.Description, catCity.LinkedLocation.DefendersAdvantage, catCity.Satisfaction);
+            cityInfoBox.ShowDialog();
         }
 
         private void btnVille_des_Chiens_info_Click(object sender, EventArgs e)
         {
-            //open dialogue avec ville des chiens
+            City dogCity = game.Cities.Find(x => x.Name == "La ville des Chiens");
+            CityInfoForm cityInfoBox = new CityInfoForm(dogCity.Income, dogCity.Name, dogCity.FortificationLevel, dogCity.FortificationLevelmax, dogCity.LinkedLocation.Description, dogCity.LinkedLocation.DefendersAdvantage, dogCity.Satisfaction);
+            cityInfoBox.ShowDialog();
         }
 
         private void btnVille_des_marmottes_info_Click(object sender, EventArgs e)
         {
-            //open dialogue avec ville des marmottes
+            City woodChuckCity = game.Cities.Find(x => x.Name == "La ville des Marmottes");
+            CityInfoForm cityInfoBox = new CityInfoForm(woodChuckCity.Income, woodChuckCity.Name, woodChuckCity.FortificationLevel, woodChuckCity.FortificationLevelmax, woodChuckCity.LinkedLocation.Description, woodChuckCity.LinkedLocation.DefendersAdvantage, woodChuckCity.Satisfaction);
+            cityInfoBox.ShowDialog();
         }
 
         private void btnVille_des_souris_info_Click(object sender, EventArgs e)
         {
-            //open dialogue avec ville des souris
+            City mouseCity = game.Cities.Find(x => x.Name == "La ville des Souris");
+            CityInfoForm cityInfoBox = new CityInfoForm(mouseCity.Income, mouseCity.Name, mouseCity.FortificationLevel, mouseCity.FortificationLevelmax, mouseCity.LinkedLocation.Description, mouseCity.LinkedLocation.DefendersAdvantage, mouseCity.Satisfaction);
+            cityInfoBox.ShowDialog();
         }
 
         private void btnListFaction_Click(object sender, EventArgs e)

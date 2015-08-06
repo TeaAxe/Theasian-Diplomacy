@@ -35,6 +35,11 @@ namespace Theasian_Diplomacy.GameLogic
         {
             get { return description; }
         }
+
+        public int DefendersAdvantage
+        {
+            get { return defendersAdvantage; }
+        }
         #endregion
     }
 }

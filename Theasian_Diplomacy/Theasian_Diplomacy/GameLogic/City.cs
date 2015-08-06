@@ -15,6 +15,7 @@ namespace Theasian_Diplomacy.GameLogic
         private Location linkedLocation;
         private int fortificationLevel;
         private int fortificationLevelMax;
+        private int satisfaction;
         #endregion
 
         public City(string _name, int _income, Location _linkedLocation)
@@ -46,6 +47,26 @@ namespace Theasian_Diplomacy.GameLogic
         public Location LinkedLocation
         {
             get { return linkedLocation; }
+        }
+
+        public string Name
+        {
+            get { return name; }
+        }
+
+        public int FortificationLevel
+        {
+            get { return fortificationLevel; }
+        }
+
+        public int FortificationLevelmax
+        {
+            get { return fortificationLevelMax; }
+        }
+
+        public int Satisfaction
+        {
+            get { return satisfaction; }
         }
         #endregion
     }
