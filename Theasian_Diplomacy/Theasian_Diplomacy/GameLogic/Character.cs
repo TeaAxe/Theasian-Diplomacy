@@ -14,7 +14,7 @@ namespace Theasian_Diplomacy.GameLogic
         private char [] sex = new char [1];
         private Faction faction;
 
-        //these would vary depending on what every character knows about you
+        //these would vary depending on what every character knows about you...
         int charisma;
         int honor;
         int cruelty;
