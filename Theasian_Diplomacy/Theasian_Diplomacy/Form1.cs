@@ -47,11 +47,18 @@ namespace Theasian_Diplomacy
         private void btnEndTurn_Click(object sender, EventArgs e)
         {
             game.endTurn();
+            Refresh();
         }
 
         private void frmMainMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
             CloseGame();
+        }
+
+        private void txtPlayerName_TextChanged(object sender, EventArgs e)
+        {
+            game.Player.FirstName = txtPlayerName.Text;
+            Refresh();
         }
         #endregion
 
@@ -67,7 +74,7 @@ namespace Theasian_Diplomacy
         /// <summary>
         /// Refresh all showed data on the screen
         /// </summary>
-        public void Refresh()
+        private void Refresh()
         {
             lstFaction.Items.Clear();
             lstCharacter.Items.Clear();
@@ -97,11 +104,5 @@ namespace Theasian_Diplomacy
             lblPlayerGold.Text = "Or: " + game.Player.Faction.Gold.ToString() + " pièce(s).";
         }
         #endregion
-
-        private void txtPlayerName_TextChanged(object sender, EventArgs e)
-        {
-            game.Player.FirstName = txtPlayerName.Text;
-        }
-
     }
 }

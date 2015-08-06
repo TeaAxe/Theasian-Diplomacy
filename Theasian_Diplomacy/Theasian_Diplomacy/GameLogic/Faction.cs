@@ -15,7 +15,6 @@ namespace Theasian_Diplomacy.GameLogic
         private int gold;
         #endregion
 
-        #region general methods
         public Faction(string _factionName)
         {
             factionName = _factionName;
@@ -23,6 +22,7 @@ namespace Theasian_Diplomacy.GameLogic
             gold = 0;
         }
 
+        #region general methods
         /// <summary>
         /// Adds a member to the list
         /// </summary>
@@ -63,7 +63,7 @@ namespace Theasian_Diplomacy.GameLogic
         public int Gold
         {
             get { return gold; }
-            set { gold += value; }
+            set { gold = value; }
         }
         #endregion
     }
