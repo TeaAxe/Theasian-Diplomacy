@@ -68,11 +68,56 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgentDB.cs">
+      <DependentUpon>TheasianDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AgentDBSkillDB.cs">
+      <DependentUpon>TheasianDBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="AgentOperationSetup.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AgentOperationSetup.Designer.cs">
       <DependentUpon>AgentOperationSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ArmyDB.cs">
+      <DependentUpon>TheasianDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CharacterDB.cs">
+      <DependentUpon>TheasianDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CharacterDBLetterDB.cs">
+      <DependentUpon>TheasianDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CharacterDBSkillDB.cs">
+      <DependentUpon>TheasianDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CityDB.cs">
+      <DependentUpon>TheasianDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DialogueDB.cs">
+      <DependentUpon>TheasianDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DialogueDBLetterDB.cs">
+      <DependentUpon>TheasianDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EventDB.cs">
+      <DependentUpon>TheasianDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EventDBGoalDB.cs">
+      <DependentUpon>TheasianDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FactionDB.cs">
+      <DependentUpon>TheasianDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FactionDBLawDB.cs">
+      <DependentUpon>TheasianDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FactionGoalDB.cs">
+      <DependentUpon>TheasianDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GameDB.cs">
+      <DependentUpon>TheasianDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="GameLogic\Army.cs" />
     <Compile Include="GameLogic\Character.cs" />
@@ -87,8 +132,41 @@
     </Compile>
     <Compile Include="GameLogic\Game.cs" />
     <Compile Include="GameLogic\Location.cs" />
+    <Compile Include="GoalDB.cs">
+      <DependentUpon>TheasianDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LawDB.cs">
+      <DependentUpon>TheasianDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LetterDB.cs">
+      <DependentUpon>TheasianDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LocationDB.cs">
+      <DependentUpon>TheasianDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OperationDB.cs">
+      <DependentUpon>TheasianDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OperationDBSkillDB.cs">
+      <DependentUpon>TheasianDBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RelationDB.cs">
+      <DependentUpon>TheasianDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RelationLevelDB.cs">
+      <DependentUpon>TheasianDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RelationModifierDB.cs">
+      <DependentUpon>TheasianDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RelationTypeDB.cs">
+      <DependentUpon>TheasianDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SkillDB.cs">
+      <DependentUpon>TheasianDBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="TheasianDBModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -4,20 +4,2043 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="TheasianDiplomacyDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityContainer Name="TheasianDiplomacyDBModelStoreContainer" />
-      </Schema>
-    </edmx:StorageModels>
+    <Schema Namespace="TheasianDiplomacyDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AgentDB">
+          <Key>
+            <PropertyRef Name="AgentDBID" />
+          </Key>
+          <Property Name="firstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="lastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="birthDate" Type="datetime" />
+          <Property Name="sex" Type="nvarchar" MaxLength="1" />
+          <Property Name="AgentDBID" Type="int" Nullable="false" />
+          <Property Name="aCharacterDBID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AgentDBSkillDB">
+          <Key>
+            <PropertyRef Name="AgentDBSkillDBID" />
+          </Key>
+          <Property Name="AgentDBSkillDBID" Type="int" Nullable="false" />
+          <Property Name="level" Type="int" Nullable="false" />
+          <Property Name="asSkillDBID" Type="int" Nullable="false" />
+          <Property Name="asAgentDBID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ArmyDB">
+          <Key>
+            <PropertyRef Name="ArmyDBID" />
+          </Key>
+          <Property Name="experienceLevel" Type="int" />
+          <Property Name="equipmentQuality" Type="int" />
+          <Property Name="soldierCount" Type="int" />
+          <Property Name="ArmyDBID" Type="int" Nullable="false" />
+          <Property Name="aFactionDBID" Type="int" Nullable="false" />
+          <Property Name="aLocationDBID" Type="int" Nullable="false" />
+          <Property Name="aCharacterDBID" Type="int" />
+        </EntityType>
+        <EntityType Name="CharacterDB">
+          <Key>
+            <PropertyRef Name="CharacterDBID" />
+          </Key>
+          <Property Name="firstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="birthDate" Type="datetime" />
+          <Property Name="sex" Type="nvarchar" MaxLength="1" />
+          <Property Name="charisma" Type="int" />
+          <Property Name="CharacterDBID" Type="int" Nullable="false" />
+          <Property Name="honor" Type="int" />
+          <Property Name="cruelty" Type="int" />
+          <Property Name="cleaderFactionDBID" Type="int" Nullable="false" />
+          <Property Name="cLocationDBID" Type="int" Nullable="false" />
+          <Property Name="cArmyDBID" Type="int" />
+          <Property Name="cmemberFactionDBID" Type="int" />
+        </EntityType>
+        <EntityType Name="CharacterDBLetterDB">
+          <Key>
+            <PropertyRef Name="letterDBCharacterDBId" />
+          </Key>
+          <Property Name="letterDBCharacterDBId" Type="int" Nullable="false" />
+          <Property Name="clCharacterDBID" Type="int" Nullable="false" />
+          <Property Name="clLetterDBID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CharacterDBSkillDB">
+          <Key>
+            <PropertyRef Name="CharacterDBSkillDBID" />
+          </Key>
+          <Property Name="CharacterDBSkillDBID" Type="int" Nullable="false" />
+          <Property Name="level" Type="int" Nullable="false" />
+          <Property Name="csCharacterDBID" Type="int" Nullable="false" />
+          <Property Name="csSkillDBID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CityDB">
+          <Key>
+            <PropertyRef Name="CityDBID" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="fortificationLevel" Type="int" />
+          <Property Name="fortificationLevelMax" Type="int" />
+          <Property Name="CityDBID" Type="int" Nullable="false" />
+          <Property Name="income" Type="int" />
+          <Property Name="cFactionDBID" Type="int" Nullable="false" />
+          <Property Name="cLocationDBID" Type="int" Nullable="false" />
+          <Property Name="satisfaction" Type="int" />
+        </EntityType>
+        <EntityType Name="DialogueDB">
+          <Key>
+            <PropertyRef Name="DialogueDBID" />
+          </Key>
+          <Property Name="code" Type="varchar" MaxLength="8" />
+          <Property Name="DialogueDBID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DialogueDBLetterDB">
+          <Key>
+            <PropertyRef Name="DialogueDBLetterDBID" />
+          </Key>
+          <Property Name="DialogueDBLetterDBID" Type="int" Nullable="false" />
+          <Property Name="dlLetterDBID" Type="int" Nullable="false" />
+          <Property Name="dlDialogueDBID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EventDB">
+          <Key>
+            <PropertyRef Name="EventDBID" />
+          </Key>
+          <Property Name="eventDescription" Type="text" />
+          <Property Name="methodID" Type="int" />
+          <Property Name="eventIntensity" Type="int" />
+          <Property Name="EventDBID" Type="int" Nullable="false" />
+          <Property Name="resolveTurn" Type="int" />
+        </EntityType>
+        <EntityType Name="EventDBGoalDB">
+          <Key>
+            <PropertyRef Name="EventDBGoalDBID" />
+          </Key>
+          <Property Name="EventDBGoalDBID" Type="int" Nullable="false" />
+          <Property Name="methodId" Type="int" />
+          <Property Name="egGoalDBID" Type="int" Nullable="false" />
+          <Property Name="egEventDBID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FactionDB">
+          <Key>
+            <PropertyRef Name="FactionDBID" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="gold" Type="int" />
+          <Property Name="emblem" Type="text" />
+          <Property Name="FactionDBID" Type="int" Nullable="false" />
+          <Property Name="fFactionGoalID" Type="int" Nullable="false" />
+          <Property Name="fCharacterDBID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FactionDBLawDB">
+          <Key>
+            <PropertyRef Name="FactionDBLawDBID" />
+          </Key>
+          <Property Name="FactionDBLawDBID" Type="int" Nullable="false" />
+          <Property Name="flLawDBID" Type="int" Nullable="false" />
+          <Property Name="flFactionDBID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FactionGoalDB">
+          <Key>
+            <PropertyRef Name="FactionGoalID" />
+          </Key>
+          <Property Name="FactionGoalID" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="description" Type="text" />
+          <Property Name="code" Type="nvarchar" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="GameDB">
+          <Key>
+            <PropertyRef Name="GameDBID" />
+          </Key>
+          <Property Name="GameDBID" Type="int" Nullable="false" />
+          <Property Name="CharacterDBID" Type="int" />
+          <Property Name="currentTurn" Type="int" />
+        </EntityType>
+        <EntityType Name="GoalDB">
+          <Key>
+            <PropertyRef Name="GoalDBID" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="GoalDBID" Type="int" Nullable="false" />
+          <Property Name="description" Type="text" />
+          <Property Name="gCharacterDBID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LawDB">
+          <Key>
+            <PropertyRef Name="LawDBID" />
+          </Key>
+          <Property Name="LawDBID" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="description" Type="text" />
+          <Property Name="entryEffectMethodID" Type="int" />
+          <Property Name="removeEffectMethodID" Type="int" />
+        </EntityType>
+        <EntityType Name="LetterDB">
+          <Key>
+            <PropertyRef Name="LetterDBID" />
+          </Key>
+          <Property Name="finalText" Type="text" />
+          <Property Name="LetterDBID" Type="int" Nullable="false" />
+          <Property Name="lCharacterDBID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LocationDB">
+          <Key>
+            <PropertyRef Name="LocationDBID" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="LocationDBID" Type="int" Nullable="false" />
+          <Property Name="defenderAdvantage" Type="int" />
+          <Property Name="description" Type="text" />
+          <Property Name="lCityDBID" Type="int" />
+        </EntityType>
+        <EntityType Name="OperationDB">
+          <Key>
+            <PropertyRef Name="OperationDBID" />
+          </Key>
+          <Property Name="OperationDBID" Type="int" Nullable="false" />
+          <Property Name="difficulty" Type="int" />
+          <Property Name="description" Type="text" />
+          <Property Name="cost" Type="int" />
+          <Property Name="executionTime" Type="int" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="methodSucessID" Type="int" />
+          <Property Name="methodFailID" Type="int" />
+        </EntityType>
+        <EntityType Name="OperationDBSkillDB">
+          <Key>
+            <PropertyRef Name="OperationDBSkillDBID" />
+          </Key>
+          <Property Name="OperationDBSkillDBID" Type="int" Nullable="false" />
+          <Property Name="osOperationDBID" Type="int" Nullable="false" />
+          <Property Name="osSkillDBID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RelationDB">
+          <Key>
+            <PropertyRef Name="RelationDBID" />
+          </Key>
+          <Property Name="RelationDBID" Type="int" Nullable="false" />
+          <Property Name="rfirstCharacterDBID" Type="int" Nullable="false" />
+          <Property Name="rRelationTypeDBID" Type="int" Nullable="false" />
+          <Property Name="rsecondCharacterDBID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RelationLevelDB">
+          <Key>
+            <PropertyRef Name="RelationLevelDBID" />
+          </Key>
+          <Property Name="RelationLevelDBID" Type="int" Nullable="false" />
+          <Property Name="level" Type="int" />
+          <Property Name="textDialogue" Type="text" />
+          <Property Name="textLetter" Type="text" />
+          <Property Name="rlDialogueDBID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RelationModifierDB">
+          <Key>
+            <PropertyRef Name="RelationModifierDBID" />
+          </Key>
+          <Property Name="modifierValue" Type="int" />
+          <Property Name="shortDescription" Type="nvarchar" MaxLength="50" />
+          <Property Name="dateAdded" Type="datetime" />
+          <Property Name="RelationModifierDBID" Type="int" Nullable="false" />
+          <Property Name="rmRelationDBID" Type="int" Nullable="false" />
+          <Property Name="rmEventDBID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RelationTypeDB">
+          <Key>
+            <PropertyRef Name="RelationTypeDBID" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="description" Type="text" />
+          <Property Name="RelationTypeDBID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SkillDB">
+          <Key>
+            <PropertyRef Name="SkillDBID" />
+          </Key>
+          <Property Name="SkillDBID" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="CE_aCharacterDBID">
+          <End Role="CharacterDB" Type="Self.CharacterDB" Multiplicity="1" />
+          <End Role="AgentDB" Type="Self.AgentDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CharacterDB">
+              <PropertyRef Name="CharacterDBID" />
+            </Principal>
+            <Dependent Role="AgentDB">
+              <PropertyRef Name="aCharacterDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_arCharacterDBID">
+          <End Role="CharacterDB" Type="Self.CharacterDB" Multiplicity="0..1" />
+          <End Role="ArmyDB" Type="Self.ArmyDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CharacterDB">
+              <PropertyRef Name="CharacterDBID" />
+            </Principal>
+            <Dependent Role="ArmyDB">
+              <PropertyRef Name="aCharacterDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_arFactionDBID">
+          <End Role="FactionDB" Type="Self.FactionDB" Multiplicity="1" />
+          <End Role="ArmyDB" Type="Self.ArmyDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FactionDB">
+              <PropertyRef Name="FactionDBID" />
+            </Principal>
+            <Dependent Role="ArmyDB">
+              <PropertyRef Name="aFactionDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_arLocationDBID">
+          <End Role="LocationDB" Type="Self.LocationDB" Multiplicity="1" />
+          <End Role="ArmyDB" Type="Self.ArmyDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LocationDB">
+              <PropertyRef Name="LocationDBID" />
+            </Principal>
+            <Dependent Role="ArmyDB">
+              <PropertyRef Name="aLocationDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_asAgentDBID">
+          <End Role="AgentDB" Type="Self.AgentDB" Multiplicity="1" />
+          <End Role="AgentDBSkillDB" Type="Self.AgentDBSkillDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AgentDB">
+              <PropertyRef Name="AgentDBID" />
+            </Principal>
+            <Dependent Role="AgentDBSkillDB">
+              <PropertyRef Name="asAgentDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_asSkillDBID">
+          <End Role="SkillDB" Type="Self.SkillDB" Multiplicity="1" />
+          <End Role="AgentDBSkillDB" Type="Self.AgentDBSkillDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SkillDB">
+              <PropertyRef Name="SkillDBID" />
+            </Principal>
+            <Dependent Role="AgentDBSkillDB">
+              <PropertyRef Name="asSkillDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_cArmyDBID">
+          <End Role="ArmyDB" Type="Self.ArmyDB" Multiplicity="0..1" />
+          <End Role="CharacterDB" Type="Self.CharacterDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ArmyDB">
+              <PropertyRef Name="ArmyDBID" />
+            </Principal>
+            <Dependent Role="CharacterDB">
+              <PropertyRef Name="cArmyDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_ciFactionDBID">
+          <End Role="FactionDB" Type="Self.FactionDB" Multiplicity="1" />
+          <End Role="CityDB" Type="Self.CityDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FactionDB">
+              <PropertyRef Name="FactionDBID" />
+            </Principal>
+            <Dependent Role="CityDB">
+              <PropertyRef Name="cFactionDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_ciLocationDBID">
+          <End Role="LocationDB" Type="Self.LocationDB" Multiplicity="1" />
+          <End Role="CityDB" Type="Self.CityDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LocationDB">
+              <PropertyRef Name="LocationDBID" />
+            </Principal>
+            <Dependent Role="CityDB">
+              <PropertyRef Name="cLocationDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_clCharacterDBID">
+          <End Role="CharacterDB" Type="Self.CharacterDB" Multiplicity="1" />
+          <End Role="CharacterDBLetterDB" Type="Self.CharacterDBLetterDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CharacterDB">
+              <PropertyRef Name="CharacterDBID" />
+            </Principal>
+            <Dependent Role="CharacterDBLetterDB">
+              <PropertyRef Name="clCharacterDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_cleaderFactionDBID">
+          <End Role="FactionDB" Type="Self.FactionDB" Multiplicity="1" />
+          <End Role="CharacterDB" Type="Self.CharacterDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FactionDB">
+              <PropertyRef Name="FactionDBID" />
+            </Principal>
+            <Dependent Role="CharacterDB">
+              <PropertyRef Name="cleaderFactionDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_clLetterDBID">
+          <End Role="LetterDB" Type="Self.LetterDB" Multiplicity="1" />
+          <End Role="CharacterDBLetterDB" Type="Self.CharacterDBLetterDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LetterDB">
+              <PropertyRef Name="LetterDBID" />
+            </Principal>
+            <Dependent Role="CharacterDBLetterDB">
+              <PropertyRef Name="clLetterDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_cLocationDBID">
+          <End Role="LocationDB" Type="Self.LocationDB" Multiplicity="1" />
+          <End Role="CharacterDB" Type="Self.CharacterDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LocationDB">
+              <PropertyRef Name="LocationDBID" />
+            </Principal>
+            <Dependent Role="CharacterDB">
+              <PropertyRef Name="cLocationDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_cmemberFactionDBID">
+          <End Role="FactionDB" Type="Self.FactionDB" Multiplicity="0..1" />
+          <End Role="CharacterDB" Type="Self.CharacterDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FactionDB">
+              <PropertyRef Name="FactionDBID" />
+            </Principal>
+            <Dependent Role="CharacterDB">
+              <PropertyRef Name="cmemberFactionDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_csCharacterDBID">
+          <End Role="CharacterDB" Type="Self.CharacterDB" Multiplicity="1" />
+          <End Role="CharacterDBSkillDB" Type="Self.CharacterDBSkillDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CharacterDB">
+              <PropertyRef Name="CharacterDBID" />
+            </Principal>
+            <Dependent Role="CharacterDBSkillDB">
+              <PropertyRef Name="csCharacterDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_csSkillDBID">
+          <End Role="SkillDB" Type="Self.SkillDB" Multiplicity="1" />
+          <End Role="CharacterDBSkillDB" Type="Self.CharacterDBSkillDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SkillDB">
+              <PropertyRef Name="SkillDBID" />
+            </Principal>
+            <Dependent Role="CharacterDBSkillDB">
+              <PropertyRef Name="csSkillDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_dlDialogueDBID">
+          <End Role="DialogueDB" Type="Self.DialogueDB" Multiplicity="1" />
+          <End Role="DialogueDBLetterDB" Type="Self.DialogueDBLetterDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DialogueDB">
+              <PropertyRef Name="DialogueDBID" />
+            </Principal>
+            <Dependent Role="DialogueDBLetterDB">
+              <PropertyRef Name="dlDialogueDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_dlLetterDBID">
+          <End Role="LetterDB" Type="Self.LetterDB" Multiplicity="1" />
+          <End Role="DialogueDBLetterDB" Type="Self.DialogueDBLetterDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LetterDB">
+              <PropertyRef Name="LetterDBID" />
+            </Principal>
+            <Dependent Role="DialogueDBLetterDB">
+              <PropertyRef Name="dlLetterDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_egEventDBID">
+          <End Role="EventDB" Type="Self.EventDB" Multiplicity="1" />
+          <End Role="EventDBGoalDB" Type="Self.EventDBGoalDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventDB">
+              <PropertyRef Name="EventDBID" />
+            </Principal>
+            <Dependent Role="EventDBGoalDB">
+              <PropertyRef Name="egEventDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_egGoalDBID">
+          <End Role="GoalDB" Type="Self.GoalDB" Multiplicity="1" />
+          <End Role="EventDBGoalDB" Type="Self.EventDBGoalDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GoalDB">
+              <PropertyRef Name="GoalDBID" />
+            </Principal>
+            <Dependent Role="EventDBGoalDB">
+              <PropertyRef Name="egGoalDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_fCharacterDBID">
+          <End Role="CharacterDB" Type="Self.CharacterDB" Multiplicity="1" />
+          <End Role="FactionDB" Type="Self.FactionDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CharacterDB">
+              <PropertyRef Name="CharacterDBID" />
+            </Principal>
+            <Dependent Role="FactionDB">
+              <PropertyRef Name="fCharacterDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_fFactionGoalID">
+          <End Role="FactionGoalDB" Type="Self.FactionGoalDB" Multiplicity="1" />
+          <End Role="FactionDB" Type="Self.FactionDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FactionGoalDB">
+              <PropertyRef Name="FactionGoalID" />
+            </Principal>
+            <Dependent Role="FactionDB">
+              <PropertyRef Name="fFactionGoalID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_flFactionDBID">
+          <End Role="FactionDB" Type="Self.FactionDB" Multiplicity="1" />
+          <End Role="FactionDBLawDB" Type="Self.FactionDBLawDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FactionDB">
+              <PropertyRef Name="FactionDBID" />
+            </Principal>
+            <Dependent Role="FactionDBLawDB">
+              <PropertyRef Name="flFactionDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_flLawDBID">
+          <End Role="LawDB" Type="Self.LawDB" Multiplicity="1" />
+          <End Role="FactionDBLawDB" Type="Self.FactionDBLawDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LawDB">
+              <PropertyRef Name="LawDBID" />
+            </Principal>
+            <Dependent Role="FactionDBLawDB">
+              <PropertyRef Name="flLawDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_gCharacterDBID">
+          <End Role="CharacterDB" Type="Self.CharacterDB" Multiplicity="1" />
+          <End Role="GoalDB" Type="Self.GoalDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CharacterDB">
+              <PropertyRef Name="CharacterDBID" />
+            </Principal>
+            <Dependent Role="GoalDB">
+              <PropertyRef Name="gCharacterDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_lCharacterDBID">
+          <End Role="CharacterDB" Type="Self.CharacterDB" Multiplicity="1" />
+          <End Role="LetterDB" Type="Self.LetterDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CharacterDB">
+              <PropertyRef Name="CharacterDBID" />
+            </Principal>
+            <Dependent Role="LetterDB">
+              <PropertyRef Name="lCharacterDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_lCityDBID">
+          <End Role="CityDB" Type="Self.CityDB" Multiplicity="0..1" />
+          <End Role="LocationDB" Type="Self.LocationDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CityDB">
+              <PropertyRef Name="CityDBID" />
+            </Principal>
+            <Dependent Role="LocationDB">
+              <PropertyRef Name="lCityDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_osOperationDBID">
+          <End Role="OperationDB" Type="Self.OperationDB" Multiplicity="1" />
+          <End Role="OperationDBSkillDB" Type="Self.OperationDBSkillDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OperationDB">
+              <PropertyRef Name="OperationDBID" />
+            </Principal>
+            <Dependent Role="OperationDBSkillDB">
+              <PropertyRef Name="osOperationDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_osSkillDBID">
+          <End Role="SkillDB" Type="Self.SkillDB" Multiplicity="1" />
+          <End Role="OperationDBSkillDB" Type="Self.OperationDBSkillDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SkillDB">
+              <PropertyRef Name="SkillDBID" />
+            </Principal>
+            <Dependent Role="OperationDBSkillDB">
+              <PropertyRef Name="osSkillDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_rfirstCharacterDBID">
+          <End Role="CharacterDB" Type="Self.CharacterDB" Multiplicity="1" />
+          <End Role="RelationDB" Type="Self.RelationDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CharacterDB">
+              <PropertyRef Name="CharacterDBID" />
+            </Principal>
+            <Dependent Role="RelationDB">
+              <PropertyRef Name="rfirstCharacterDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_rlDialogueDBID">
+          <End Role="DialogueDB" Type="Self.DialogueDB" Multiplicity="1" />
+          <End Role="RelationLevelDB" Type="Self.RelationLevelDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DialogueDB">
+              <PropertyRef Name="DialogueDBID" />
+            </Principal>
+            <Dependent Role="RelationLevelDB">
+              <PropertyRef Name="rlDialogueDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_rmEventDBID">
+          <End Role="EventDB" Type="Self.EventDB" Multiplicity="1" />
+          <End Role="RelationModifierDB" Type="Self.RelationModifierDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventDB">
+              <PropertyRef Name="EventDBID" />
+            </Principal>
+            <Dependent Role="RelationModifierDB">
+              <PropertyRef Name="rmEventDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_rmRelationDBID">
+          <End Role="RelationDB" Type="Self.RelationDB" Multiplicity="1" />
+          <End Role="RelationModifierDB" Type="Self.RelationModifierDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RelationDB">
+              <PropertyRef Name="RelationDBID" />
+            </Principal>
+            <Dependent Role="RelationModifierDB">
+              <PropertyRef Name="rmRelationDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_rRelationTypeDBID">
+          <End Role="RelationTypeDB" Type="Self.RelationTypeDB" Multiplicity="1" />
+          <End Role="RelationDB" Type="Self.RelationDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RelationTypeDB">
+              <PropertyRef Name="RelationTypeDBID" />
+            </Principal>
+            <Dependent Role="RelationDB">
+              <PropertyRef Name="rRelationTypeDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_rsecondCharacterDBID">
+          <End Role="CharacterDB" Type="Self.CharacterDB" Multiplicity="1" />
+          <End Role="RelationDB" Type="Self.RelationDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CharacterDB">
+              <PropertyRef Name="CharacterDBID" />
+            </Principal>
+            <Dependent Role="RelationDB">
+              <PropertyRef Name="rsecondCharacterDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TheasianDiplomacyDBModelStoreContainer">
+          <EntitySet Name="AgentDB" EntityType="Self.AgentDB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AgentDBSkillDB" EntityType="Self.AgentDBSkillDB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ArmyDB" EntityType="Self.ArmyDB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CharacterDB" EntityType="Self.CharacterDB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CharacterDBLetterDB" EntityType="Self.CharacterDBLetterDB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CharacterDBSkillDB" EntityType="Self.CharacterDBSkillDB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CityDB" EntityType="Self.CityDB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DialogueDB" EntityType="Self.DialogueDB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DialogueDBLetterDB" EntityType="Self.DialogueDBLetterDB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EventDB" EntityType="Self.EventDB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EventDBGoalDB" EntityType="Self.EventDBGoalDB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FactionDB" EntityType="Self.FactionDB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FactionDBLawDB" EntityType="Self.FactionDBLawDB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FactionGoalDB" EntityType="Self.FactionGoalDB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GameDB" EntityType="Self.GameDB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GoalDB" EntityType="Self.GoalDB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LawDB" EntityType="Self.LawDB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LetterDB" EntityType="Self.LetterDB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LocationDB" EntityType="Self.LocationDB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OperationDB" EntityType="Self.OperationDB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OperationDBSkillDB" EntityType="Self.OperationDBSkillDB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RelationDB" EntityType="Self.RelationDB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RelationLevelDB" EntityType="Self.RelationLevelDB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RelationModifierDB" EntityType="Self.RelationModifierDB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RelationTypeDB" EntityType="Self.RelationTypeDB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SkillDB" EntityType="Self.SkillDB" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="CE_aCharacterDBID" Association="Self.CE_aCharacterDBID">
+            <End Role="CharacterDB" EntitySet="CharacterDB" />
+            <End Role="AgentDB" EntitySet="AgentDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_arCharacterDBID" Association="Self.CE_arCharacterDBID">
+            <End Role="CharacterDB" EntitySet="CharacterDB" />
+            <End Role="ArmyDB" EntitySet="ArmyDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_arFactionDBID" Association="Self.CE_arFactionDBID">
+            <End Role="FactionDB" EntitySet="FactionDB" />
+            <End Role="ArmyDB" EntitySet="ArmyDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_arLocationDBID" Association="Self.CE_arLocationDBID">
+            <End Role="LocationDB" EntitySet="LocationDB" />
+            <End Role="ArmyDB" EntitySet="ArmyDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_asAgentDBID" Association="Self.CE_asAgentDBID">
+            <End Role="AgentDB" EntitySet="AgentDB" />
+            <End Role="AgentDBSkillDB" EntitySet="AgentDBSkillDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_asSkillDBID" Association="Self.CE_asSkillDBID">
+            <End Role="SkillDB" EntitySet="SkillDB" />
+            <End Role="AgentDBSkillDB" EntitySet="AgentDBSkillDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_cArmyDBID" Association="Self.CE_cArmyDBID">
+            <End Role="ArmyDB" EntitySet="ArmyDB" />
+            <End Role="CharacterDB" EntitySet="CharacterDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_ciFactionDBID" Association="Self.CE_ciFactionDBID">
+            <End Role="FactionDB" EntitySet="FactionDB" />
+            <End Role="CityDB" EntitySet="CityDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_ciLocationDBID" Association="Self.CE_ciLocationDBID">
+            <End Role="LocationDB" EntitySet="LocationDB" />
+            <End Role="CityDB" EntitySet="CityDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_clCharacterDBID" Association="Self.CE_clCharacterDBID">
+            <End Role="CharacterDB" EntitySet="CharacterDB" />
+            <End Role="CharacterDBLetterDB" EntitySet="CharacterDBLetterDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_cleaderFactionDBID" Association="Self.CE_cleaderFactionDBID">
+            <End Role="FactionDB" EntitySet="FactionDB" />
+            <End Role="CharacterDB" EntitySet="CharacterDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_clLetterDBID" Association="Self.CE_clLetterDBID">
+            <End Role="LetterDB" EntitySet="LetterDB" />
+            <End Role="CharacterDBLetterDB" EntitySet="CharacterDBLetterDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_cLocationDBID" Association="Self.CE_cLocationDBID">
+            <End Role="LocationDB" EntitySet="LocationDB" />
+            <End Role="CharacterDB" EntitySet="CharacterDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_cmemberFactionDBID" Association="Self.CE_cmemberFactionDBID">
+            <End Role="FactionDB" EntitySet="FactionDB" />
+            <End Role="CharacterDB" EntitySet="CharacterDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_csCharacterDBID" Association="Self.CE_csCharacterDBID">
+            <End Role="CharacterDB" EntitySet="CharacterDB" />
+            <End Role="CharacterDBSkillDB" EntitySet="CharacterDBSkillDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_csSkillDBID" Association="Self.CE_csSkillDBID">
+            <End Role="SkillDB" EntitySet="SkillDB" />
+            <End Role="CharacterDBSkillDB" EntitySet="CharacterDBSkillDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_dlDialogueDBID" Association="Self.CE_dlDialogueDBID">
+            <End Role="DialogueDB" EntitySet="DialogueDB" />
+            <End Role="DialogueDBLetterDB" EntitySet="DialogueDBLetterDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_dlLetterDBID" Association="Self.CE_dlLetterDBID">
+            <End Role="LetterDB" EntitySet="LetterDB" />
+            <End Role="DialogueDBLetterDB" EntitySet="DialogueDBLetterDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_egEventDBID" Association="Self.CE_egEventDBID">
+            <End Role="EventDB" EntitySet="EventDB" />
+            <End Role="EventDBGoalDB" EntitySet="EventDBGoalDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_egGoalDBID" Association="Self.CE_egGoalDBID">
+            <End Role="GoalDB" EntitySet="GoalDB" />
+            <End Role="EventDBGoalDB" EntitySet="EventDBGoalDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_fCharacterDBID" Association="Self.CE_fCharacterDBID">
+            <End Role="CharacterDB" EntitySet="CharacterDB" />
+            <End Role="FactionDB" EntitySet="FactionDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_fFactionGoalID" Association="Self.CE_fFactionGoalID">
+            <End Role="FactionGoalDB" EntitySet="FactionGoalDB" />
+            <End Role="FactionDB" EntitySet="FactionDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_flFactionDBID" Association="Self.CE_flFactionDBID">
+            <End Role="FactionDB" EntitySet="FactionDB" />
+            <End Role="FactionDBLawDB" EntitySet="FactionDBLawDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_flLawDBID" Association="Self.CE_flLawDBID">
+            <End Role="LawDB" EntitySet="LawDB" />
+            <End Role="FactionDBLawDB" EntitySet="FactionDBLawDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_gCharacterDBID" Association="Self.CE_gCharacterDBID">
+            <End Role="CharacterDB" EntitySet="CharacterDB" />
+            <End Role="GoalDB" EntitySet="GoalDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_lCharacterDBID" Association="Self.CE_lCharacterDBID">
+            <End Role="CharacterDB" EntitySet="CharacterDB" />
+            <End Role="LetterDB" EntitySet="LetterDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_lCityDBID" Association="Self.CE_lCityDBID">
+            <End Role="CityDB" EntitySet="CityDB" />
+            <End Role="LocationDB" EntitySet="LocationDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_osOperationDBID" Association="Self.CE_osOperationDBID">
+            <End Role="OperationDB" EntitySet="OperationDB" />
+            <End Role="OperationDBSkillDB" EntitySet="OperationDBSkillDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_osSkillDBID" Association="Self.CE_osSkillDBID">
+            <End Role="SkillDB" EntitySet="SkillDB" />
+            <End Role="OperationDBSkillDB" EntitySet="OperationDBSkillDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_rfirstCharacterDBID" Association="Self.CE_rfirstCharacterDBID">
+            <End Role="CharacterDB" EntitySet="CharacterDB" />
+            <End Role="RelationDB" EntitySet="RelationDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_rlDialogueDBID" Association="Self.CE_rlDialogueDBID">
+            <End Role="DialogueDB" EntitySet="DialogueDB" />
+            <End Role="RelationLevelDB" EntitySet="RelationLevelDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_rmEventDBID" Association="Self.CE_rmEventDBID">
+            <End Role="EventDB" EntitySet="EventDB" />
+            <End Role="RelationModifierDB" EntitySet="RelationModifierDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_rmRelationDBID" Association="Self.CE_rmRelationDBID">
+            <End Role="RelationDB" EntitySet="RelationDB" />
+            <End Role="RelationModifierDB" EntitySet="RelationModifierDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_rRelationTypeDBID" Association="Self.CE_rRelationTypeDBID">
+            <End Role="RelationTypeDB" EntitySet="RelationTypeDB" />
+            <End Role="RelationDB" EntitySet="RelationDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_rsecondCharacterDBID" Association="Self.CE_rsecondCharacterDBID">
+            <End Role="CharacterDB" EntitySet="CharacterDB" />
+            <End Role="RelationDB" EntitySet="RelationDB" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TheasianDiplomacyDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="TheasianDiplomacyDBEntities" annotation:LazyLoadingEnabled="true" />
+        <EntityContainer Name="TheasianDiplomacyDBEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="AgentDB" EntityType="TheasianDiplomacyDBModel.AgentDB" />
+          <EntitySet Name="AgentDBSkillDB" EntityType="TheasianDiplomacyDBModel.AgentDBSkillDB" />
+          <EntitySet Name="ArmyDB" EntityType="TheasianDiplomacyDBModel.ArmyDB" />
+          <EntitySet Name="CharacterDB" EntityType="TheasianDiplomacyDBModel.CharacterDB" />
+          <EntitySet Name="CharacterDBLetterDB" EntityType="TheasianDiplomacyDBModel.CharacterDBLetterDB" />
+          <EntitySet Name="CharacterDBSkillDB" EntityType="TheasianDiplomacyDBModel.CharacterDBSkillDB" />
+          <EntitySet Name="CityDB" EntityType="TheasianDiplomacyDBModel.CityDB" />
+          <EntitySet Name="DialogueDB" EntityType="TheasianDiplomacyDBModel.DialogueDB" />
+          <EntitySet Name="DialogueDBLetterDB" EntityType="TheasianDiplomacyDBModel.DialogueDBLetterDB" />
+          <EntitySet Name="EventDB" EntityType="TheasianDiplomacyDBModel.EventDB" />
+          <EntitySet Name="EventDBGoalDB" EntityType="TheasianDiplomacyDBModel.EventDBGoalDB" />
+          <EntitySet Name="FactionDB" EntityType="TheasianDiplomacyDBModel.FactionDB" />
+          <EntitySet Name="FactionDBLawDB" EntityType="TheasianDiplomacyDBModel.FactionDBLawDB" />
+          <EntitySet Name="FactionGoalDB" EntityType="TheasianDiplomacyDBModel.FactionGoalDB" />
+          <EntitySet Name="GameDB" EntityType="TheasianDiplomacyDBModel.GameDB" />
+          <EntitySet Name="GoalDB" EntityType="TheasianDiplomacyDBModel.GoalDB" />
+          <EntitySet Name="LawDB" EntityType="TheasianDiplomacyDBModel.LawDB" />
+          <EntitySet Name="LetterDB" EntityType="TheasianDiplomacyDBModel.LetterDB" />
+          <EntitySet Name="LocationDB" EntityType="TheasianDiplomacyDBModel.LocationDB" />
+          <EntitySet Name="OperationDB" EntityType="TheasianDiplomacyDBModel.OperationDB" />
+          <EntitySet Name="OperationDBSkillDB" EntityType="TheasianDiplomacyDBModel.OperationDBSkillDB" />
+          <EntitySet Name="RelationDB" EntityType="TheasianDiplomacyDBModel.RelationDB" />
+          <EntitySet Name="RelationLevelDB" EntityType="TheasianDiplomacyDBModel.RelationLevelDB" />
+          <EntitySet Name="RelationModifierDB" EntityType="TheasianDiplomacyDBModel.RelationModifierDB" />
+          <EntitySet Name="RelationTypeDB" EntityType="TheasianDiplomacyDBModel.RelationTypeDB" />
+          <EntitySet Name="SkillDB" EntityType="TheasianDiplomacyDBModel.SkillDB" />
+          <AssociationSet Name="CE_aCharacterDBID" Association="TheasianDiplomacyDBModel.CE_aCharacterDBID">
+            <End Role="CharacterDB" EntitySet="CharacterDB" />
+            <End Role="AgentDB" EntitySet="AgentDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_asAgentDBID" Association="TheasianDiplomacyDBModel.CE_asAgentDBID">
+            <End Role="AgentDB" EntitySet="AgentDB" />
+            <End Role="AgentDBSkillDB" EntitySet="AgentDBSkillDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_asSkillDBID" Association="TheasianDiplomacyDBModel.CE_asSkillDBID">
+            <End Role="SkillDB" EntitySet="SkillDB" />
+            <End Role="AgentDBSkillDB" EntitySet="AgentDBSkillDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_arCharacterDBID" Association="TheasianDiplomacyDBModel.CE_arCharacterDBID">
+            <End Role="CharacterDB" EntitySet="CharacterDB" />
+            <End Role="ArmyDB" EntitySet="ArmyDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_arFactionDBID" Association="TheasianDiplomacyDBModel.CE_arFactionDBID">
+            <End Role="FactionDB" EntitySet="FactionDB" />
+            <End Role="ArmyDB" EntitySet="ArmyDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_arLocationDBID" Association="TheasianDiplomacyDBModel.CE_arLocationDBID">
+            <End Role="LocationDB" EntitySet="LocationDB" />
+            <End Role="ArmyDB" EntitySet="ArmyDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_cArmyDBID" Association="TheasianDiplomacyDBModel.CE_cArmyDBID">
+            <End Role="ArmyDB" EntitySet="ArmyDB" />
+            <End Role="CharacterDB" EntitySet="CharacterDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_clCharacterDBID" Association="TheasianDiplomacyDBModel.CE_clCharacterDBID">
+            <End Role="CharacterDB" EntitySet="CharacterDB" />
+            <End Role="CharacterDBLetterDB" EntitySet="CharacterDBLetterDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_cleaderFactionDBID" Association="TheasianDiplomacyDBModel.CE_cleaderFactionDBID">
+            <End Role="FactionDB" EntitySet="FactionDB" />
+            <End Role="CharacterDB" EntitySet="CharacterDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_cLocationDBID" Association="TheasianDiplomacyDBModel.CE_cLocationDBID">
+            <End Role="LocationDB" EntitySet="LocationDB" />
+            <End Role="CharacterDB" EntitySet="CharacterDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_cmemberFactionDBID" Association="TheasianDiplomacyDBModel.CE_cmemberFactionDBID">
+            <End Role="FactionDB" EntitySet="FactionDB" />
+            <End Role="CharacterDB" EntitySet="CharacterDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_csCharacterDBID" Association="TheasianDiplomacyDBModel.CE_csCharacterDBID">
+            <End Role="CharacterDB" EntitySet="CharacterDB" />
+            <End Role="CharacterDBSkillDB" EntitySet="CharacterDBSkillDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_fCharacterDBID" Association="TheasianDiplomacyDBModel.CE_fCharacterDBID">
+            <End Role="CharacterDB" EntitySet="CharacterDB" />
+            <End Role="FactionDB" EntitySet="FactionDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_gCharacterDBID" Association="TheasianDiplomacyDBModel.CE_gCharacterDBID">
+            <End Role="CharacterDB" EntitySet="CharacterDB" />
+            <End Role="GoalDB" EntitySet="GoalDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_lCharacterDBID" Association="TheasianDiplomacyDBModel.CE_lCharacterDBID">
+            <End Role="CharacterDB" EntitySet="CharacterDB" />
+            <End Role="LetterDB" EntitySet="LetterDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_rfirstCharacterDBID" Association="TheasianDiplomacyDBModel.CE_rfirstCharacterDBID">
+            <End Role="CharacterDB" EntitySet="CharacterDB" />
+            <End Role="RelationDB" EntitySet="RelationDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_rsecondCharacterDBID" Association="TheasianDiplomacyDBModel.CE_rsecondCharacterDBID">
+            <End Role="CharacterDB" EntitySet="CharacterDB" />
+            <End Role="RelationDB" EntitySet="RelationDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_clLetterDBID" Association="TheasianDiplomacyDBModel.CE_clLetterDBID">
+            <End Role="LetterDB" EntitySet="LetterDB" />
+            <End Role="CharacterDBLetterDB" EntitySet="CharacterDBLetterDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_csSkillDBID" Association="TheasianDiplomacyDBModel.CE_csSkillDBID">
+            <End Role="SkillDB" EntitySet="SkillDB" />
+            <End Role="CharacterDBSkillDB" EntitySet="CharacterDBSkillDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_ciFactionDBID" Association="TheasianDiplomacyDBModel.CE_ciFactionDBID">
+            <End Role="FactionDB" EntitySet="FactionDB" />
+            <End Role="CityDB" EntitySet="CityDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_ciLocationDBID" Association="TheasianDiplomacyDBModel.CE_ciLocationDBID">
+            <End Role="LocationDB" EntitySet="LocationDB" />
+            <End Role="CityDB" EntitySet="CityDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_lCityDBID" Association="TheasianDiplomacyDBModel.CE_lCityDBID">
+            <End Role="CityDB" EntitySet="CityDB" />
+            <End Role="LocationDB" EntitySet="LocationDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_dlDialogueDBID" Association="TheasianDiplomacyDBModel.CE_dlDialogueDBID">
+            <End Role="DialogueDB" EntitySet="DialogueDB" />
+            <End Role="DialogueDBLetterDB" EntitySet="DialogueDBLetterDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_rlDialogueDBID" Association="TheasianDiplomacyDBModel.CE_rlDialogueDBID">
+            <End Role="DialogueDB" EntitySet="DialogueDB" />
+            <End Role="RelationLevelDB" EntitySet="RelationLevelDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_dlLetterDBID" Association="TheasianDiplomacyDBModel.CE_dlLetterDBID">
+            <End Role="LetterDB" EntitySet="LetterDB" />
+            <End Role="DialogueDBLetterDB" EntitySet="DialogueDBLetterDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_egEventDBID" Association="TheasianDiplomacyDBModel.CE_egEventDBID">
+            <End Role="EventDB" EntitySet="EventDB" />
+            <End Role="EventDBGoalDB" EntitySet="EventDBGoalDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_rmEventDBID" Association="TheasianDiplomacyDBModel.CE_rmEventDBID">
+            <End Role="EventDB" EntitySet="EventDB" />
+            <End Role="RelationModifierDB" EntitySet="RelationModifierDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_egGoalDBID" Association="TheasianDiplomacyDBModel.CE_egGoalDBID">
+            <End Role="GoalDB" EntitySet="GoalDB" />
+            <End Role="EventDBGoalDB" EntitySet="EventDBGoalDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_fFactionGoalID" Association="TheasianDiplomacyDBModel.CE_fFactionGoalID">
+            <End Role="FactionGoalDB" EntitySet="FactionGoalDB" />
+            <End Role="FactionDB" EntitySet="FactionDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_flFactionDBID" Association="TheasianDiplomacyDBModel.CE_flFactionDBID">
+            <End Role="FactionDB" EntitySet="FactionDB" />
+            <End Role="FactionDBLawDB" EntitySet="FactionDBLawDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_flLawDBID" Association="TheasianDiplomacyDBModel.CE_flLawDBID">
+            <End Role="LawDB" EntitySet="LawDB" />
+            <End Role="FactionDBLawDB" EntitySet="FactionDBLawDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_osOperationDBID" Association="TheasianDiplomacyDBModel.CE_osOperationDBID">
+            <End Role="OperationDB" EntitySet="OperationDB" />
+            <End Role="OperationDBSkillDB" EntitySet="OperationDBSkillDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_osSkillDBID" Association="TheasianDiplomacyDBModel.CE_osSkillDBID">
+            <End Role="SkillDB" EntitySet="SkillDB" />
+            <End Role="OperationDBSkillDB" EntitySet="OperationDBSkillDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_rmRelationDBID" Association="TheasianDiplomacyDBModel.CE_rmRelationDBID">
+            <End Role="RelationDB" EntitySet="RelationDB" />
+            <End Role="RelationModifierDB" EntitySet="RelationModifierDB" />
+          </AssociationSet>
+          <AssociationSet Name="CE_rRelationTypeDBID" Association="TheasianDiplomacyDBModel.CE_rRelationTypeDBID">
+            <End Role="RelationTypeDB" EntitySet="RelationTypeDB" />
+            <End Role="RelationDB" EntitySet="RelationDB" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AgentDB">
+          <Key>
+            <PropertyRef Name="AgentDBID" />
+          </Key>
+          <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="birthDate" Type="DateTime" Precision="3" />
+          <Property Name="sex" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="AgentDBID" Type="Int32" Nullable="false" />
+          <Property Name="aCharacterDBID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CharacterDB" Relationship="TheasianDiplomacyDBModel.CE_aCharacterDBID" FromRole="AgentDB" ToRole="CharacterDB" />
+          <NavigationProperty Name="AgentDBSkillDB" Relationship="TheasianDiplomacyDBModel.CE_asAgentDBID" FromRole="AgentDB" ToRole="AgentDBSkillDB" />
+        </EntityType>
+        <EntityType Name="AgentDBSkillDB">
+          <Key>
+            <PropertyRef Name="AgentDBSkillDBID" />
+          </Key>
+          <Property Name="AgentDBSkillDBID" Type="Int32" Nullable="false" />
+          <Property Name="level" Type="Int32" Nullable="false" />
+          <Property Name="asSkillDBID" Type="Int32" Nullable="false" />
+          <Property Name="asAgentDBID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AgentDB" Relationship="TheasianDiplomacyDBModel.CE_asAgentDBID" FromRole="AgentDBSkillDB" ToRole="AgentDB" />
+          <NavigationProperty Name="SkillDB" Relationship="TheasianDiplomacyDBModel.CE_asSkillDBID" FromRole="AgentDBSkillDB" ToRole="SkillDB" />
+        </EntityType>
+        <EntityType Name="ArmyDB">
+          <Key>
+            <PropertyRef Name="ArmyDBID" />
+          </Key>
+          <Property Name="experienceLevel" Type="Int32" />
+          <Property Name="equipmentQuality" Type="Int32" />
+          <Property Name="soldierCount" Type="Int32" />
+          <Property Name="ArmyDBID" Type="Int32" Nullable="false" />
+          <Property Name="aFactionDBID" Type="Int32" Nullable="false" />
+          <Property Name="aLocationDBID" Type="Int32" Nullable="false" />
+          <Property Name="aCharacterDBID" Type="Int32" />
+          <NavigationProperty Name="CharacterDB" Relationship="TheasianDiplomacyDBModel.CE_arCharacterDBID" FromRole="ArmyDB" ToRole="CharacterDB" />
+          <NavigationProperty Name="FactionDB" Relationship="TheasianDiplomacyDBModel.CE_arFactionDBID" FromRole="ArmyDB" ToRole="FactionDB" />
+          <NavigationProperty Name="LocationDB" Relationship="TheasianDiplomacyDBModel.CE_arLocationDBID" FromRole="ArmyDB" ToRole="LocationDB" />
+          <NavigationProperty Name="CharacterDB1" Relationship="TheasianDiplomacyDBModel.CE_cArmyDBID" FromRole="ArmyDB" ToRole="CharacterDB" />
+        </EntityType>
+        <EntityType Name="CharacterDB">
+          <Key>
+            <PropertyRef Name="CharacterDBID" />
+          </Key>
+          <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="birthDate" Type="DateTime" Precision="3" />
+          <Property Name="sex" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="charisma" Type="Int32" />
+          <Property Name="CharacterDBID" Type="Int32" Nullable="false" />
+          <Property Name="honor" Type="Int32" />
+          <Property Name="cruelty" Type="Int32" />
+          <Property Name="cleaderFactionDBID" Type="Int32" Nullable="false" />
+          <Property Name="cLocationDBID" Type="Int32" Nullable="false" />
+          <Property Name="cArmyDBID" Type="Int32" />
+          <Property Name="cmemberFactionDBID" Type="Int32" />
+          <NavigationProperty Name="AgentDB" Relationship="TheasianDiplomacyDBModel.CE_aCharacterDBID" FromRole="CharacterDB" ToRole="AgentDB" />
+          <NavigationProperty Name="ArmyDB" Relationship="TheasianDiplomacyDBModel.CE_arCharacterDBID" FromRole="CharacterDB" ToRole="ArmyDB" />
+          <NavigationProperty Name="ArmyDB1" Relationship="TheasianDiplomacyDBModel.CE_cArmyDBID" FromRole="CharacterDB" ToRole="ArmyDB" />
+          <NavigationProperty Name="CharacterDBLetterDB" Relationship="TheasianDiplomacyDBModel.CE_clCharacterDBID" FromRole="CharacterDB" ToRole="CharacterDBLetterDB" />
+          <NavigationProperty Name="FactionDB" Relationship="TheasianDiplomacyDBModel.CE_cleaderFactionDBID" FromRole="CharacterDB" ToRole="FactionDB" />
+          <NavigationProperty Name="LocationDB" Relationship="TheasianDiplomacyDBModel.CE_cLocationDBID" FromRole="CharacterDB" ToRole="LocationDB" />
+          <NavigationProperty Name="FactionDB1" Relationship="TheasianDiplomacyDBModel.CE_cmemberFactionDBID" FromRole="CharacterDB" ToRole="FactionDB" />
+          <NavigationProperty Name="CharacterDBSkillDB" Relationship="TheasianDiplomacyDBModel.CE_csCharacterDBID" FromRole="CharacterDB" ToRole="CharacterDBSkillDB" />
+          <NavigationProperty Name="FactionDB2" Relationship="TheasianDiplomacyDBModel.CE_fCharacterDBID" FromRole="CharacterDB" ToRole="FactionDB" />
+          <NavigationProperty Name="GoalDB" Relationship="TheasianDiplomacyDBModel.CE_gCharacterDBID" FromRole="CharacterDB" ToRole="GoalDB" />
+          <NavigationProperty Name="LetterDB" Relationship="TheasianDiplomacyDBModel.CE_lCharacterDBID" FromRole="CharacterDB" ToRole="LetterDB" />
+          <NavigationProperty Name="RelationDB" Relationship="TheasianDiplomacyDBModel.CE_rfirstCharacterDBID" FromRole="CharacterDB" ToRole="RelationDB" />
+          <NavigationProperty Name="RelationDB1" Relationship="TheasianDiplomacyDBModel.CE_rsecondCharacterDBID" FromRole="CharacterDB" ToRole="RelationDB" />
+        </EntityType>
+        <EntityType Name="CharacterDBLetterDB">
+          <Key>
+            <PropertyRef Name="letterDBCharacterDBId" />
+          </Key>
+          <Property Name="letterDBCharacterDBId" Type="Int32" Nullable="false" />
+          <Property Name="clCharacterDBID" Type="Int32" Nullable="false" />
+          <Property Name="clLetterDBID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CharacterDB" Relationship="TheasianDiplomacyDBModel.CE_clCharacterDBID" FromRole="CharacterDBLetterDB" ToRole="CharacterDB" />
+          <NavigationProperty Name="LetterDB" Relationship="TheasianDiplomacyDBModel.CE_clLetterDBID" FromRole="CharacterDBLetterDB" ToRole="LetterDB" />
+        </EntityType>
+        <EntityType Name="CharacterDBSkillDB">
+          <Key>
+            <PropertyRef Name="CharacterDBSkillDBID" />
+          </Key>
+          <Property Name="CharacterDBSkillDBID" Type="Int32" Nullable="false" />
+          <Property Name="level" Type="Int32" Nullable="false" />
+          <Property Name="csCharacterDBID" Type="Int32" Nullable="false" />
+          <Property Name="csSkillDBID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CharacterDB" Relationship="TheasianDiplomacyDBModel.CE_csCharacterDBID" FromRole="CharacterDBSkillDB" ToRole="CharacterDB" />
+          <NavigationProperty Name="SkillDB" Relationship="TheasianDiplomacyDBModel.CE_csSkillDBID" FromRole="CharacterDBSkillDB" ToRole="SkillDB" />
+        </EntityType>
+        <EntityType Name="CityDB">
+          <Key>
+            <PropertyRef Name="CityDBID" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fortificationLevel" Type="Int32" />
+          <Property Name="fortificationLevelMax" Type="Int32" />
+          <Property Name="CityDBID" Type="Int32" Nullable="false" />
+          <Property Name="income" Type="Int32" />
+          <Property Name="cFactionDBID" Type="Int32" Nullable="false" />
+          <Property Name="cLocationDBID" Type="Int32" Nullable="false" />
+          <Property Name="satisfaction" Type="Int32" />
+          <NavigationProperty Name="FactionDB" Relationship="TheasianDiplomacyDBModel.CE_ciFactionDBID" FromRole="CityDB" ToRole="FactionDB" />
+          <NavigationProperty Name="LocationDB" Relationship="TheasianDiplomacyDBModel.CE_ciLocationDBID" FromRole="CityDB" ToRole="LocationDB" />
+          <NavigationProperty Name="LocationDB1" Relationship="TheasianDiplomacyDBModel.CE_lCityDBID" FromRole="CityDB" ToRole="LocationDB" />
+        </EntityType>
+        <EntityType Name="DialogueDB">
+          <Key>
+            <PropertyRef Name="DialogueDBID" />
+          </Key>
+          <Property Name="code" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="DialogueDBID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DialogueDBLetterDB" Relationship="TheasianDiplomacyDBModel.CE_dlDialogueDBID" FromRole="DialogueDB" ToRole="DialogueDBLetterDB" />
+          <NavigationProperty Name="RelationLevelDB" Relationship="TheasianDiplomacyDBModel.CE_rlDialogueDBID" FromRole="DialogueDB" ToRole="RelationLevelDB" />
+        </EntityType>
+        <EntityType Name="DialogueDBLetterDB">
+          <Key>
+            <PropertyRef Name="DialogueDBLetterDBID" />
+          </Key>
+          <Property Name="DialogueDBLetterDBID" Type="Int32" Nullable="false" />
+          <Property Name="dlLetterDBID" Type="Int32" Nullable="false" />
+          <Property Name="dlDialogueDBID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DialogueDB" Relationship="TheasianDiplomacyDBModel.CE_dlDialogueDBID" FromRole="DialogueDBLetterDB" ToRole="DialogueDB" />
+          <NavigationProperty Name="LetterDB" Relationship="TheasianDiplomacyDBModel.CE_dlLetterDBID" FromRole="DialogueDBLetterDB" ToRole="LetterDB" />
+        </EntityType>
+        <EntityType Name="EventDB">
+          <Key>
+            <PropertyRef Name="EventDBID" />
+          </Key>
+          <Property Name="eventDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="methodID" Type="Int32" />
+          <Property Name="eventIntensity" Type="Int32" />
+          <Property Name="EventDBID" Type="Int32" Nullable="false" />
+          <Property Name="resolveTurn" Type="Int32" />
+          <NavigationProperty Name="EventDBGoalDB" Relationship="TheasianDiplomacyDBModel.CE_egEventDBID" FromRole="EventDB" ToRole="EventDBGoalDB" />
+          <NavigationProperty Name="RelationModifierDB" Relationship="TheasianDiplomacyDBModel.CE_rmEventDBID" FromRole="EventDB" ToRole="RelationModifierDB" />
+        </EntityType>
+        <EntityType Name="EventDBGoalDB">
+          <Key>
+            <PropertyRef Name="EventDBGoalDBID" />
+          </Key>
+          <Property Name="EventDBGoalDBID" Type="Int32" Nullable="false" />
+          <Property Name="methodId" Type="Int32" />
+          <Property Name="egGoalDBID" Type="Int32" Nullable="false" />
+          <Property Name="egEventDBID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="EventDB" Relationship="TheasianDiplomacyDBModel.CE_egEventDBID" FromRole="EventDBGoalDB" ToRole="EventDB" />
+          <NavigationProperty Name="GoalDB" Relationship="TheasianDiplomacyDBModel.CE_egGoalDBID" FromRole="EventDBGoalDB" ToRole="GoalDB" />
+        </EntityType>
+        <EntityType Name="FactionDB">
+          <Key>
+            <PropertyRef Name="FactionDBID" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="gold" Type="Int32" />
+          <Property Name="emblem" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FactionDBID" Type="Int32" Nullable="false" />
+          <Property Name="fFactionGoalID" Type="Int32" Nullable="false" />
+          <Property Name="fCharacterDBID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ArmyDB" Relationship="TheasianDiplomacyDBModel.CE_arFactionDBID" FromRole="FactionDB" ToRole="ArmyDB" />
+          <NavigationProperty Name="CharacterDB" Relationship="TheasianDiplomacyDBModel.CE_cleaderFactionDBID" FromRole="FactionDB" ToRole="CharacterDB" />
+          <NavigationProperty Name="CharacterDB1" Relationship="TheasianDiplomacyDBModel.CE_cmemberFactionDBID" FromRole="FactionDB" ToRole="CharacterDB" />
+          <NavigationProperty Name="CharacterDB2" Relationship="TheasianDiplomacyDBModel.CE_fCharacterDBID" FromRole="FactionDB" ToRole="CharacterDB" />
+          <NavigationProperty Name="CityDB" Relationship="TheasianDiplomacyDBModel.CE_ciFactionDBID" FromRole="FactionDB" ToRole="CityDB" />
+          <NavigationProperty Name="FactionGoalDB" Relationship="TheasianDiplomacyDBModel.CE_fFactionGoalID" FromRole="FactionDB" ToRole="FactionGoalDB" />
+          <NavigationProperty Name="FactionDBLawDB" Relationship="TheasianDiplomacyDBModel.CE_flFactionDBID" FromRole="FactionDB" ToRole="FactionDBLawDB" />
+        </EntityType>
+        <EntityType Name="FactionDBLawDB">
+          <Key>
+            <PropertyRef Name="FactionDBLawDBID" />
+          </Key>
+          <Property Name="FactionDBLawDBID" Type="Int32" Nullable="false" />
+          <Property Name="flLawDBID" Type="Int32" Nullable="false" />
+          <Property Name="flFactionDBID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="FactionDB" Relationship="TheasianDiplomacyDBModel.CE_flFactionDBID" FromRole="FactionDBLawDB" ToRole="FactionDB" />
+          <NavigationProperty Name="LawDB" Relationship="TheasianDiplomacyDBModel.CE_flLawDBID" FromRole="FactionDBLawDB" ToRole="LawDB" />
+        </EntityType>
+        <EntityType Name="FactionGoalDB">
+          <Key>
+            <PropertyRef Name="FactionGoalID" />
+          </Key>
+          <Property Name="FactionGoalID" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="code" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="FactionDB" Relationship="TheasianDiplomacyDBModel.CE_fFactionGoalID" FromRole="FactionGoalDB" ToRole="FactionDB" />
+        </EntityType>
+        <EntityType Name="GameDB">
+          <Key>
+            <PropertyRef Name="GameDBID" />
+          </Key>
+          <Property Name="GameDBID" Type="Int32" Nullable="false" />
+          <Property Name="CharacterDBID" Type="Int32" />
+          <Property Name="currentTurn" Type="Int32" />
+        </EntityType>
+        <EntityType Name="GoalDB">
+          <Key>
+            <PropertyRef Name="GoalDBID" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GoalDBID" Type="Int32" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="gCharacterDBID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CharacterDB" Relationship="TheasianDiplomacyDBModel.CE_gCharacterDBID" FromRole="GoalDB" ToRole="CharacterDB" />
+          <NavigationProperty Name="EventDBGoalDB" Relationship="TheasianDiplomacyDBModel.CE_egGoalDBID" FromRole="GoalDB" ToRole="EventDBGoalDB" />
+        </EntityType>
+        <EntityType Name="LawDB">
+          <Key>
+            <PropertyRef Name="LawDBID" />
+          </Key>
+          <Property Name="LawDBID" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="entryEffectMethodID" Type="Int32" />
+          <Property Name="removeEffectMethodID" Type="Int32" />
+          <NavigationProperty Name="FactionDBLawDB" Relationship="TheasianDiplomacyDBModel.CE_flLawDBID" FromRole="LawDB" ToRole="FactionDBLawDB" />
+        </EntityType>
+        <EntityType Name="LetterDB">
+          <Key>
+            <PropertyRef Name="LetterDBID" />
+          </Key>
+          <Property Name="finalText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LetterDBID" Type="Int32" Nullable="false" />
+          <Property Name="lCharacterDBID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CharacterDB" Relationship="TheasianDiplomacyDBModel.CE_lCharacterDBID" FromRole="LetterDB" ToRole="CharacterDB" />
+          <NavigationProperty Name="CharacterDBLetterDB" Relationship="TheasianDiplomacyDBModel.CE_clLetterDBID" FromRole="LetterDB" ToRole="CharacterDBLetterDB" />
+          <NavigationProperty Name="DialogueDBLetterDB" Relationship="TheasianDiplomacyDBModel.CE_dlLetterDBID" FromRole="LetterDB" ToRole="DialogueDBLetterDB" />
+        </EntityType>
+        <EntityType Name="LocationDB">
+          <Key>
+            <PropertyRef Name="LocationDBID" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LocationDBID" Type="Int32" Nullable="false" />
+          <Property Name="defenderAdvantage" Type="Int32" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="lCityDBID" Type="Int32" />
+          <NavigationProperty Name="ArmyDB" Relationship="TheasianDiplomacyDBModel.CE_arLocationDBID" FromRole="LocationDB" ToRole="ArmyDB" />
+          <NavigationProperty Name="CharacterDB" Relationship="TheasianDiplomacyDBModel.CE_cLocationDBID" FromRole="LocationDB" ToRole="CharacterDB" />
+          <NavigationProperty Name="CityDB" Relationship="TheasianDiplomacyDBModel.CE_ciLocationDBID" FromRole="LocationDB" ToRole="CityDB" />
+          <NavigationProperty Name="CityDB1" Relationship="TheasianDiplomacyDBModel.CE_lCityDBID" FromRole="LocationDB" ToRole="CityDB" />
+        </EntityType>
+        <EntityType Name="OperationDB">
+          <Key>
+            <PropertyRef Name="OperationDBID" />
+          </Key>
+          <Property Name="OperationDBID" Type="Int32" Nullable="false" />
+          <Property Name="difficulty" Type="Int32" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cost" Type="Int32" />
+          <Property Name="executionTime" Type="Int32" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="methodSucessID" Type="Int32" />
+          <Property Name="methodFailID" Type="Int32" />
+          <NavigationProperty Name="OperationDBSkillDB" Relationship="TheasianDiplomacyDBModel.CE_osOperationDBID" FromRole="OperationDB" ToRole="OperationDBSkillDB" />
+        </EntityType>
+        <EntityType Name="OperationDBSkillDB">
+          <Key>
+            <PropertyRef Name="OperationDBSkillDBID" />
+          </Key>
+          <Property Name="OperationDBSkillDBID" Type="Int32" Nullable="false" />
+          <Property Name="osOperationDBID" Type="Int32" Nullable="false" />
+          <Property Name="osSkillDBID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="OperationDB" Relationship="TheasianDiplomacyDBModel.CE_osOperationDBID" FromRole="OperationDBSkillDB" ToRole="OperationDB" />
+          <NavigationProperty Name="SkillDB" Relationship="TheasianDiplomacyDBModel.CE_osSkillDBID" FromRole="OperationDBSkillDB" ToRole="SkillDB" />
+        </EntityType>
+        <EntityType Name="RelationDB">
+          <Key>
+            <PropertyRef Name="RelationDBID" />
+          </Key>
+          <Property Name="RelationDBID" Type="Int32" Nullable="false" />
+          <Property Name="rfirstCharacterDBID" Type="Int32" Nullable="false" />
+          <Property Name="rRelationTypeDBID" Type="Int32" Nullable="false" />
+          <Property Name="rsecondCharacterDBID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CharacterDB" Relationship="TheasianDiplomacyDBModel.CE_rfirstCharacterDBID" FromRole="RelationDB" ToRole="CharacterDB" />
+          <NavigationProperty Name="CharacterDB1" Relationship="TheasianDiplomacyDBModel.CE_rsecondCharacterDBID" FromRole="RelationDB" ToRole="CharacterDB" />
+          <NavigationProperty Name="RelationModifierDB" Relationship="TheasianDiplomacyDBModel.CE_rmRelationDBID" FromRole="RelationDB" ToRole="RelationModifierDB" />
+          <NavigationProperty Name="RelationTypeDB" Relationship="TheasianDiplomacyDBModel.CE_rRelationTypeDBID" FromRole="RelationDB" ToRole="RelationTypeDB" />
+        </EntityType>
+        <EntityType Name="RelationLevelDB">
+          <Key>
+            <PropertyRef Name="RelationLevelDBID" />
+          </Key>
+          <Property Name="RelationLevelDBID" Type="Int32" Nullable="false" />
+          <Property Name="level" Type="Int32" />
+          <Property Name="textDialogue" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="textLetter" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="rlDialogueDBID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DialogueDB" Relationship="TheasianDiplomacyDBModel.CE_rlDialogueDBID" FromRole="RelationLevelDB" ToRole="DialogueDB" />
+        </EntityType>
+        <EntityType Name="RelationModifierDB">
+          <Key>
+            <PropertyRef Name="RelationModifierDBID" />
+          </Key>
+          <Property Name="modifierValue" Type="Int32" />
+          <Property Name="shortDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dateAdded" Type="DateTime" Precision="3" />
+          <Property Name="RelationModifierDBID" Type="Int32" Nullable="false" />
+          <Property Name="rmRelationDBID" Type="Int32" Nullable="false" />
+          <Property Name="rmEventDBID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="EventDB" Relationship="TheasianDiplomacyDBModel.CE_rmEventDBID" FromRole="RelationModifierDB" ToRole="EventDB" />
+          <NavigationProperty Name="RelationDB" Relationship="TheasianDiplomacyDBModel.CE_rmRelationDBID" FromRole="RelationModifierDB" ToRole="RelationDB" />
+        </EntityType>
+        <EntityType Name="RelationTypeDB">
+          <Key>
+            <PropertyRef Name="RelationTypeDBID" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RelationTypeDBID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="RelationDB" Relationship="TheasianDiplomacyDBModel.CE_rRelationTypeDBID" FromRole="RelationTypeDB" ToRole="RelationDB" />
+        </EntityType>
+        <EntityType Name="SkillDB">
+          <Key>
+            <PropertyRef Name="SkillDBID" />
+          </Key>
+          <Property Name="SkillDBID" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AgentDBSkillDB" Relationship="TheasianDiplomacyDBModel.CE_asSkillDBID" FromRole="SkillDB" ToRole="AgentDBSkillDB" />
+          <NavigationProperty Name="CharacterDBSkillDB" Relationship="TheasianDiplomacyDBModel.CE_csSkillDBID" FromRole="SkillDB" ToRole="CharacterDBSkillDB" />
+          <NavigationProperty Name="OperationDBSkillDB" Relationship="TheasianDiplomacyDBModel.CE_osSkillDBID" FromRole="SkillDB" ToRole="OperationDBSkillDB" />
+        </EntityType>
+        <Association Name="CE_aCharacterDBID">
+          <End Type="TheasianDiplomacyDBModel.CharacterDB" Role="CharacterDB" Multiplicity="1" />
+          <End Type="TheasianDiplomacyDBModel.AgentDB" Role="AgentDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CharacterDB">
+              <PropertyRef Name="CharacterDBID" />
+            </Principal>
+            <Dependent Role="AgentDB">
+              <PropertyRef Name="aCharacterDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_asAgentDBID">
+          <End Type="TheasianDiplomacyDBModel.AgentDB" Role="AgentDB" Multiplicity="1" />
+          <End Type="TheasianDiplomacyDBModel.AgentDBSkillDB" Role="AgentDBSkillDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AgentDB">
+              <PropertyRef Name="AgentDBID" />
+            </Principal>
+            <Dependent Role="AgentDBSkillDB">
+              <PropertyRef Name="asAgentDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_asSkillDBID">
+          <End Type="TheasianDiplomacyDBModel.SkillDB" Role="SkillDB" Multiplicity="1" />
+          <End Type="TheasianDiplomacyDBModel.AgentDBSkillDB" Role="AgentDBSkillDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SkillDB">
+              <PropertyRef Name="SkillDBID" />
+            </Principal>
+            <Dependent Role="AgentDBSkillDB">
+              <PropertyRef Name="asSkillDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_arCharacterDBID">
+          <End Type="TheasianDiplomacyDBModel.CharacterDB" Role="CharacterDB" Multiplicity="0..1" />
+          <End Type="TheasianDiplomacyDBModel.ArmyDB" Role="ArmyDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CharacterDB">
+              <PropertyRef Name="CharacterDBID" />
+            </Principal>
+            <Dependent Role="ArmyDB">
+              <PropertyRef Name="aCharacterDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_arFactionDBID">
+          <End Type="TheasianDiplomacyDBModel.FactionDB" Role="FactionDB" Multiplicity="1" />
+          <End Type="TheasianDiplomacyDBModel.ArmyDB" Role="ArmyDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FactionDB">
+              <PropertyRef Name="FactionDBID" />
+            </Principal>
+            <Dependent Role="ArmyDB">
+              <PropertyRef Name="aFactionDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_arLocationDBID">
+          <End Type="TheasianDiplomacyDBModel.LocationDB" Role="LocationDB" Multiplicity="1" />
+          <End Type="TheasianDiplomacyDBModel.ArmyDB" Role="ArmyDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LocationDB">
+              <PropertyRef Name="LocationDBID" />
+            </Principal>
+            <Dependent Role="ArmyDB">
+              <PropertyRef Name="aLocationDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_cArmyDBID">
+          <End Type="TheasianDiplomacyDBModel.ArmyDB" Role="ArmyDB" Multiplicity="0..1" />
+          <End Type="TheasianDiplomacyDBModel.CharacterDB" Role="CharacterDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ArmyDB">
+              <PropertyRef Name="ArmyDBID" />
+            </Principal>
+            <Dependent Role="CharacterDB">
+              <PropertyRef Name="cArmyDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_clCharacterDBID">
+          <End Type="TheasianDiplomacyDBModel.CharacterDB" Role="CharacterDB" Multiplicity="1" />
+          <End Type="TheasianDiplomacyDBModel.CharacterDBLetterDB" Role="CharacterDBLetterDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CharacterDB">
+              <PropertyRef Name="CharacterDBID" />
+            </Principal>
+            <Dependent Role="CharacterDBLetterDB">
+              <PropertyRef Name="clCharacterDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_cleaderFactionDBID">
+          <End Type="TheasianDiplomacyDBModel.FactionDB" Role="FactionDB" Multiplicity="1" />
+          <End Type="TheasianDiplomacyDBModel.CharacterDB" Role="CharacterDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FactionDB">
+              <PropertyRef Name="FactionDBID" />
+            </Principal>
+            <Dependent Role="CharacterDB">
+              <PropertyRef Name="cleaderFactionDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_cLocationDBID">
+          <End Type="TheasianDiplomacyDBModel.LocationDB" Role="LocationDB" Multiplicity="1" />
+          <End Type="TheasianDiplomacyDBModel.CharacterDB" Role="CharacterDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LocationDB">
+              <PropertyRef Name="LocationDBID" />
+            </Principal>
+            <Dependent Role="CharacterDB">
+              <PropertyRef Name="cLocationDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_cmemberFactionDBID">
+          <End Type="TheasianDiplomacyDBModel.FactionDB" Role="FactionDB" Multiplicity="0..1" />
+          <End Type="TheasianDiplomacyDBModel.CharacterDB" Role="CharacterDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FactionDB">
+              <PropertyRef Name="FactionDBID" />
+            </Principal>
+            <Dependent Role="CharacterDB">
+              <PropertyRef Name="cmemberFactionDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_csCharacterDBID">
+          <End Type="TheasianDiplomacyDBModel.CharacterDB" Role="CharacterDB" Multiplicity="1" />
+          <End Type="TheasianDiplomacyDBModel.CharacterDBSkillDB" Role="CharacterDBSkillDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CharacterDB">
+              <PropertyRef Name="CharacterDBID" />
+            </Principal>
+            <Dependent Role="CharacterDBSkillDB">
+              <PropertyRef Name="csCharacterDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_fCharacterDBID">
+          <End Type="TheasianDiplomacyDBModel.CharacterDB" Role="CharacterDB" Multiplicity="1" />
+          <End Type="TheasianDiplomacyDBModel.FactionDB" Role="FactionDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CharacterDB">
+              <PropertyRef Name="CharacterDBID" />
+            </Principal>
+            <Dependent Role="FactionDB">
+              <PropertyRef Name="fCharacterDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_gCharacterDBID">
+          <End Type="TheasianDiplomacyDBModel.CharacterDB" Role="CharacterDB" Multiplicity="1" />
+          <End Type="TheasianDiplomacyDBModel.GoalDB" Role="GoalDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CharacterDB">
+              <PropertyRef Name="CharacterDBID" />
+            </Principal>
+            <Dependent Role="GoalDB">
+              <PropertyRef Name="gCharacterDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_lCharacterDBID">
+          <End Type="TheasianDiplomacyDBModel.CharacterDB" Role="CharacterDB" Multiplicity="1" />
+          <End Type="TheasianDiplomacyDBModel.LetterDB" Role="LetterDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CharacterDB">
+              <PropertyRef Name="CharacterDBID" />
+            </Principal>
+            <Dependent Role="LetterDB">
+              <PropertyRef Name="lCharacterDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_rfirstCharacterDBID">
+          <End Type="TheasianDiplomacyDBModel.CharacterDB" Role="CharacterDB" Multiplicity="1" />
+          <End Type="TheasianDiplomacyDBModel.RelationDB" Role="RelationDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CharacterDB">
+              <PropertyRef Name="CharacterDBID" />
+            </Principal>
+            <Dependent Role="RelationDB">
+              <PropertyRef Name="rfirstCharacterDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_rsecondCharacterDBID">
+          <End Type="TheasianDiplomacyDBModel.CharacterDB" Role="CharacterDB" Multiplicity="1" />
+          <End Type="TheasianDiplomacyDBModel.RelationDB" Role="RelationDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CharacterDB">
+              <PropertyRef Name="CharacterDBID" />
+            </Principal>
+            <Dependent Role="RelationDB">
+              <PropertyRef Name="rsecondCharacterDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_clLetterDBID">
+          <End Type="TheasianDiplomacyDBModel.LetterDB" Role="LetterDB" Multiplicity="1" />
+          <End Type="TheasianDiplomacyDBModel.CharacterDBLetterDB" Role="CharacterDBLetterDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LetterDB">
+              <PropertyRef Name="LetterDBID" />
+            </Principal>
+            <Dependent Role="CharacterDBLetterDB">
+              <PropertyRef Name="clLetterDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_csSkillDBID">
+          <End Type="TheasianDiplomacyDBModel.SkillDB" Role="SkillDB" Multiplicity="1" />
+          <End Type="TheasianDiplomacyDBModel.CharacterDBSkillDB" Role="CharacterDBSkillDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SkillDB">
+              <PropertyRef Name="SkillDBID" />
+            </Principal>
+            <Dependent Role="CharacterDBSkillDB">
+              <PropertyRef Name="csSkillDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_ciFactionDBID">
+          <End Type="TheasianDiplomacyDBModel.FactionDB" Role="FactionDB" Multiplicity="1" />
+          <End Type="TheasianDiplomacyDBModel.CityDB" Role="CityDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FactionDB">
+              <PropertyRef Name="FactionDBID" />
+            </Principal>
+            <Dependent Role="CityDB">
+              <PropertyRef Name="cFactionDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_ciLocationDBID">
+          <End Type="TheasianDiplomacyDBModel.LocationDB" Role="LocationDB" Multiplicity="1" />
+          <End Type="TheasianDiplomacyDBModel.CityDB" Role="CityDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LocationDB">
+              <PropertyRef Name="LocationDBID" />
+            </Principal>
+            <Dependent Role="CityDB">
+              <PropertyRef Name="cLocationDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_lCityDBID">
+          <End Type="TheasianDiplomacyDBModel.CityDB" Role="CityDB" Multiplicity="0..1" />
+          <End Type="TheasianDiplomacyDBModel.LocationDB" Role="LocationDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CityDB">
+              <PropertyRef Name="CityDBID" />
+            </Principal>
+            <Dependent Role="LocationDB">
+              <PropertyRef Name="lCityDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_dlDialogueDBID">
+          <End Type="TheasianDiplomacyDBModel.DialogueDB" Role="DialogueDB" Multiplicity="1" />
+          <End Type="TheasianDiplomacyDBModel.DialogueDBLetterDB" Role="DialogueDBLetterDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DialogueDB">
+              <PropertyRef Name="DialogueDBID" />
+            </Principal>
+            <Dependent Role="DialogueDBLetterDB">
+              <PropertyRef Name="dlDialogueDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_rlDialogueDBID">
+          <End Type="TheasianDiplomacyDBModel.DialogueDB" Role="DialogueDB" Multiplicity="1" />
+          <End Type="TheasianDiplomacyDBModel.RelationLevelDB" Role="RelationLevelDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DialogueDB">
+              <PropertyRef Name="DialogueDBID" />
+            </Principal>
+            <Dependent Role="RelationLevelDB">
+              <PropertyRef Name="rlDialogueDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_dlLetterDBID">
+          <End Type="TheasianDiplomacyDBModel.LetterDB" Role="LetterDB" Multiplicity="1" />
+          <End Type="TheasianDiplomacyDBModel.DialogueDBLetterDB" Role="DialogueDBLetterDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LetterDB">
+              <PropertyRef Name="LetterDBID" />
+            </Principal>
+            <Dependent Role="DialogueDBLetterDB">
+              <PropertyRef Name="dlLetterDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_egEventDBID">
+          <End Type="TheasianDiplomacyDBModel.EventDB" Role="EventDB" Multiplicity="1" />
+          <End Type="TheasianDiplomacyDBModel.EventDBGoalDB" Role="EventDBGoalDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventDB">
+              <PropertyRef Name="EventDBID" />
+            </Principal>
+            <Dependent Role="EventDBGoalDB">
+              <PropertyRef Name="egEventDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_rmEventDBID">
+          <End Type="TheasianDiplomacyDBModel.EventDB" Role="EventDB" Multiplicity="1" />
+          <End Type="TheasianDiplomacyDBModel.RelationModifierDB" Role="RelationModifierDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventDB">
+              <PropertyRef Name="EventDBID" />
+            </Principal>
+            <Dependent Role="RelationModifierDB">
+              <PropertyRef Name="rmEventDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_egGoalDBID">
+          <End Type="TheasianDiplomacyDBModel.GoalDB" Role="GoalDB" Multiplicity="1" />
+          <End Type="TheasianDiplomacyDBModel.EventDBGoalDB" Role="EventDBGoalDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GoalDB">
+              <PropertyRef Name="GoalDBID" />
+            </Principal>
+            <Dependent Role="EventDBGoalDB">
+              <PropertyRef Name="egGoalDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_fFactionGoalID">
+          <End Type="TheasianDiplomacyDBModel.FactionGoalDB" Role="FactionGoalDB" Multiplicity="1" />
+          <End Type="TheasianDiplomacyDBModel.FactionDB" Role="FactionDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FactionGoalDB">
+              <PropertyRef Name="FactionGoalID" />
+            </Principal>
+            <Dependent Role="FactionDB">
+              <PropertyRef Name="fFactionGoalID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_flFactionDBID">
+          <End Type="TheasianDiplomacyDBModel.FactionDB" Role="FactionDB" Multiplicity="1" />
+          <End Type="TheasianDiplomacyDBModel.FactionDBLawDB" Role="FactionDBLawDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FactionDB">
+              <PropertyRef Name="FactionDBID" />
+            </Principal>
+            <Dependent Role="FactionDBLawDB">
+              <PropertyRef Name="flFactionDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_flLawDBID">
+          <End Type="TheasianDiplomacyDBModel.LawDB" Role="LawDB" Multiplicity="1" />
+          <End Type="TheasianDiplomacyDBModel.FactionDBLawDB" Role="FactionDBLawDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LawDB">
+              <PropertyRef Name="LawDBID" />
+            </Principal>
+            <Dependent Role="FactionDBLawDB">
+              <PropertyRef Name="flLawDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_osOperationDBID">
+          <End Type="TheasianDiplomacyDBModel.OperationDB" Role="OperationDB" Multiplicity="1" />
+          <End Type="TheasianDiplomacyDBModel.OperationDBSkillDB" Role="OperationDBSkillDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OperationDB">
+              <PropertyRef Name="OperationDBID" />
+            </Principal>
+            <Dependent Role="OperationDBSkillDB">
+              <PropertyRef Name="osOperationDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_osSkillDBID">
+          <End Type="TheasianDiplomacyDBModel.SkillDB" Role="SkillDB" Multiplicity="1" />
+          <End Type="TheasianDiplomacyDBModel.OperationDBSkillDB" Role="OperationDBSkillDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SkillDB">
+              <PropertyRef Name="SkillDBID" />
+            </Principal>
+            <Dependent Role="OperationDBSkillDB">
+              <PropertyRef Name="osSkillDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_rmRelationDBID">
+          <End Type="TheasianDiplomacyDBModel.RelationDB" Role="RelationDB" Multiplicity="1" />
+          <End Type="TheasianDiplomacyDBModel.RelationModifierDB" Role="RelationModifierDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RelationDB">
+              <PropertyRef Name="RelationDBID" />
+            </Principal>
+            <Dependent Role="RelationModifierDB">
+              <PropertyRef Name="rmRelationDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CE_rRelationTypeDBID">
+          <End Type="TheasianDiplomacyDBModel.RelationTypeDB" Role="RelationTypeDB" Multiplicity="1" />
+          <End Type="TheasianDiplomacyDBModel.RelationDB" Role="RelationDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RelationTypeDB">
+              <PropertyRef Name="RelationTypeDBID" />
+            </Principal>
+            <Dependent Role="RelationDB">
+              <PropertyRef Name="rRelationTypeDBID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="TheasianDiplomacyDBModelStoreContainer" CdmEntityContainer="TheasianDiplomacyDBEntities" />
+        <EntityContainerMapping StorageEntityContainer="TheasianDiplomacyDBModelStoreContainer" CdmEntityContainer="TheasianDiplomacyDBEntities" >
+          <EntitySetMapping Name="AgentDB">
+            <EntityTypeMapping TypeName="TheasianDiplomacyDBModel.AgentDB">
+              <MappingFragment StoreEntitySet="AgentDB">
+                <ScalarProperty Name="aCharacterDBID" ColumnName="aCharacterDBID" />
+                <ScalarProperty Name="AgentDBID" ColumnName="AgentDBID" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="birthDate" ColumnName="birthDate" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AgentDBSkillDB">
+            <EntityTypeMapping TypeName="TheasianDiplomacyDBModel.AgentDBSkillDB">
+              <MappingFragment StoreEntitySet="AgentDBSkillDB">
+                <ScalarProperty Name="asAgentDBID" ColumnName="asAgentDBID" />
+                <ScalarProperty Name="asSkillDBID" ColumnName="asSkillDBID" />
+                <ScalarProperty Name="level" ColumnName="level" />
+                <ScalarProperty Name="AgentDBSkillDBID" ColumnName="AgentDBSkillDBID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ArmyDB">
+            <EntityTypeMapping TypeName="TheasianDiplomacyDBModel.ArmyDB">
+              <MappingFragment StoreEntitySet="ArmyDB">
+                <ScalarProperty Name="aCharacterDBID" ColumnName="aCharacterDBID" />
+                <ScalarProperty Name="aLocationDBID" ColumnName="aLocationDBID" />
+                <ScalarProperty Name="aFactionDBID" ColumnName="aFactionDBID" />
+                <ScalarProperty Name="ArmyDBID" ColumnName="ArmyDBID" />
+                <ScalarProperty Name="soldierCount" ColumnName="soldierCount" />
+                <ScalarProperty Name="equipmentQuality" ColumnName="equipmentQuality" />
+                <ScalarProperty Name="experienceLevel" ColumnName="experienceLevel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CharacterDB">
+            <EntityTypeMapping TypeName="TheasianDiplomacyDBModel.CharacterDB">
+              <MappingFragment StoreEntitySet="CharacterDB">
+                <ScalarProperty Name="cmemberFactionDBID" ColumnName="cmemberFactionDBID" />
+                <ScalarProperty Name="cArmyDBID" ColumnName="cArmyDBID" />
+                <ScalarProperty Name="cLocationDBID" ColumnName="cLocationDBID" />
+                <ScalarProperty Name="cleaderFactionDBID" ColumnName="cleaderFactionDBID" />
+                <ScalarProperty Name="cruelty" ColumnName="cruelty" />
+                <ScalarProperty Name="honor" ColumnName="honor" />
+                <ScalarProperty Name="CharacterDBID" ColumnName="CharacterDBID" />
+                <ScalarProperty Name="charisma" ColumnName="charisma" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="birthDate" ColumnName="birthDate" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CharacterDBLetterDB">
+            <EntityTypeMapping TypeName="TheasianDiplomacyDBModel.CharacterDBLetterDB">
+              <MappingFragment StoreEntitySet="CharacterDBLetterDB">
+                <ScalarProperty Name="clLetterDBID" ColumnName="clLetterDBID" />
+                <ScalarProperty Name="clCharacterDBID" ColumnName="clCharacterDBID" />
+                <ScalarProperty Name="letterDBCharacterDBId" ColumnName="letterDBCharacterDBId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CharacterDBSkillDB">
+            <EntityTypeMapping TypeName="TheasianDiplomacyDBModel.CharacterDBSkillDB">
+              <MappingFragment StoreEntitySet="CharacterDBSkillDB">
+                <ScalarProperty Name="csSkillDBID" ColumnName="csSkillDBID" />
+                <ScalarProperty Name="csCharacterDBID" ColumnName="csCharacterDBID" />
+                <ScalarProperty Name="level" ColumnName="level" />
+                <ScalarProperty Name="CharacterDBSkillDBID" ColumnName="CharacterDBSkillDBID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CityDB">
+            <EntityTypeMapping TypeName="TheasianDiplomacyDBModel.CityDB">
+              <MappingFragment StoreEntitySet="CityDB">
+                <ScalarProperty Name="satisfaction" ColumnName="satisfaction" />
+                <ScalarProperty Name="cLocationDBID" ColumnName="cLocationDBID" />
+                <ScalarProperty Name="cFactionDBID" ColumnName="cFactionDBID" />
+                <ScalarProperty Name="income" ColumnName="income" />
+                <ScalarProperty Name="CityDBID" ColumnName="CityDBID" />
+                <ScalarProperty Name="fortificationLevelMax" ColumnName="fortificationLevelMax" />
+                <ScalarProperty Name="fortificationLevel" ColumnName="fortificationLevel" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DialogueDB">
+            <EntityTypeMapping TypeName="TheasianDiplomacyDBModel.DialogueDB">
+              <MappingFragment StoreEntitySet="DialogueDB">
+                <ScalarProperty Name="DialogueDBID" ColumnName="DialogueDBID" />
+                <ScalarProperty Name="code" ColumnName="code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DialogueDBLetterDB">
+            <EntityTypeMapping TypeName="TheasianDiplomacyDBModel.DialogueDBLetterDB">
+              <MappingFragment StoreEntitySet="DialogueDBLetterDB">
+                <ScalarProperty Name="dlDialogueDBID" ColumnName="dlDialogueDBID" />
+                <ScalarProperty Name="dlLetterDBID" ColumnName="dlLetterDBID" />
+                <ScalarProperty Name="DialogueDBLetterDBID" ColumnName="DialogueDBLetterDBID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EventDB">
+            <EntityTypeMapping TypeName="TheasianDiplomacyDBModel.EventDB">
+              <MappingFragment StoreEntitySet="EventDB">
+                <ScalarProperty Name="resolveTurn" ColumnName="resolveTurn" />
+                <ScalarProperty Name="EventDBID" ColumnName="EventDBID" />
+                <ScalarProperty Name="eventIntensity" ColumnName="eventIntensity" />
+                <ScalarProperty Name="methodID" ColumnName="methodID" />
+                <ScalarProperty Name="eventDescription" ColumnName="eventDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EventDBGoalDB">
+            <EntityTypeMapping TypeName="TheasianDiplomacyDBModel.EventDBGoalDB">
+              <MappingFragment StoreEntitySet="EventDBGoalDB">
+                <ScalarProperty Name="egEventDBID" ColumnName="egEventDBID" />
+                <ScalarProperty Name="egGoalDBID" ColumnName="egGoalDBID" />
+                <ScalarProperty Name="methodId" ColumnName="methodId" />
+                <ScalarProperty Name="EventDBGoalDBID" ColumnName="EventDBGoalDBID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FactionDB">
+            <EntityTypeMapping TypeName="TheasianDiplomacyDBModel.FactionDB">
+              <MappingFragment StoreEntitySet="FactionDB">
+                <ScalarProperty Name="fCharacterDBID" ColumnName="fCharacterDBID" />
+                <ScalarProperty Name="fFactionGoalID" ColumnName="fFactionGoalID" />
+                <ScalarProperty Name="FactionDBID" ColumnName="FactionDBID" />
+                <ScalarProperty Name="emblem" ColumnName="emblem" />
+                <ScalarProperty Name="gold" ColumnName="gold" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FactionDBLawDB">
+            <EntityTypeMapping TypeName="TheasianDiplomacyDBModel.FactionDBLawDB">
+              <MappingFragment StoreEntitySet="FactionDBLawDB">
+                <ScalarProperty Name="flFactionDBID" ColumnName="flFactionDBID" />
+                <ScalarProperty Name="flLawDBID" ColumnName="flLawDBID" />
+                <ScalarProperty Name="FactionDBLawDBID" ColumnName="FactionDBLawDBID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FactionGoalDB">
+            <EntityTypeMapping TypeName="TheasianDiplomacyDBModel.FactionGoalDB">
+              <MappingFragment StoreEntitySet="FactionGoalDB">
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="FactionGoalID" ColumnName="FactionGoalID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GameDB">
+            <EntityTypeMapping TypeName="TheasianDiplomacyDBModel.GameDB">
+              <MappingFragment StoreEntitySet="GameDB">
+                <ScalarProperty Name="currentTurn" ColumnName="currentTurn" />
+                <ScalarProperty Name="CharacterDBID" ColumnName="CharacterDBID" />
+                <ScalarProperty Name="GameDBID" ColumnName="GameDBID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GoalDB">
+            <EntityTypeMapping TypeName="TheasianDiplomacyDBModel.GoalDB">
+              <MappingFragment StoreEntitySet="GoalDB">
+                <ScalarProperty Name="gCharacterDBID" ColumnName="gCharacterDBID" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="GoalDBID" ColumnName="GoalDBID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LawDB">
+            <EntityTypeMapping TypeName="TheasianDiplomacyDBModel.LawDB">
+              <MappingFragment StoreEntitySet="LawDB">
+                <ScalarProperty Name="removeEffectMethodID" ColumnName="removeEffectMethodID" />
+                <ScalarProperty Name="entryEffectMethodID" ColumnName="entryEffectMethodID" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="LawDBID" ColumnName="LawDBID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LetterDB">
+            <EntityTypeMapping TypeName="TheasianDiplomacyDBModel.LetterDB">
+              <MappingFragment StoreEntitySet="LetterDB">
+                <ScalarProperty Name="lCharacterDBID" ColumnName="lCharacterDBID" />
+                <ScalarProperty Name="LetterDBID" ColumnName="LetterDBID" />
+                <ScalarProperty Name="finalText" ColumnName="finalText" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LocationDB">
+            <EntityTypeMapping TypeName="TheasianDiplomacyDBModel.LocationDB">
+              <MappingFragment StoreEntitySet="LocationDB">
+                <ScalarProperty Name="lCityDBID" ColumnName="lCityDBID" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="defenderAdvantage" ColumnName="defenderAdvantage" />
+                <ScalarProperty Name="LocationDBID" ColumnName="LocationDBID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OperationDB">
+            <EntityTypeMapping TypeName="TheasianDiplomacyDBModel.OperationDB">
+              <MappingFragment StoreEntitySet="OperationDB">
+                <ScalarProperty Name="methodFailID" ColumnName="methodFailID" />
+                <ScalarProperty Name="methodSucessID" ColumnName="methodSucessID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="executionTime" ColumnName="executionTime" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="difficulty" ColumnName="difficulty" />
+                <ScalarProperty Name="OperationDBID" ColumnName="OperationDBID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OperationDBSkillDB">
+            <EntityTypeMapping TypeName="TheasianDiplomacyDBModel.OperationDBSkillDB">
+              <MappingFragment StoreEntitySet="OperationDBSkillDB">
+                <ScalarProperty Name="osSkillDBID" ColumnName="osSkillDBID" />
+                <ScalarProperty Name="osOperationDBID" ColumnName="osOperationDBID" />
+                <ScalarProperty Name="OperationDBSkillDBID" ColumnName="OperationDBSkillDBID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RelationDB">
+            <EntityTypeMapping TypeName="TheasianDiplomacyDBModel.RelationDB">
+              <MappingFragment StoreEntitySet="RelationDB">
+                <ScalarProperty Name="rsecondCharacterDBID" ColumnName="rsecondCharacterDBID" />
+                <ScalarProperty Name="rRelationTypeDBID" ColumnName="rRelationTypeDBID" />
+                <ScalarProperty Name="rfirstCharacterDBID" ColumnName="rfirstCharacterDBID" />
+                <ScalarProperty Name="RelationDBID" ColumnName="RelationDBID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RelationLevelDB">
+            <EntityTypeMapping TypeName="TheasianDiplomacyDBModel.RelationLevelDB">
+              <MappingFragment StoreEntitySet="RelationLevelDB">
+                <ScalarProperty Name="rlDialogueDBID" ColumnName="rlDialogueDBID" />
+                <ScalarProperty Name="textLetter" ColumnName="textLetter" />
+                <ScalarProperty Name="textDialogue" ColumnName="textDialogue" />
+                <ScalarProperty Name="level" ColumnName="level" />
+                <ScalarProperty Name="RelationLevelDBID" ColumnName="RelationLevelDBID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RelationModifierDB">
+            <EntityTypeMapping TypeName="TheasianDiplomacyDBModel.RelationModifierDB">
+              <MappingFragment StoreEntitySet="RelationModifierDB">
+                <ScalarProperty Name="rmEventDBID" ColumnName="rmEventDBID" />
+                <ScalarProperty Name="rmRelationDBID" ColumnName="rmRelationDBID" />
+                <ScalarProperty Name="RelationModifierDBID" ColumnName="RelationModifierDBID" />
+                <ScalarProperty Name="dateAdded" ColumnName="dateAdded" />
+                <ScalarProperty Name="shortDescription" ColumnName="shortDescription" />
+                <ScalarProperty Name="modifierValue" ColumnName="modifierValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RelationTypeDB">
+            <EntityTypeMapping TypeName="TheasianDiplomacyDBModel.RelationTypeDB">
+              <MappingFragment StoreEntitySet="RelationTypeDB">
+                <ScalarProperty Name="RelationTypeDBID" ColumnName="RelationTypeDBID" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SkillDB">
+            <EntityTypeMapping TypeName="TheasianDiplomacyDBModel.SkillDB">
+              <MappingFragment StoreEntitySet="SkillDB">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="SkillDBID" ColumnName="SkillDBID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

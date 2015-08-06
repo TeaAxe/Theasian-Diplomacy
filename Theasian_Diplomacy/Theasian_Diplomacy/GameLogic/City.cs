@@ -15,6 +15,7 @@ namespace Theasian_Diplomacy.GameLogic
         private Location linkedLocation;
         private int fortificationLevel;
         private int fortificationLevelMax;
+        private CityDB JIZZ;
         #endregion
 
         public City(string _name, int _income, Location _linkedLocation)

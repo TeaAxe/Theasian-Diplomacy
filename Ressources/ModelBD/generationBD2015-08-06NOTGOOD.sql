@@ -5,7 +5,7 @@
     Nom de la base de données : "Base de données"
     Fichier source : "F:\Projets\ProjetUnrealAvecSamEtMax\Theasian-Diplomacy\Ressources\ModelBD\Theasian_Diplomacy.sms"
 
-    Généré le : 6 août 2015 11:55:15
+    Généré le : 6 août 2015 11:58:19
     Généré par Open ModelSphere Version 3.2"
 ***********************************************************
 
@@ -89,7 +89,7 @@ CREATE TABLE CityDB
     income INT NULL,
     FactionDB_FactionDBID INT NOT NULL,
     LocationDB_LocationDBID INT NOT NULL,
-    satisfation ??? NULL
+    satisfation INT NULL
 );
 
 

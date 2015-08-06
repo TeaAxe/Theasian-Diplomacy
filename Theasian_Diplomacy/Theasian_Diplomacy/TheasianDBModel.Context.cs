@@ -25,5 +25,31 @@ namespace Theasian_Diplomacy
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<AgentDB> AgentDB { get; set; }
+        public virtual DbSet<AgentDBSkillDB> AgentDBSkillDB { get; set; }
+        public virtual DbSet<ArmyDB> ArmyDB { get; set; }
+        public virtual DbSet<CharacterDB> CharacterDB { get; set; }
+        public virtual DbSet<CharacterDBLetterDB> CharacterDBLetterDB { get; set; }
+        public virtual DbSet<CharacterDBSkillDB> CharacterDBSkillDB { get; set; }
+        public virtual DbSet<CityDB> CityDB { get; set; }
+        public virtual DbSet<DialogueDB> DialogueDB { get; set; }
+        public virtual DbSet<DialogueDBLetterDB> DialogueDBLetterDB { get; set; }
+        public virtual DbSet<EventDB> EventDB { get; set; }
+        public virtual DbSet<EventDBGoalDB> EventDBGoalDB { get; set; }
+        public virtual DbSet<FactionDB> FactionDB { get; set; }
+        public virtual DbSet<FactionDBLawDB> FactionDBLawDB { get; set; }
+        public virtual DbSet<FactionGoalDB> FactionGoalDB { get; set; }
+        public virtual DbSet<GameDB> GameDB { get; set; }
+        public virtual DbSet<GoalDB> GoalDB { get; set; }
+        public virtual DbSet<LawDB> LawDB { get; set; }
+        public virtual DbSet<LetterDB> LetterDB { get; set; }
+        public virtual DbSet<LocationDB> LocationDB { get; set; }
+        public virtual DbSet<OperationDB> OperationDB { get; set; }
+        public virtual DbSet<OperationDBSkillDB> OperationDBSkillDB { get; set; }
+        public virtual DbSet<RelationDB> RelationDB { get; set; }
+        public virtual DbSet<RelationLevelDB> RelationLevelDB { get; set; }
+        public virtual DbSet<RelationModifierDB> RelationModifierDB { get; set; }
+        public virtual DbSet<RelationTypeDB> RelationTypeDB { get; set; }
+        public virtual DbSet<SkillDB> SkillDB { get; set; }
     }
 }
