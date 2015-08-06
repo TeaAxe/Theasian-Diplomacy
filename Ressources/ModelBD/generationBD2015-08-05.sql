@@ -5,7 +5,7 @@
     Nom de la base de données : "Base de données"
     Fichier source : "F:\Projets\ProjetUnrealAvecSamEtMax\Theasian-Diplomacy\Ressources\ModelBD\Theasian_Diplomacy.sms"
 
-    Généré le : 5 août 2015 19:59:02
+    Généré le : 5 août 2015 22:30:30
     Généré par Open ModelSphere Version 3.2"
 ***********************************************************
 
@@ -15,508 +15,509 @@
 ***********************************************************
 
 
-CREATE TABLE agentdb 
+CREATE TABLE AgentDB 
 (
-    firstname NVARCHAR(50) NULL,
-    lastname NVARCHAR(50) NULL,
-    birthdate DATETIME NULL,
+    firstName NVARCHAR(50) NULL,
+    lastName NVARCHAR(50) NULL,
+    birthDate DATETIME NULL,
     sex NVARCHAR(1) NULL,
-    agentdbid INT NOT NULL,
-    acharacterdbid INT NOT NULL
+    AgentDBID INT NOT NULL,
+    aCharacterDBID INT NOT NULL
 );
 
 
-CREATE TABLE agentdbskilldb 
+CREATE TABLE AgentDBSkillDB 
 (
-    agentdbskilldbid INT NOT NULL,
+    AgentDBSkillDBID INT NOT NULL,
     level INT NOT NULL,
-    asskilldbid INT NOT NULL,
-    asagentdbid INT NOT NULL
+    asSkillDBID INT NOT NULL,
+    asAgentDBID INT NOT NULL
 );
 
 
-CREATE TABLE armydb 
+CREATE TABLE ArmyDB 
 (
-    experiencelevel INT NULL,
-    equipmentquality INT NULL,
-    soldiercount INT NULL,
-    armydbid INT NOT NULL,
-    afactiondbid INT NOT NULL,
-    alocationdbid INT NOT NULL,
-    acharacterdbid INT NULL
+    experienceLevel INT NULL,
+    equipmentQuality INT NULL,
+    soldierCount INT NULL,
+    ArmyDBID INT NOT NULL,
+    aFactionDBID INT NOT NULL,
+    aLocationDBID INT NOT NULL,
+    aCharacterDBID INT NULL
 );
 
 
-CREATE TABLE characterdb 
+CREATE TABLE CharacterDB 
 (
-    firstname NVARCHAR(50) NULL,
-    birthdate DATETIME NULL,
+    firstName NVARCHAR(50) NULL,
+    birthDate DATETIME NULL,
     sex NVARCHAR(1) NULL,
     charisma INT NULL,
-    characterdbid INT NOT NULL,
+    CharacterDBID INT NOT NULL,
     honor INT NULL,
     cruelty INT NULL,
-    cfactiondbid INT NOT NULL,
-    clocationdbid INT NOT NULL,
-    carmydbid INT NULL,
-    cfactiondbid INT NULL
+    cleaderFactionDBID INT NOT NULL,
+    cLocationDBID INT NOT NULL,
+    cArmyDBID INT NULL,
+    cmemberFactionDBID INT NULL
 );
 
 
-CREATE TABLE characterdbletterdb 
+CREATE TABLE CharacterDBLetterDB 
 (
-    letterdbcharacterdbid INT NOT NULL,
-    clcharacterdbid INT NOT NULL,
-    clletterdbid INT NOT NULL
+    letterDBCharacterDBId INT NOT NULL,
+    clCharacterDBID INT NOT NULL,
+    clLetterDBID INT NOT NULL
 );
 
 
-CREATE TABLE characterdbskilldb 
+CREATE TABLE CharacterDBSkillDB 
 (
-    characterdbskilldbid INT NOT NULL,
+    CharacterDBSkillDBID INT NOT NULL,
     level INT NOT NULL,
-    cscharacterdbid INT NOT NULL,
-    csskilldbid INT NOT NULL
+    csCharacterDBID INT NOT NULL,
+    csSkillDBID INT NOT NULL
 );
 
 
-CREATE TABLE citydb 
+CREATE TABLE CityDB 
 (
     name NVARCHAR(50) NULL,
-    fortificationlevel INT NULL,
-    fortificationlevelmax INT NULL,
-    citydbid INT NOT NULL,
+    fortificationLevel INT NULL,
+    fortificationLevelMax INT NULL,
+    CityDBID INT NOT NULL,
     income INT NULL,
-    cfactiondbid INT NOT NULL,
-    clocationdbid INT NOT NULL
+    cFactionDBID INT NOT NULL,
+    cLocationDBID INT NOT NULL,
+    satisfaction INT NULL
 );
 
 
-CREATE TABLE dialoguedb 
+CREATE TABLE DialogueDB 
 (
     code VARCHAR(8) NULL,
-    dialoguedbid INT NOT NULL
+    DialogueDBID INT NOT NULL
 );
 
 
-CREATE TABLE dialoguedbletterdb 
+CREATE TABLE DialogueDBLetterDB 
 (
-    dialoguedbletterdbid INT NOT NULL,
-    dlletterdbid INT NOT NULL,
-    dldialoguedbid INT NOT NULL
+    DialogueDBLetterDBID INT NOT NULL,
+    dlLetterDBID INT NOT NULL,
+    dlDialogueDBID INT NOT NULL
 );
 
 
-CREATE TABLE eventdb 
+CREATE TABLE EventDB 
 (
-    eventdescription TEXT NULL,
-    methodid INT NULL,
-    eventintensity INT NULL,
-    eventdbid INT NOT NULL,
-    resolveturn INT NULL
+    eventDescription TEXT NULL,
+    methodID INT NULL,
+    eventIntensity INT NULL,
+    EventDBID INT NOT NULL,
+    resolveTurn INT NULL
 );
 
 
-CREATE TABLE eventdbgoaldb 
+CREATE TABLE EventDBGoalDB 
 (
-    eventdbgoaldbid ??? NOT NULL,
-    methodid ??? NULL,
-    eggoaldbid INT NOT NULL,
-    egeventdbid INT NOT NULL
+    EventDBGoalDBID INT NOT NULL,
+    methodId INT NULL,
+    egGoalDBID INT NOT NULL,
+    egEventDBID INT NOT NULL
 );
 
 
-CREATE TABLE factiondb 
+CREATE TABLE FactionDB 
 (
     name NVARCHAR(50) NULL,
     gold INT NULL,
     emblem TEXT NULL,
-    factiondbid INT NOT NULL,
-    ffactiongoalid INT NOT NULL,
-    fcharacterdbid INT NOT NULL
+    FactionDBID INT NOT NULL,
+    fFactionGoalID INT NOT NULL,
+    fCharacterDBID INT NOT NULL
 );
 
 
-CREATE TABLE factiondblawdb 
+CREATE TABLE FactionDBLawDB 
 (
-    factiondblawdbid INT NOT NULL,
-    fllawdbid INT NOT NULL,
-    flfactiondbid INT NOT NULL
+    FactionDBLawDBID INT NOT NULL,
+    flLawDBID INT NOT NULL,
+    flFactionDBID INT NOT NULL
 );
 
 
-CREATE TABLE factiongoaldb 
+CREATE TABLE FactionGoalDB 
 (
-    factiongoalid INT NOT NULL,
+    FactionGoalID INT NOT NULL,
     name NVARCHAR(50) NULL,
     description TEXT NULL,
     code NVARCHAR(3) NULL
 );
 
 
-CREATE TABLE gamedb 
+CREATE TABLE GameDB 
 (
-    gamedbid INT NOT NULL,
-    characterdbid INT NULL,
-    currentturn INT NULL
+    GameDBID INT NOT NULL,
+    CharacterDBID INT NULL,
+    currentTurn INT NULL
 );
 
 
-CREATE TABLE goaldb 
+CREATE TABLE GoalDB 
 (
     name NVARCHAR(50) NULL,
-    goaldbid INT NOT NULL,
+    GoalDBID INT NOT NULL,
     description TEXT NULL,
-    gcharacterdbid INT NOT NULL
+    gCharacterDBID INT NOT NULL
 );
 
 
-CREATE TABLE lawdb 
+CREATE TABLE LawDB 
 (
-    lawdbid INT NOT NULL,
+    LawDBID INT NOT NULL,
     name NVARCHAR(50) NULL,
     description TEXT NULL,
-    entryeffectmethodid INT NULL,
-    removeeffectmethodid INT NULL
+    entryEffectMethodID INT NULL,
+    removeEffectMethodID INT NULL
 );
 
 
-CREATE TABLE letterdb 
+CREATE TABLE LetterDB 
 (
-    finaltext TEXT NULL,
-    letterdbid INT NOT NULL,
-    lcharacterdbid INT NOT NULL
+    finalText TEXT NULL,
+    LetterDBID INT NOT NULL,
+    lCharacterDBID INT NOT NULL
 );
 
 
-CREATE TABLE locationdb 
+CREATE TABLE LocationDB 
 (
     name NVARCHAR(50) NULL,
-    locationdbid INT NOT NULL,
-    defenderadvantage INT NULL,
+    LocationDBID INT NOT NULL,
+    defenderAdvantage INT NULL,
     description TEXT NULL,
-    lcitydbid INT NULL
+    lCityDBID INT NULL
 );
 
 
-CREATE TABLE operationdb 
+CREATE TABLE OperationDB 
 (
-    operationdbid INT NOT NULL,
+    OperationDBID INT NOT NULL,
     difficulty INT NULL,
     description TEXT NULL,
     cost INT NULL,
-    executiontime INT NULL,
+    executionTime INT NULL,
     name NVARCHAR(50) NULL,
-    methodsucessid INT NULL,
-    methodfailid INT NULL
+    methodSucessID INT NULL,
+    methodFailID INT NULL
 );
 
 
-CREATE TABLE operationdbskilldb 
+CREATE TABLE OperationDBSkillDB 
 (
-    operationdbskilldbid INT NOT NULL,
-    osoperationdbid INT NOT NULL,
-    osskilldbid INT NOT NULL
+    OperationDBSkillDBID INT NOT NULL,
+    osOperationDBID INT NOT NULL,
+    osSkillDBID INT NOT NULL
 );
 
 
-CREATE TABLE relationdb 
+CREATE TABLE RelationDB 
 (
-    relationdbid INT NOT NULL,
-    rcharacterdbid INT NOT NULL,
-    rrelationtypedbid INT NOT NULL,
-    rcharacterdbid INT NOT NULL
+    RelationDBID INT NOT NULL,
+    rfirstCharacterDBID INT NOT NULL,
+    rRelationTypeDBID INT NOT NULL,
+    rsecondCharacterDBID INT NOT NULL
 );
 
 
-CREATE TABLE relationleveldb 
+CREATE TABLE RelationLevelDB 
 (
-    relationleveldbid INT NOT NULL,
+    RelationLevelDBID INT NOT NULL,
     level INT NULL,
-    textdialogue TEXT NULL,
-    textletter TEXT NULL,
-    rldialoguedbid INT NOT NULL
+    textDialogue TEXT NULL,
+    textLetter TEXT NULL,
+    rlDialogueDBID INT NOT NULL
 );
 
 
-CREATE TABLE relationmodifierdb 
+CREATE TABLE RelationModifierDB 
 (
-    modifiervalue INT NULL,
-    shortdescription NVARCHAR(50) NULL,
-    dateadded DATETIME NULL,
-    relationmodifierdbid INT NOT NULL,
-    rmrelationdbid INT NOT NULL,
-    rmeventdbid INT NOT NULL
+    modifierValue INT NULL,
+    shortDescription NVARCHAR(50) NULL,
+    dateAdded DATETIME NULL,
+    RelationModifierDBID INT NOT NULL,
+    rmRelationDBID INT NOT NULL,
+    rmEventDBID INT NOT NULL
 );
 
 
-CREATE TABLE relationtypedb 
+CREATE TABLE RelationTypeDB 
 (
     name NVARCHAR(50) NULL,
     description TEXT NULL,
-    relationtypedbid INT NOT NULL
+    RelationTypeDBID INT NOT NULL
 );
 
 
-CREATE TABLE skilldb 
+CREATE TABLE SkillDB 
 (
-    skilldbid INT NOT NULL,
+    SkillDBID INT NOT NULL,
     name NVARCHAR(50) NULL
 );
 
 
-ALTER TABLE agentdb 
-  ADD CONSTRAINT cp_agentdb_primary_key PRIMARY KEY (
-    agentdbid)  ;
-ALTER TABLE agentdbskilldb 
-  ADD CONSTRAINT cp_agentdbskilldb_cle_primaire PRIMARY KEY (
-    agentdbskilldbid)  ;
-ALTER TABLE armydb 
-  ADD CONSTRAINT cp_armydb_primary_key PRIMARY KEY (
-    armydbid)  ;
-ALTER TABLE characterdb 
-  ADD CONSTRAINT cp_characterdb_primary_key PRIMARY KEY (
-    characterdbid)  ;
-ALTER TABLE characterdbletterdb 
-  ADD CONSTRAINT cp_characterdbletterdb_cle_primaire_ PRIMARY KEY (
-    letterdbcharacterdbid)  ;
-ALTER TABLE characterdbskilldb 
-  ADD CONSTRAINT cp_characterdbskilldb_cle_primaire PRIMARY KEY (
-    characterdbskilldbid)  ;
-ALTER TABLE citydb 
-  ADD CONSTRAINT cp_citydb_primary_key PRIMARY KEY (
-    citydbid)  ;
-ALTER TABLE dialoguedb 
-  ADD CONSTRAINT cp_dialoguedb_primary_key PRIMARY KEY (
-    dialoguedbid)  ;
-ALTER TABLE dialoguedbletterdb 
-  ADD CONSTRAINT cp_dialoguedbletterdb_cle_primaire PRIMARY KEY (
-    dialoguedbletterdbid)  ;
-ALTER TABLE eventdb 
-  ADD CONSTRAINT cp_eventdb_primary_key PRIMARY KEY (
-    eventdbid)  ;
-ALTER TABLE eventdbgoaldb 
-  ADD CONSTRAINT cp_eventdbgoaldb_cle_primaire PRIMARY KEY (
-    eventdbgoaldbid)  ;
-ALTER TABLE factiondb 
-  ADD CONSTRAINT cp_factiondb_primary_key PRIMARY KEY (
-    factiondbid)  ;
-ALTER TABLE factiondblawdb 
-  ADD CONSTRAINT cp_factiondblawdb_cle_primaire PRIMARY KEY (
-    factiondblawdbid)  ;
-ALTER TABLE factiongoaldb 
-  ADD CONSTRAINT cp_factiongoaldb_cle_primaire PRIMARY KEY (
-    factiongoalid)  ;
-ALTER TABLE gamedb 
-  ADD CONSTRAINT cp_gamedb_primary_key PRIMARY KEY (
-    gamedbid)  ;
-ALTER TABLE goaldb 
-  ADD CONSTRAINT cp_goaldb_primary_key PRIMARY KEY (
-    goaldbid)  ;
-ALTER TABLE lawdb 
-  ADD CONSTRAINT cp_lawdb_primary_key PRIMARY KEY (
-    lawdbid)  ;
-ALTER TABLE letterdb 
-  ADD CONSTRAINT cp_letterdb_primary_key PRIMARY KEY (
-    letterdbid)  ;
-ALTER TABLE locationdb 
-  ADD CONSTRAINT cp_locationdb_primary_key PRIMARY KEY (
-    locationdbid)  ;
-ALTER TABLE operationdb 
-  ADD CONSTRAINT cp_operationdb_cle_primaire PRIMARY KEY (
-    operationdbid)  ;
-ALTER TABLE operationdbskilldb 
-  ADD CONSTRAINT cp_operationdbskilldb_cle_primaire PRIMARY KEY (
-    operationdbskilldbid)  ;
-ALTER TABLE relationdb 
-  ADD CONSTRAINT cp_relationdb_primary_key PRIMARY KEY (
-    relationdbid)  ;
-ALTER TABLE relationleveldb 
-  ADD CONSTRAINT cp_relationleveldb_primary_key PRIMARY KEY (
-    relationleveldbid)  ;
-ALTER TABLE relationmodifierdb 
-  ADD CONSTRAINT cp_relationmodifierdb_primary_key PRIMARY KEY (
-    relationmodifierdbid)  ;
-ALTER TABLE relationtypedb 
-  ADD CONSTRAINT cp_relationtypedb_primary_key PRIMARY KEY (
-    relationtypedbid)  ;
-ALTER TABLE skilldb 
-  ADD CONSTRAINT cp_skilldb_cle_primaire PRIMARY KEY (
-    skilldbid)  ;
-ALTER TABLE agentdbskilldb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (asskilldbid)
-      REFERENCES skilldb;
+ALTER TABLE AgentDB 
+  ADD CONSTRAINT CP_AgentDB_Primary_Key PRIMARY KEY (
+    AgentDBID)  ;
+ALTER TABLE AgentDBSkillDB 
+  ADD CONSTRAINT CP_AgentDBSkillDB_Cle_primaire PRIMARY KEY (
+    AgentDBSkillDBID)  ;
+ALTER TABLE ArmyDB 
+  ADD CONSTRAINT CP_ArmyDB_Primary_Key PRIMARY KEY (
+    ArmyDBID)  ;
+ALTER TABLE CharacterDB 
+  ADD CONSTRAINT CP_CharacterDB_Primary_Key PRIMARY KEY (
+    CharacterDBID)  ;
+ALTER TABLE CharacterDBLetterDB 
+  ADD CONSTRAINT CP_CharacterDBLetterDB_Cle_primaire_ PRIMARY KEY (
+    letterDBCharacterDBId)  ;
+ALTER TABLE CharacterDBSkillDB 
+  ADD CONSTRAINT CP_CharacterDBSkillDB_Cle_primaire PRIMARY KEY (
+    CharacterDBSkillDBID)  ;
+ALTER TABLE CityDB 
+  ADD CONSTRAINT CP_CityDB_Primary_Key PRIMARY KEY (
+    CityDBID)  ;
+ALTER TABLE DialogueDB 
+  ADD CONSTRAINT CP_DialogueDB_Primary_Key PRIMARY KEY (
+    DialogueDBID)  ;
+ALTER TABLE DialogueDBLetterDB 
+  ADD CONSTRAINT CP_DialogueDBLetterDB_Cle_primaire PRIMARY KEY (
+    DialogueDBLetterDBID)  ;
+ALTER TABLE EventDB 
+  ADD CONSTRAINT CP_EventDB_Primary_Key PRIMARY KEY (
+    EventDBID)  ;
+ALTER TABLE EventDBGoalDB 
+  ADD CONSTRAINT CP_EventDBGoalDB_Cle_primaire PRIMARY KEY (
+    EventDBGoalDBID)  ;
+ALTER TABLE FactionDB 
+  ADD CONSTRAINT CP_FactionDB_Primary_Key PRIMARY KEY (
+    FactionDBID)  ;
+ALTER TABLE FactionDBLawDB 
+  ADD CONSTRAINT CP_FactionDBLawDB_Cle_primaire PRIMARY KEY (
+    FactionDBLawDBID)  ;
+ALTER TABLE FactionGoalDB 
+  ADD CONSTRAINT CP_FactionGoalDB_Cle_primaire PRIMARY KEY (
+    FactionGoalID)  ;
+ALTER TABLE GameDB 
+  ADD CONSTRAINT CP_GameDB_Primary_Key PRIMARY KEY (
+    GameDBID)  ;
+ALTER TABLE GoalDB 
+  ADD CONSTRAINT CP_GoalDB_Primary_Key PRIMARY KEY (
+    GoalDBID)  ;
+ALTER TABLE LawDB 
+  ADD CONSTRAINT CP_LawDB_Primary_Key PRIMARY KEY (
+    LawDBID)  ;
+ALTER TABLE LetterDB 
+  ADD CONSTRAINT CP_LetterDB_Primary_Key PRIMARY KEY (
+    LetterDBID)  ;
+ALTER TABLE LocationDB 
+  ADD CONSTRAINT CP_LocationDB_Primary_Key PRIMARY KEY (
+    LocationDBID)  ;
+ALTER TABLE OperationDB 
+  ADD CONSTRAINT CP_OperationDB_Cle_primaire PRIMARY KEY (
+    OperationDBID)  ;
+ALTER TABLE OperationDBSkillDB 
+  ADD CONSTRAINT CP_OperationDBSkillDB_Cle_primaire PRIMARY KEY (
+    OperationDBSkillDBID)  ;
+ALTER TABLE RelationDB 
+  ADD CONSTRAINT CP_RelationDB_Primary_Key PRIMARY KEY (
+    RelationDBID)  ;
+ALTER TABLE RelationLevelDB 
+  ADD CONSTRAINT CP_RelationLevelDB_Primary_Key PRIMARY KEY (
+    RelationLevelDBID)  ;
+ALTER TABLE RelationModifierDB 
+  ADD CONSTRAINT CP_RelationModifierDB_Primary_Key PRIMARY KEY (
+    RelationModifierDBID)  ;
+ALTER TABLE RelationTypeDB 
+  ADD CONSTRAINT CP_RelationTypeDB_Primary_Key PRIMARY KEY (
+    RelationTypeDBID)  ;
+ALTER TABLE SkillDB 
+  ADD CONSTRAINT CP_SkillDB_Cle_primaire PRIMARY KEY (
+    SkillDBID)  ;
+ALTER TABLE CharacterDB
+  ADD CONSTRAINT CE_cArmyDBID 
+    FOREIGN KEY (cArmyDBID)
+      REFERENCES ArmyDB;
 
-ALTER TABLE agentdbskilldb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (asagentdbid)
-      REFERENCES agentdb;
+ALTER TABLE AgentDBSkillDB
+  ADD CONSTRAINT CE_Cle_etrangere 
+    FOREIGN KEY (asSkillDBID)
+      REFERENCES SkillDB;
 
-ALTER TABLE operationdbskilldb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (osoperationdbid)
-      REFERENCES operationdb;
+ALTER TABLE AgentDBSkillDB
+  ADD CONSTRAINT CE_Cle_etrangere 
+    FOREIGN KEY (asAgentDBID)
+      REFERENCES AgentDB;
 
-ALTER TABLE operationdbskilldb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (osskilldbid)
-      REFERENCES skilldb;
+ALTER TABLE OperationDBSkillDB
+  ADD CONSTRAINT CE_Cle_etrangere 
+    FOREIGN KEY (osOperationDBID)
+      REFERENCES OperationDB;
 
-ALTER TABLE dialoguedbletterdb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (dlletterdbid)
-      REFERENCES letterdb;
+ALTER TABLE OperationDBSkillDB
+  ADD CONSTRAINT CE_Cle_etrangere 
+    FOREIGN KEY (osSkillDBID)
+      REFERENCES SkillDB;
 
-ALTER TABLE dialoguedbletterdb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (dldialoguedbid)
-      REFERENCES dialoguedb;
+ALTER TABLE FactionDBLawDB
+  ADD CONSTRAINT CE_Cle_etrangere 
+    FOREIGN KEY (flLawDBID)
+      REFERENCES LawDB;
 
-ALTER TABLE factiondblawdb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (fllawdbid)
-      REFERENCES lawdb;
+ALTER TABLE FactionDBLawDB
+  ADD CONSTRAINT CE_Cle_etrangere 
+    FOREIGN KEY (flFactionDBID)
+      REFERENCES FactionDB;
 
-ALTER TABLE factiondblawdb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (flfactiondbid)
-      REFERENCES factiondb;
+ALTER TABLE CharacterDBSkillDB
+  ADD CONSTRAINT CE_Cle_etrangere 
+    FOREIGN KEY (csCharacterDBID)
+      REFERENCES CharacterDB;
 
-ALTER TABLE characterdbskilldb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (cscharacterdbid)
-      REFERENCES characterdb;
+ALTER TABLE CharacterDBSkillDB
+  ADD CONSTRAINT CE_Cle_etrangere 
+    FOREIGN KEY (csSkillDBID)
+      REFERENCES SkillDB;
 
-ALTER TABLE characterdbskilldb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (csskilldbid)
-      REFERENCES skilldb;
+ALTER TABLE FactionDB
+  ADD CONSTRAINT CE_Cle_etrangere 
+    FOREIGN KEY (fFactionGoalID)
+      REFERENCES FactionGoalDB;
 
-ALTER TABLE factiondb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (ffactiongoalid)
-      REFERENCES factiongoaldb;
+ALTER TABLE FactionDB
+  ADD CONSTRAINT CE_Cle_etrangere 
+    FOREIGN KEY (fCharacterDBID)
+      REFERENCES CharacterDB;
 
-ALTER TABLE factiondb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (fcharacterdbid)
-      REFERENCES characterdb;
+ALTER TABLE CityDB
+  ADD CONSTRAINT CE_Cle_etrangere 
+    FOREIGN KEY (cFactionDBID)
+      REFERENCES FactionDB;
 
-ALTER TABLE citydb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (cfactiondbid)
-      REFERENCES factiondb;
+ALTER TABLE CityDB
+  ADD CONSTRAINT CE_Cle_etrangere 
+    FOREIGN KEY (cLocationDBID)
+      REFERENCES LocationDB;
 
-ALTER TABLE citydb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (clocationdbid)
-      REFERENCES locationdb;
+ALTER TABLE ArmyDB
+  ADD CONSTRAINT CE_Cle_etrangere 
+    FOREIGN KEY (aFactionDBID)
+      REFERENCES FactionDB;
 
-ALTER TABLE characterdb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (cfactiondbid)
-      REFERENCES factiondb;
+ALTER TABLE ArmyDB
+  ADD CONSTRAINT CE_Cle_etrangere 
+    FOREIGN KEY (aLocationDBID)
+      REFERENCES LocationDB;
 
-ALTER TABLE characterdb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (clocationdbid)
-      REFERENCES locationdb;
+ALTER TABLE ArmyDB
+  ADD CONSTRAINT CE_Cle_etrangere 
+    FOREIGN KEY (aCharacterDBID)
+      REFERENCES CharacterDB;
 
-ALTER TABLE characterdb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (carmydbid)
-      REFERENCES armydb;
+ALTER TABLE LocationDB
+  ADD CONSTRAINT CE_Cle_etrangere 
+    FOREIGN KEY (lCityDBID)
+      REFERENCES CityDB;
 
-ALTER TABLE characterdb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (cfactiondbid)
-      REFERENCES factiondb;
+ALTER TABLE AgentDB
+  ADD CONSTRAINT CE_Cle_etrangere 
+    FOREIGN KEY (aCharacterDBID)
+      REFERENCES CharacterDB;
 
-ALTER TABLE armydb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (afactiondbid)
-      REFERENCES factiondb;
+ALTER TABLE RelationModifierDB
+  ADD CONSTRAINT CE_Cle_etrangere 
+    FOREIGN KEY (rmRelationDBID)
+      REFERENCES RelationDB;
 
-ALTER TABLE armydb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (alocationdbid)
-      REFERENCES locationdb;
+ALTER TABLE RelationModifierDB
+  ADD CONSTRAINT CE_Cle_etrangere 
+    FOREIGN KEY (rmEventDBID)
+      REFERENCES EventDB;
 
-ALTER TABLE armydb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (acharacterdbid)
-      REFERENCES characterdb;
+ALTER TABLE LetterDB
+  ADD CONSTRAINT CE_Cle_etrangere 
+    FOREIGN KEY (lCharacterDBID)
+      REFERENCES CharacterDB;
 
-ALTER TABLE locationdb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (lcitydbid)
-      REFERENCES citydb;
+ALTER TABLE CharacterDBLetterDB
+  ADD CONSTRAINT CE_Cle_etrangere 
+    FOREIGN KEY (clCharacterDBID)
+      REFERENCES CharacterDB;
 
-ALTER TABLE relationdb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (rcharacterdbid)
-      REFERENCES characterdb;
+ALTER TABLE CharacterDBLetterDB
+  ADD CONSTRAINT CE_Cle_etrangere 
+    FOREIGN KEY (clLetterDBID)
+      REFERENCES LetterDB;
 
-ALTER TABLE relationdb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (rrelationtypedbid)
-      REFERENCES relationtypedb;
+ALTER TABLE GoalDB
+  ADD CONSTRAINT CE_Cle_etrangere 
+    FOREIGN KEY (gCharacterDBID)
+      REFERENCES CharacterDB;
 
-ALTER TABLE relationdb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (rcharacterdbid)
-      REFERENCES characterdb;
+ALTER TABLE EventDBGoalDB
+  ADD CONSTRAINT CE_Cle_etrangere 
+    FOREIGN KEY (egGoalDBID)
+      REFERENCES GoalDB;
 
-ALTER TABLE agentdb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (acharacterdbid)
-      REFERENCES characterdb;
+ALTER TABLE EventDBGoalDB
+  ADD CONSTRAINT CE_Cle_etrangere 
+    FOREIGN KEY (egEventDBID)
+      REFERENCES EventDB;
 
-ALTER TABLE relationmodifierdb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (rmrelationdbid)
-      REFERENCES relationdb;
+ALTER TABLE CharacterDB
+  ADD CONSTRAINT CE_cleaderFactionDBID 
+    FOREIGN KEY (cleaderFactionDBID)
+      REFERENCES FactionDB;
 
-ALTER TABLE relationmodifierdb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (rmeventdbid)
-      REFERENCES eventdb;
+ALTER TABLE CharacterDB
+  ADD CONSTRAINT CE_cLocationDBID 
+    FOREIGN KEY (cLocationDBID)
+      REFERENCES LocationDB;
 
-ALTER TABLE relationleveldb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (rldialoguedbid)
-      REFERENCES dialoguedb;
+ALTER TABLE CharacterDB
+  ADD CONSTRAINT CE_cmemberFactionDBID 
+    FOREIGN KEY (cmemberFactionDBID)
+      REFERENCES FactionDB;
 
-ALTER TABLE letterdb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (lcharacterdbid)
-      REFERENCES characterdb;
+ALTER TABLE DialogueDBLetterDB
+  ADD CONSTRAINT CE_dlDialogueDBID 
+    FOREIGN KEY (dlDialogueDBID)
+      REFERENCES DialogueDB;
 
-ALTER TABLE characterdbletterdb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (clcharacterdbid)
-      REFERENCES characterdb;
+ALTER TABLE DialogueDBLetterDB
+  ADD CONSTRAINT CE_dlLetterDBID 
+    FOREIGN KEY (dlLetterDBID)
+      REFERENCES LetterDB;
 
-ALTER TABLE characterdbletterdb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (clletterdbid)
-      REFERENCES letterdb;
+ALTER TABLE RelationDB
+  ADD CONSTRAINT CE_rfirstCharacterDBID 
+    FOREIGN KEY (rfirstCharacterDBID)
+      REFERENCES CharacterDB;
 
-ALTER TABLE goaldb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (gcharacterdbid)
-      REFERENCES characterdb;
+ALTER TABLE RelationLevelDB
+  ADD CONSTRAINT CE_rlDialogueDBID 
+    FOREIGN KEY (rlDialogueDBID)
+      REFERENCES DialogueDB;
 
-ALTER TABLE eventdbgoaldb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (eggoaldbid)
-      REFERENCES goaldb;
+ALTER TABLE RelationDB
+  ADD CONSTRAINT CE_rRelationTypeDBID 
+    FOREIGN KEY (rRelationTypeDBID)
+      REFERENCES RelationTypeDB;
 
-ALTER TABLE eventdbgoaldb
-  ADD CONSTRAINT ce_cle_etrangere 
-    FOREIGN KEY (egeventdbid)
-      REFERENCES eventdb;
+ALTER TABLE RelationDB
+  ADD CONSTRAINT CE_rsecondCharacterDBID 
+    FOREIGN KEY (rsecondCharacterDBID)
+      REFERENCES CharacterDB;
 
 
 
