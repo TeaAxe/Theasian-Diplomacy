@@ -9,18 +9,23 @@ namespace Theasian_Diplomacy.GameLogic
     class Character
     {
         #region variable
-        private string firstName;
-        //No need for last names, it comes from faction
-        private int age = 25;
-
+        private string firstName; //No need for last names, it comes from faction
+        private DateTime birthDate;
+        private char [] sex = new char [1];
         private Faction faction;
+
+        //these would vary depending on what every character knows about you
+        int charisma;
+        int honor;
+        int cruelty;
         #endregion
 
         #region constructor
-        public Character(string _firstName, Faction _faction)
+        public Character(string _firstName, Faction _faction, DateTime _birthDate)
         {
             firstName = _firstName;
             faction = _faction;
+            birthDate = _birthDate;
         }
         #endregion
 

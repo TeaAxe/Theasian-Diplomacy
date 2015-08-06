@@ -14,14 +14,16 @@ namespace Theasian_Diplomacy.GameLogic
         private Character general;
         private int experienceLevel = 0;
         private int equipmentQuality = 0;
+        Location currentLocation;
         #endregion
 
         #region constructor
-        public Army(Faction _faction, int _soldierCount, Character _general)
+        public Army(Faction _faction, int _soldierCount, Character _general, Location _currentLocation)
         {
             owner = _faction;
             soldierCount = _soldierCount;
             general = _general;
+            currentLocation = _currentLocation;
         }
         #endregion
 
