@@ -53,6 +53,7 @@
     <Compile Include="GameLogic\Army.cs" />
     <Compile Include="GameLogic\Character.cs" />
     <Compile Include="GameLogic\City.cs" />
+    <Compile Include="GameLogic\EventManager.cs" />
     <Compile Include="GameLogic\Faction.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -61,6 +62,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="GameLogic\Game.cs" />
+    <Compile Include="GameLogic\Location.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AgentOperationSetup.resx">

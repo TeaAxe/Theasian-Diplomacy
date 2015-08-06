@@ -12,6 +12,7 @@ namespace Theasian_Diplomacy.GameLogic
         private Character player;
         private List<Faction> factions;
         private List<City> cities;
+        private List<Location> locations;
         #endregion
 
         #region general methods
@@ -27,11 +28,13 @@ namespace Theasian_Diplomacy.GameLogic
         {
             factions = new List<Faction>();
             cities = new List<City>();
+            locations = new List<Location>();
 
             //Adds factions to the list, needs to come from a list
             Faction newFaction = new Faction("Barbarians");
             newFaction.addMember(new Character("John", newFaction), true);
-            City newCity = new City("La ville des chats", 100);
+            Location newLocation = new Location("La ville des chats", "Il y a beaucoup de chats ici!");
+            City newCity = new City("La ville des chats", 100, newLocation);
             newCity.Owner = newFaction;
             cities.Add(newCity);
             factions.Add(newFaction);
@@ -39,21 +42,24 @@ namespace Theasian_Diplomacy.GameLogic
             newFaction = new Faction("Player_House");
             newFaction.addMember(new Character("Generic", newFaction), true);
             player = newFaction.Members.ElementAt(0);
-            newCity = new City("La ville des Souris", 100);
+            newLocation = new Location("La ville des souris", "Il y a beaucoup de souris ici!");
+            newCity = new City("La ville des Souris", 100, newLocation);
             newCity.Owner = newFaction;
             cities.Add(newCity);
             factions.Add(newFaction);
 
             newFaction = new Faction("People");
             newFaction.addMember(new Character("Yolo", newFaction), true);
-            newCity = new City("La ville des Marmottes", 100);
+            newLocation = new Location("La ville des marmottes", "Il y a beaucoup de marmottes ici!");
+            newCity = new City("La ville des Marmottes", 100, newLocation);
             newCity.Owner = newFaction;
             cities.Add(newCity);
             factions.Add(newFaction);
 
             newFaction = new Faction("Foreign_Nation");
             newFaction.addMember(new Character("swEG", newFaction), true);
-            newCity = new City("La ville des chiens", 100);
+            newLocation = new Location("La ville des chiens", "Il y a beaucoup de chiens ici!");
+            newCity = new City("La ville des chiens", 100, newLocation);
             newCity.Owner = newFaction;
             cities.Add(newCity);
             factions.Add(newFaction);

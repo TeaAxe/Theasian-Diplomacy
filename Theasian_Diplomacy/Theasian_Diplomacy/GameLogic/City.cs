@@ -12,12 +12,19 @@ namespace Theasian_Diplomacy.GameLogic
         private Faction owner;
         private string name;
         private int income;
+        private Location linkedLocation;
+        private int fortificationLevel;
+        private int fortificationLevelMax;
         #endregion
 
+        public City(string _name, int _income, Location _linkedLocation)
+        {
+            name = _name;
+            income = _income;
+            linkedLocation = _linkedLocation;
+        }
+
         #region general methods
-
-        
-
         public override string ToString()
         {
             return name + ", " + owner.ToString();
@@ -25,12 +32,6 @@ namespace Theasian_Diplomacy.GameLogic
         #endregion
 
         #region properties
-        public City(string _name, int _income)
-        {
-            name = _name;
-            income = _income;
-        }
-
         public Faction Owner
         {
             get { return owner; }
@@ -40,6 +41,11 @@ namespace Theasian_Diplomacy.GameLogic
         public int Income
         {
             get { return income; }
+        }
+
+        public Location LinkedLocation
+        {
+            get { return linkedLocation; }
         }
         #endregion
     }
