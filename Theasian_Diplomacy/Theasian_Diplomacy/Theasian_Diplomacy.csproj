@@ -80,13 +80,12 @@
     <Compile Include="AgentOperationSetup.Designer.cs">
       <DependentUpon>AgentOperationSetup.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="CityInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CityInfoForm.Designer.cs">
       <DependentUpon>CityInfoForm.cs</DependentUpon>
-=======
+	</Compile>
     <Compile Include="ArmyDB.cs">
       <DependentUpon>TheasianDBModel.tt</DependentUpon>
     </Compile>
@@ -125,7 +124,6 @@
     </Compile>
     <Compile Include="GameDB.cs">
       <DependentUpon>TheasianDBModel.tt</DependentUpon>
->>>>>>> origin/master
     </Compile>
     <Compile Include="GameLogic\Army.cs" />
     <Compile Include="GameLogic\Character.cs" />
