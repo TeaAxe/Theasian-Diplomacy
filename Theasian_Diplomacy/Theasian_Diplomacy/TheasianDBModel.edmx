@@ -50,7 +50,6 @@
           <Property Name="cruelty" Type="int" />
           <Property Name="cleaderFactionDBID" Type="int" Nullable="false" />
           <Property Name="cLocationDBID" Type="int" Nullable="false" />
-          <Property Name="cArmyDBID" Type="int" />
           <Property Name="cmemberFactionDBID" Type="int" />
         </EntityType>
         <EntityType Name="CharacterDBLetterDB">
@@ -325,18 +324,6 @@
             </Principal>
             <Dependent Role="AgentDBSkillDB">
               <PropertyRef Name="asSkillDBID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="CE_cArmyDBID">
-          <End Role="ArmyDB" Type="Self.ArmyDB" Multiplicity="0..1" />
-          <End Role="CharacterDB" Type="Self.CharacterDB" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ArmyDB">
-              <PropertyRef Name="ArmyDBID" />
-            </Principal>
-            <Dependent Role="CharacterDB">
-              <PropertyRef Name="cArmyDBID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -726,10 +713,6 @@
           <AssociationSet Name="CE_asSkillDBID" Association="Self.CE_asSkillDBID">
             <End Role="SkillDB" EntitySet="SkillDB" />
             <End Role="AgentDBSkillDB" EntitySet="AgentDBSkillDB" />
-          </AssociationSet>
-          <AssociationSet Name="CE_cArmyDBID" Association="Self.CE_cArmyDBID">
-            <End Role="ArmyDB" EntitySet="ArmyDB" />
-            <End Role="CharacterDB" EntitySet="CharacterDB" />
           </AssociationSet>
           <AssociationSet Name="CE_ciFactionDBID" Association="Self.CE_ciFactionDBID">
             <End Role="FactionDB" EntitySet="FactionDB" />
@@ -1802,7 +1785,6 @@
             <EntityTypeMapping TypeName="TheasianDiplomacyDBModel.CharacterDB">
               <MappingFragment StoreEntitySet="CharacterDB">
                 <ScalarProperty Name="cmemberFactionDBID" ColumnName="cmemberFactionDBID" />
-                <ScalarProperty Name="cArmyDBID" ColumnName="cArmyDBID" />
                 <ScalarProperty Name="cLocationDBID" ColumnName="cLocationDBID" />
                 <ScalarProperty Name="cleaderFactionDBID" ColumnName="cleaderFactionDBID" />
                 <ScalarProperty Name="cruelty" ColumnName="cruelty" />
