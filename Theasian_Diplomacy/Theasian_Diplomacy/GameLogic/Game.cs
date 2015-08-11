@@ -33,21 +33,21 @@ namespace Theasian_Diplomacy.GameLogic
             {
 
                 //Adds factions to the list, needs to come from a list
-                FactionDB factionDb = new FactionDB();
-                factionDb.name = "Barbarians";
-                factionDb.gold = 0;
-                factionDb.fFactionGoalID = 1;//mettre vrai ID
-                factionDb.fCharacterDBID = 1;//mettre vrai ID
+                //FactionDB factionDb = new FactionDB();
+                //factionDb.name = "Barbarians";
+                //factionDb.gold = 0;
+                //factionDb.fFactionGoalID = 1;//mettre vrai ID
+                //factionDb.fCharacterDBID = 1;//mettre vrai ID
 
-                db.FactionDB.Add(factionDb);
-                db.SaveChanges();
+                //db.FactionDB.Add(factionDb);
+                //db.SaveChanges();
 
                 Faction newFaction = new Faction("Barbarians");
-                CharacterDB characterDB = new CharacterDB();
-                characterDB.firstName = "John";
-                characterDB.honor = 2;
-                characterDB.birthDate = new DateTime(1995, 5, 3);
-                characterDB.cArmyDBID = 1;//mettre vrai ID
+                //CharacterDB characterDB = new CharacterDB();
+                //characterDB.firstName = "John";
+                //characterDB.honor = 2;
+                //characterDB.birthDate = new DateTime(1995, 5, 3);
+                //characterDB.cArmyDBID = 1;//mettre vrai ID
 
                 newFaction.addMember(new Character("John", newFaction, new DateTime()), true);
                 Location newLocation = new Location("La ville des Chats", "Il y a beaucoup de chats ici!");
