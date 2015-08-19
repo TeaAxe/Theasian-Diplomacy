@@ -21,7 +21,7 @@
           <Key>
             <PropertyRef Name="AgentDBSkillDBID" />
           </Key>
-          <Property Name="AgentDBSkillDBID" Type="int" Nullable="false" />
+          <Property Name="AgentDBSkillDBID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="level" Type="int" Nullable="false" />
           <Property Name="asSkillDBID" Type="int" Nullable="false" />
           <Property Name="asAgentDBID" Type="int" Nullable="false" />
@@ -33,7 +33,7 @@
           <Property Name="experienceLevel" Type="int" />
           <Property Name="equipmentQuality" Type="int" />
           <Property Name="soldierCount" Type="int" />
-          <Property Name="ArmyDBID" Type="int" Nullable="false" />
+          <Property Name="ArmyDBID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="aFactionDBID" Type="int" Nullable="false" />
           <Property Name="aLocationDBID" Type="int" Nullable="false" />
           <Property Name="aCharacterDBID" Type="int" />
@@ -46,7 +46,7 @@
           <Property Name="birthDate" Type="datetime" />
           <Property Name="sex" Type="nvarchar" MaxLength="1" />
           <Property Name="charisma" Type="int" />
-          <Property Name="CharacterDBID" Type="int" Nullable="false" />
+          <Property Name="CharacterDBID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="honor" Type="int" />
           <Property Name="cruelty" Type="int" />
           <Property Name="cLocationDBID" Type="int" Nullable="false" />
@@ -58,7 +58,7 @@
           <Key>
             <PropertyRef Name="letterDBCharacterDBId" />
           </Key>
-          <Property Name="letterDBCharacterDBId" Type="int" Nullable="false" />
+          <Property Name="letterDBCharacterDBId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="clCharacterDBID" Type="int" Nullable="false" />
           <Property Name="clLetterDBID" Type="int" Nullable="false" />
         </EntityType>
@@ -66,7 +66,7 @@
           <Key>
             <PropertyRef Name="CharacterDBSkillDBID" />
           </Key>
-          <Property Name="CharacterDBSkillDBID" Type="int" Nullable="false" />
+          <Property Name="CharacterDBSkillDBID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="level" Type="int" Nullable="false" />
           <Property Name="csCharacterDBID" Type="int" Nullable="false" />
           <Property Name="csSkillDBID" Type="int" Nullable="false" />
@@ -78,7 +78,7 @@
           <Property Name="name" Type="nvarchar" MaxLength="50" />
           <Property Name="fortificationLevel" Type="int" />
           <Property Name="fortificationLevelMax" Type="int" />
-          <Property Name="CityDBID" Type="int" Nullable="false" />
+          <Property Name="CityDBID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="income" Type="int" />
           <Property Name="cFactionDBID" Type="int" Nullable="false" />
           <Property Name="cLocationDBID" Type="int" Nullable="false" />
@@ -89,13 +89,13 @@
             <PropertyRef Name="DialogueDBID" />
           </Key>
           <Property Name="code" Type="varchar" MaxLength="8" />
-          <Property Name="DialogueDBID" Type="int" Nullable="false" />
+          <Property Name="DialogueDBID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="DialogueDBLetterDB">
           <Key>
             <PropertyRef Name="DialogueDBLetterDBID" />
           </Key>
-          <Property Name="DialogueDBLetterDBID" Type="int" Nullable="false" />
+          <Property Name="DialogueDBLetterDBID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="dlLetterDBID" Type="int" Nullable="false" />
           <Property Name="dlDialogueDBID" Type="int" Nullable="false" />
         </EntityType>
@@ -106,14 +106,14 @@
           <Property Name="eventDescription" Type="text" />
           <Property Name="methodID" Type="int" />
           <Property Name="eventIntensity" Type="int" />
-          <Property Name="EventDBID" Type="int" Nullable="false" />
+          <Property Name="EventDBID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="resolveTurn" Type="int" />
         </EntityType>
         <EntityType Name="EventDBGoalDB">
           <Key>
             <PropertyRef Name="EventDBGoalDBID" />
           </Key>
-          <Property Name="EventDBGoalDBID" Type="int" Nullable="false" />
+          <Property Name="EventDBGoalDBID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="methodId" Type="int" />
           <Property Name="egGoalDBID" Type="int" Nullable="false" />
           <Property Name="egEventDBID" Type="int" Nullable="false" />
@@ -125,7 +125,7 @@
           <Property Name="name" Type="nvarchar" MaxLength="50" />
           <Property Name="gold" Type="int" />
           <Property Name="emblem" Type="text" />
-          <Property Name="FactionDBID" Type="int" Nullable="false" />
+          <Property Name="FactionDBID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="fFactionGoalID" Type="int" Nullable="false" />
           <Property Name="fCharacterDBID" Type="int" Nullable="false" />
         </EntityType>
@@ -133,7 +133,7 @@
           <Key>
             <PropertyRef Name="FactionDBLawDBID" />
           </Key>
-          <Property Name="FactionDBLawDBID" Type="int" Nullable="false" />
+          <Property Name="FactionDBLawDBID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="flLawDBID" Type="int" Nullable="false" />
           <Property Name="flFactionDBID" Type="int" Nullable="false" />
         </EntityType>
@@ -141,7 +141,7 @@
           <Key>
             <PropertyRef Name="FactionGoalID" />
           </Key>
-          <Property Name="FactionGoalID" Type="int" Nullable="false" />
+          <Property Name="FactionGoalID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="nvarchar" MaxLength="50" />
           <Property Name="description" Type="text" />
           <Property Name="code" Type="nvarchar" MaxLength="3" />
@@ -150,7 +150,7 @@
           <Key>
             <PropertyRef Name="GameDBID" />
           </Key>
-          <Property Name="GameDBID" Type="int" Nullable="false" />
+          <Property Name="GameDBID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CharacterDBID" Type="int" />
           <Property Name="currentTurn" Type="int" />
         </EntityType>
@@ -159,14 +159,14 @@
             <PropertyRef Name="GoalDBID" />
           </Key>
           <Property Name="name" Type="nvarchar" MaxLength="50" />
-          <Property Name="GoalDBID" Type="int" Nullable="false" />
+          <Property Name="GoalDBID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="description" Type="text" />
         </EntityType>
         <EntityType Name="LawDB">
           <Key>
             <PropertyRef Name="LawDBID" />
           </Key>
-          <Property Name="LawDBID" Type="int" Nullable="false" />
+          <Property Name="LawDBID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="nvarchar" MaxLength="50" />
           <Property Name="description" Type="text" />
           <Property Name="entryEffectMethodID" Type="int" />
@@ -177,7 +177,7 @@
             <PropertyRef Name="LetterDBID" />
           </Key>
           <Property Name="finalText" Type="text" />
-          <Property Name="LetterDBID" Type="int" Nullable="false" />
+          <Property Name="LetterDBID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="lCharacterDBID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="LocationDB">
@@ -185,7 +185,7 @@
             <PropertyRef Name="LocationDBID" />
           </Key>
           <Property Name="name" Type="nvarchar" MaxLength="50" />
-          <Property Name="LocationDBID" Type="int" Nullable="false" />
+          <Property Name="LocationDBID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="defenderAdvantage" Type="int" />
           <Property Name="description" Type="text" />
         </EntityType>
@@ -193,7 +193,7 @@
           <Key>
             <PropertyRef Name="OperationDBID" />
           </Key>
-          <Property Name="OperationDBID" Type="int" Nullable="false" />
+          <Property Name="OperationDBID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="difficulty" Type="int" />
           <Property Name="description" Type="text" />
           <Property Name="cost" Type="int" />
@@ -206,7 +206,7 @@
           <Key>
             <PropertyRef Name="OperationDBSkillDBID" />
           </Key>
-          <Property Name="OperationDBSkillDBID" Type="int" Nullable="false" />
+          <Property Name="OperationDBSkillDBID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="osOperationDBID" Type="int" Nullable="false" />
           <Property Name="osSkillDBID" Type="int" Nullable="false" />
         </EntityType>
@@ -214,7 +214,7 @@
           <Key>
             <PropertyRef Name="RelationDBID" />
           </Key>
-          <Property Name="RelationDBID" Type="int" Nullable="false" />
+          <Property Name="RelationDBID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="rfirstCharacterDBID" Type="int" Nullable="false" />
           <Property Name="rRelationTypeDBID" Type="int" Nullable="false" />
           <Property Name="rsecondCharacterDBID" Type="int" Nullable="false" />
@@ -223,7 +223,7 @@
           <Key>
             <PropertyRef Name="RelationLevelDBID" />
           </Key>
-          <Property Name="RelationLevelDBID" Type="int" Nullable="false" />
+          <Property Name="RelationLevelDBID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="level" Type="int" />
           <Property Name="textDialogue" Type="text" />
           <Property Name="textLetter" Type="text" />
@@ -236,7 +236,7 @@
           <Property Name="modifierValue" Type="int" />
           <Property Name="shortDescription" Type="nvarchar" MaxLength="50" />
           <Property Name="dateAdded" Type="datetime" />
-          <Property Name="RelationModifierDBID" Type="int" Nullable="false" />
+          <Property Name="RelationModifierDBID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="rmRelationDBID" Type="int" Nullable="false" />
           <Property Name="rmEventDBID" Type="int" Nullable="false" />
         </EntityType>
@@ -246,13 +246,13 @@
           </Key>
           <Property Name="name" Type="nvarchar" MaxLength="50" />
           <Property Name="description" Type="text" />
-          <Property Name="RelationTypeDBID" Type="int" Nullable="false" />
+          <Property Name="RelationTypeDBID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="SkillDB">
           <Key>
             <PropertyRef Name="SkillDBID" />
           </Key>
-          <Property Name="SkillDBID" Type="int" Nullable="false" />
+          <Property Name="SkillDBID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <Association Name="CE_aCharacterDBID">
@@ -973,7 +973,7 @@
           <Key>
             <PropertyRef Name="AgentDBSkillDBID" />
           </Key>
-          <Property Name="AgentDBSkillDBID" Type="Int32" Nullable="false" />
+          <Property Name="AgentDBSkillDBID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="level" Type="Int32" Nullable="false" />
           <Property Name="asSkillDBID" Type="Int32" Nullable="false" />
           <Property Name="asAgentDBID" Type="Int32" Nullable="false" />
@@ -987,7 +987,7 @@
           <Property Name="experienceLevel" Type="Int32" />
           <Property Name="equipmentQuality" Type="Int32" />
           <Property Name="soldierCount" Type="Int32" />
-          <Property Name="ArmyDBID" Type="Int32" Nullable="false" />
+          <Property Name="ArmyDBID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="aFactionDBID" Type="Int32" Nullable="false" />
           <Property Name="aLocationDBID" Type="Int32" Nullable="false" />
           <Property Name="aCharacterDBID" Type="Int32" />
@@ -1003,7 +1003,7 @@
           <Property Name="birthDate" Type="DateTime" Precision="3" />
           <Property Name="sex" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
           <Property Name="charisma" Type="Int32" />
-          <Property Name="CharacterDBID" Type="Int32" Nullable="false" />
+          <Property Name="CharacterDBID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="honor" Type="Int32" />
           <Property Name="cruelty" Type="Int32" />
           <Property Name="cLocationDBID" Type="Int32" Nullable="false" />
@@ -1026,7 +1026,7 @@
           <Key>
             <PropertyRef Name="letterDBCharacterDBId" />
           </Key>
-          <Property Name="letterDBCharacterDBId" Type="Int32" Nullable="false" />
+          <Property Name="letterDBCharacterDBId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="clCharacterDBID" Type="Int32" Nullable="false" />
           <Property Name="clLetterDBID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="CharacterDB" Relationship="TheasianDiplomacyDBModel.CE_clCharacterDBID" FromRole="CharacterDBLetterDB" ToRole="CharacterDB" />
@@ -1036,7 +1036,7 @@
           <Key>
             <PropertyRef Name="CharacterDBSkillDBID" />
           </Key>
-          <Property Name="CharacterDBSkillDBID" Type="Int32" Nullable="false" />
+          <Property Name="CharacterDBSkillDBID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="level" Type="Int32" Nullable="false" />
           <Property Name="csCharacterDBID" Type="Int32" Nullable="false" />
           <Property Name="csSkillDBID" Type="Int32" Nullable="false" />
@@ -1050,7 +1050,7 @@
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="fortificationLevel" Type="Int32" />
           <Property Name="fortificationLevelMax" Type="Int32" />
-          <Property Name="CityDBID" Type="Int32" Nullable="false" />
+          <Property Name="CityDBID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="income" Type="Int32" />
           <Property Name="cFactionDBID" Type="Int32" Nullable="false" />
           <Property Name="cLocationDBID" Type="Int32" Nullable="false" />
@@ -1063,7 +1063,7 @@
             <PropertyRef Name="DialogueDBID" />
           </Key>
           <Property Name="code" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
-          <Property Name="DialogueDBID" Type="Int32" Nullable="false" />
+          <Property Name="DialogueDBID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="DialogueDBLetterDB" Relationship="TheasianDiplomacyDBModel.CE_dlDialogueDBID" FromRole="DialogueDB" ToRole="DialogueDBLetterDB" />
           <NavigationProperty Name="RelationLevelDB" Relationship="TheasianDiplomacyDBModel.CE_rlDialogueDBID" FromRole="DialogueDB" ToRole="RelationLevelDB" />
         </EntityType>
@@ -1071,7 +1071,7 @@
           <Key>
             <PropertyRef Name="DialogueDBLetterDBID" />
           </Key>
-          <Property Name="DialogueDBLetterDBID" Type="Int32" Nullable="false" />
+          <Property Name="DialogueDBLetterDBID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="dlLetterDBID" Type="Int32" Nullable="false" />
           <Property Name="dlDialogueDBID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="DialogueDB" Relationship="TheasianDiplomacyDBModel.CE_dlDialogueDBID" FromRole="DialogueDBLetterDB" ToRole="DialogueDB" />
@@ -1084,7 +1084,7 @@
           <Property Name="eventDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="methodID" Type="Int32" />
           <Property Name="eventIntensity" Type="Int32" />
-          <Property Name="EventDBID" Type="Int32" Nullable="false" />
+          <Property Name="EventDBID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="resolveTurn" Type="Int32" />
           <NavigationProperty Name="EventDBGoalDB" Relationship="TheasianDiplomacyDBModel.CE_egEventDBID" FromRole="EventDB" ToRole="EventDBGoalDB" />
           <NavigationProperty Name="RelationModifierDB" Relationship="TheasianDiplomacyDBModel.CE_rmEventDBID" FromRole="EventDB" ToRole="RelationModifierDB" />
@@ -1093,7 +1093,7 @@
           <Key>
             <PropertyRef Name="EventDBGoalDBID" />
           </Key>
-          <Property Name="EventDBGoalDBID" Type="Int32" Nullable="false" />
+          <Property Name="EventDBGoalDBID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="methodId" Type="Int32" />
           <Property Name="egGoalDBID" Type="Int32" Nullable="false" />
           <Property Name="egEventDBID" Type="Int32" Nullable="false" />
@@ -1107,7 +1107,7 @@
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="gold" Type="Int32" />
           <Property Name="emblem" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="FactionDBID" Type="Int32" Nullable="false" />
+          <Property Name="FactionDBID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="fFactionGoalID" Type="Int32" Nullable="false" />
           <Property Name="fCharacterDBID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ArmyDB" Relationship="TheasianDiplomacyDBModel.CE_arFactionDBID" FromRole="FactionDB" ToRole="ArmyDB" />
@@ -1121,7 +1121,7 @@
           <Key>
             <PropertyRef Name="FactionDBLawDBID" />
           </Key>
-          <Property Name="FactionDBLawDBID" Type="Int32" Nullable="false" />
+          <Property Name="FactionDBLawDBID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="flLawDBID" Type="Int32" Nullable="false" />
           <Property Name="flFactionDBID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="FactionDB" Relationship="TheasianDiplomacyDBModel.CE_flFactionDBID" FromRole="FactionDBLawDB" ToRole="FactionDB" />
@@ -1131,7 +1131,7 @@
           <Key>
             <PropertyRef Name="FactionGoalID" />
           </Key>
-          <Property Name="FactionGoalID" Type="Int32" Nullable="false" />
+          <Property Name="FactionGoalID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="code" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
@@ -1141,7 +1141,7 @@
           <Key>
             <PropertyRef Name="GameDBID" />
           </Key>
-          <Property Name="GameDBID" Type="Int32" Nullable="false" />
+          <Property Name="GameDBID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CharacterDBID" Type="Int32" />
           <Property Name="currentTurn" Type="Int32" />
         </EntityType>
@@ -1150,7 +1150,7 @@
             <PropertyRef Name="GoalDBID" />
           </Key>
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="GoalDBID" Type="Int32" Nullable="false" />
+          <Property Name="GoalDBID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="CharacterDB" Relationship="TheasianDiplomacyDBModel.CE_cGoalDBID" FromRole="GoalDB" ToRole="CharacterDB" />
           <NavigationProperty Name="EventDBGoalDB" Relationship="TheasianDiplomacyDBModel.CE_egGoalDBID" FromRole="GoalDB" ToRole="EventDBGoalDB" />
@@ -1159,7 +1159,7 @@
           <Key>
             <PropertyRef Name="LawDBID" />
           </Key>
-          <Property Name="LawDBID" Type="Int32" Nullable="false" />
+          <Property Name="LawDBID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="entryEffectMethodID" Type="Int32" />
@@ -1171,7 +1171,7 @@
             <PropertyRef Name="LetterDBID" />
           </Key>
           <Property Name="finalText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="LetterDBID" Type="Int32" Nullable="false" />
+          <Property Name="LetterDBID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="lCharacterDBID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="CharacterDB" Relationship="TheasianDiplomacyDBModel.CE_lCharacterDBID" FromRole="LetterDB" ToRole="CharacterDB" />
           <NavigationProperty Name="CharacterDBLetterDB" Relationship="TheasianDiplomacyDBModel.CE_clLetterDBID" FromRole="LetterDB" ToRole="CharacterDBLetterDB" />
@@ -1182,7 +1182,7 @@
             <PropertyRef Name="LocationDBID" />
           </Key>
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="LocationDBID" Type="Int32" Nullable="false" />
+          <Property Name="LocationDBID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="defenderAdvantage" Type="Int32" />
           <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="ArmyDB" Relationship="TheasianDiplomacyDBModel.CE_arLocationDBID" FromRole="LocationDB" ToRole="ArmyDB" />
@@ -1193,7 +1193,7 @@
           <Key>
             <PropertyRef Name="OperationDBID" />
           </Key>
-          <Property Name="OperationDBID" Type="Int32" Nullable="false" />
+          <Property Name="OperationDBID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="difficulty" Type="Int32" />
           <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="cost" Type="Int32" />
@@ -1207,7 +1207,7 @@
           <Key>
             <PropertyRef Name="OperationDBSkillDBID" />
           </Key>
-          <Property Name="OperationDBSkillDBID" Type="Int32" Nullable="false" />
+          <Property Name="OperationDBSkillDBID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="osOperationDBID" Type="Int32" Nullable="false" />
           <Property Name="osSkillDBID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="OperationDB" Relationship="TheasianDiplomacyDBModel.CE_osOperationDBID" FromRole="OperationDBSkillDB" ToRole="OperationDB" />
@@ -1217,7 +1217,7 @@
           <Key>
             <PropertyRef Name="RelationDBID" />
           </Key>
-          <Property Name="RelationDBID" Type="Int32" Nullable="false" />
+          <Property Name="RelationDBID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="rfirstCharacterDBID" Type="Int32" Nullable="false" />
           <Property Name="rRelationTypeDBID" Type="Int32" Nullable="false" />
           <Property Name="rsecondCharacterDBID" Type="Int32" Nullable="false" />
@@ -1230,7 +1230,7 @@
           <Key>
             <PropertyRef Name="RelationLevelDBID" />
           </Key>
-          <Property Name="RelationLevelDBID" Type="Int32" Nullable="false" />
+          <Property Name="RelationLevelDBID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="level" Type="Int32" />
           <Property Name="textDialogue" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="textLetter" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
@@ -1244,7 +1244,7 @@
           <Property Name="modifierValue" Type="Int32" />
           <Property Name="shortDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="dateAdded" Type="DateTime" Precision="3" />
-          <Property Name="RelationModifierDBID" Type="Int32" Nullable="false" />
+          <Property Name="RelationModifierDBID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="rmRelationDBID" Type="Int32" Nullable="false" />
           <Property Name="rmEventDBID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="EventDB" Relationship="TheasianDiplomacyDBModel.CE_rmEventDBID" FromRole="RelationModifierDB" ToRole="EventDB" />
@@ -1256,14 +1256,14 @@
           </Key>
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="RelationTypeDBID" Type="Int32" Nullable="false" />
+          <Property Name="RelationTypeDBID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="RelationDB" Relationship="TheasianDiplomacyDBModel.CE_rRelationTypeDBID" FromRole="RelationTypeDB" ToRole="RelationDB" />
         </EntityType>
         <EntityType Name="SkillDB">
           <Key>
             <PropertyRef Name="SkillDBID" />
           </Key>
-          <Property Name="SkillDBID" Type="Int32" Nullable="false" />
+          <Property Name="SkillDBID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="AgentDBSkillDB" Relationship="TheasianDiplomacyDBModel.CE_asSkillDBID" FromRole="SkillDB" ToRole="AgentDBSkillDB" />
           <NavigationProperty Name="CharacterDBSkillDB" Relationship="TheasianDiplomacyDBModel.CE_csSkillDBID" FromRole="SkillDB" ToRole="CharacterDBSkillDB" />

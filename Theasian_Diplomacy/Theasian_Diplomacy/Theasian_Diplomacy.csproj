@@ -85,7 +85,7 @@
     </Compile>
     <Compile Include="CityInfoForm.Designer.cs">
       <DependentUpon>CityInfoForm.cs</DependentUpon>
-	</Compile>
+    </Compile>
     <Compile Include="ArmyDB.cs">
       <DependentUpon>TheasianDBModel.tt</DependentUpon>
     </Compile>
@@ -244,10 +244,10 @@
   <ItemGroup>
     <None Include="Resources\mapTemp.png" />
     <Content Include="TheasianDiplomacyDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="TheasianDiplomacyDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>TheasianDiplomacyDB.mdf</DependentUpon>
     </Content>
   </ItemGroup>
