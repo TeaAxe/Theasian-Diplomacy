@@ -25,6 +25,7 @@ namespace Theasian_Diplomacy
         public string sex { get; set; }
         public int AgentDBID { get; set; }
         public int aCharacterDBID { get; set; }
+        public Nullable<bool> isDead { get; set; }
     
         public virtual CharacterDB CharacterDB { get; set; }
         public virtual ICollection<AgentDBSkillDB> AgentDBSkillDB { get; set; }

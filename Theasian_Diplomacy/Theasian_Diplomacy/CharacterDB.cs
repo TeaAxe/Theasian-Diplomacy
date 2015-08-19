@@ -20,8 +20,7 @@ namespace Theasian_Diplomacy
             this.ArmyDB = new HashSet<ArmyDB>();
             this.CharacterDBLetterDB = new HashSet<CharacterDBLetterDB>();
             this.CharacterDBSkillDB = new HashSet<CharacterDBSkillDB>();
-            this.FactionDB2 = new HashSet<FactionDB>();
-            this.GoalDB = new HashSet<GoalDB>();
+            this.FactionDB1 = new HashSet<FactionDB>();
             this.LetterDB = new HashSet<LetterDB>();
             this.RelationDB = new HashSet<RelationDB>();
             this.RelationDB1 = new HashSet<RelationDB>();
@@ -34,21 +33,19 @@ namespace Theasian_Diplomacy
         public int CharacterDBID { get; set; }
         public Nullable<int> honor { get; set; }
         public Nullable<int> cruelty { get; set; }
-        public int cleaderFactionDBID { get; set; }
         public int cLocationDBID { get; set; }
-        public Nullable<int> cArmyDBID { get; set; }
         public Nullable<int> cmemberFactionDBID { get; set; }
+        public Nullable<bool> isDead { get; set; }
+        public int cGoalDBID { get; set; }
     
         public virtual ICollection<AgentDB> AgentDB { get; set; }
         public virtual ICollection<ArmyDB> ArmyDB { get; set; }
-        public virtual ArmyDB ArmyDB1 { get; set; }
+        public virtual GoalDB GoalDB { get; set; }
         public virtual ICollection<CharacterDBLetterDB> CharacterDBLetterDB { get; set; }
-        public virtual FactionDB FactionDB { get; set; }
         public virtual LocationDB LocationDB { get; set; }
-        public virtual FactionDB FactionDB1 { get; set; }
+        public virtual FactionDB FactionDB { get; set; }
         public virtual ICollection<CharacterDBSkillDB> CharacterDBSkillDB { get; set; }
-        public virtual ICollection<FactionDB> FactionDB2 { get; set; }
-        public virtual ICollection<GoalDB> GoalDB { get; set; }
+        public virtual ICollection<FactionDB> FactionDB1 { get; set; }
         public virtual ICollection<LetterDB> LetterDB { get; set; }
         public virtual ICollection<RelationDB> RelationDB { get; set; }
         public virtual ICollection<RelationDB> RelationDB1 { get; set; }

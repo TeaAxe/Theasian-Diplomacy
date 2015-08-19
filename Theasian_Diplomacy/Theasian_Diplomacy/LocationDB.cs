@@ -25,11 +25,9 @@ namespace Theasian_Diplomacy
         public int LocationDBID { get; set; }
         public Nullable<int> defenderAdvantage { get; set; }
         public string description { get; set; }
-        public Nullable<int> lCityDBID { get; set; }
     
         public virtual ICollection<ArmyDB> ArmyDB { get; set; }
         public virtual ICollection<CharacterDB> CharacterDB { get; set; }
         public virtual ICollection<CityDB> CityDB { get; set; }
-        public virtual CityDB CityDB1 { get; set; }
     }
 }

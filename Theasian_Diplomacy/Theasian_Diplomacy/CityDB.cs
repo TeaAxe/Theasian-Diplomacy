@@ -14,11 +14,6 @@ namespace Theasian_Diplomacy
     
     public partial class CityDB
     {
-        public CityDB()
-        {
-            this.LocationDB1 = new HashSet<LocationDB>();
-        }
-    
         public string name { get; set; }
         public Nullable<int> fortificationLevel { get; set; }
         public Nullable<int> fortificationLevelMax { get; set; }
@@ -30,6 +25,5 @@ namespace Theasian_Diplomacy
     
         public virtual FactionDB FactionDB { get; set; }
         public virtual LocationDB LocationDB { get; set; }
-        public virtual ICollection<LocationDB> LocationDB1 { get; set; }
     }
 }

@@ -16,15 +16,15 @@ namespace Theasian_Diplomacy
     {
         public GoalDB()
         {
+            this.CharacterDB = new HashSet<CharacterDB>();
             this.EventDBGoalDB = new HashSet<EventDBGoalDB>();
         }
     
         public string name { get; set; }
         public int GoalDBID { get; set; }
         public string description { get; set; }
-        public int gCharacterDBID { get; set; }
     
-        public virtual CharacterDB CharacterDB { get; set; }
+        public virtual ICollection<CharacterDB> CharacterDB { get; set; }
         public virtual ICollection<EventDBGoalDB> EventDBGoalDB { get; set; }
     }
 }

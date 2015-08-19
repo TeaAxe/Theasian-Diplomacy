@@ -18,7 +18,6 @@ namespace Theasian_Diplomacy
         {
             this.ArmyDB = new HashSet<ArmyDB>();
             this.CharacterDB = new HashSet<CharacterDB>();
-            this.CharacterDB1 = new HashSet<CharacterDB>();
             this.CityDB = new HashSet<CityDB>();
             this.FactionDBLawDB = new HashSet<FactionDBLawDB>();
         }
@@ -32,8 +31,7 @@ namespace Theasian_Diplomacy
     
         public virtual ICollection<ArmyDB> ArmyDB { get; set; }
         public virtual ICollection<CharacterDB> CharacterDB { get; set; }
-        public virtual ICollection<CharacterDB> CharacterDB1 { get; set; }
-        public virtual CharacterDB CharacterDB2 { get; set; }
+        public virtual CharacterDB CharacterDB1 { get; set; }
         public virtual ICollection<CityDB> CityDB { get; set; }
         public virtual FactionGoalDB FactionGoalDB { get; set; }
         public virtual ICollection<FactionDBLawDB> FactionDBLawDB { get; set; }

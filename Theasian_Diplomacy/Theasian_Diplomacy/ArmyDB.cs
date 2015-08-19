@@ -14,11 +14,6 @@ namespace Theasian_Diplomacy
     
     public partial class ArmyDB
     {
-        public ArmyDB()
-        {
-            this.CharacterDB1 = new HashSet<CharacterDB>();
-        }
-    
         public Nullable<int> experienceLevel { get; set; }
         public Nullable<int> equipmentQuality { get; set; }
         public Nullable<int> soldierCount { get; set; }
@@ -30,6 +25,5 @@ namespace Theasian_Diplomacy
         public virtual CharacterDB CharacterDB { get; set; }
         public virtual FactionDB FactionDB { get; set; }
         public virtual LocationDB LocationDB { get; set; }
-        public virtual ICollection<CharacterDB> CharacterDB1 { get; set; }
     }
 }

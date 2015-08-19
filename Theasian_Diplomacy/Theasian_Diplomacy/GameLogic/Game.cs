@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,25 +30,51 @@ namespace Theasian_Diplomacy.GameLogic
             factions = new List<Faction>();
             cities = new List<City>();
             locations = new List<Location>();
-            using (TheasianDiplomacyDBEntities db = new TheasianDiplomacyDBEntities())
-            {
+            //using (TheasianDiplomacyDBEntities db = new TheasianDiplomacyDBEntities())
+            //{ 
+            TheasianDiplomacyDBEntities db = new TheasianDiplomacyDBEntities();
+            
+                GoalDB goalDB = new GoalDB();
+                goalDB.description = "First Goal";
+                goalDB.name = "first";
 
-                //Adds factions to the list, needs to come from a list
-                //FactionDB factionDb = new FactionDB();
-                //factionDb.name = "Barbarians";
-                //factionDb.gold = 0;
-                //factionDb.fFactionGoalID = 1;//mettre vrai ID
-                //factionDb.fCharacterDBID = 1;//mettre vrai ID
+                db.GoalDB.Add(goalDB);
+                db.SaveChanges();
 
-                //db.FactionDB.Add(factionDb);
+                //FR_connexion FRBD = (from FR in ctxFR.Fr_Connexion select FR).FirstOrDefault();
+                GoalDB testgoal = (from goal in db.GoalDB select goal).FirstOrDefault();
+                testgoal.name = "";
+                db.SaveChanges();
+
+                //FactionGoalDB factionGoalDB = new FactionGoalDB();
+                //factionGoalDB.code = "penis";
+                //factionGoalDB.description = "first penis goal";
+                //factionGoalDB.name = "firstpenis";
+                //db.FactionGoalDB.Add(factionGoalDB);
                 //db.SaveChanges();
 
-                Faction newFaction = new Faction("Barbarians");
                 //CharacterDB characterDB = new CharacterDB();
                 //characterDB.firstName = "John";
                 //characterDB.honor = 2;
                 //characterDB.birthDate = new DateTime(1995, 5, 3);
-                //characterDB.cArmyDBID = 1;//mettre vrai ID
+                //characterDB.cGoalDBID = goalDB.GoalDBID;
+                //db.CharacterDB.Add(characterDB);
+
+                ////Adds factions to the list, needs to come from a list
+                //FactionDB factionDb = new FactionDB();
+                //factionDb.name = "Barbarians";
+                //factionDb.gold = 0;
+                //factionDb.fFactionGoalID = factionGoalDB.FactionGoalID;//mettre vrai ID
+                //factionDb.fCharacterDBID = characterDB.CharacterDBID;//mettre vrai ID
+                //characterDB.cmemberFactionDBID = factionDb.FactionDBID;
+                
+                //db.FactionDB.Add(factionDb);
+
+                //db.SaveChanges();
+
+                Faction newFaction = new Faction("Barbarians");
+                
+
 
                 newFaction.addMember(new Character("John", newFaction, new DateTime()), true);
                 Location newLocation = new Location("La ville des Chats", "Il y a beaucoup de chats ici!");
@@ -80,7 +107,7 @@ namespace Theasian_Diplomacy.GameLogic
                 newCity.Owner = newFaction;
                 cities.Add(newCity);
                 factions.Add(newFaction);
-            }
+            //}
         }
 
         /// <summary>
