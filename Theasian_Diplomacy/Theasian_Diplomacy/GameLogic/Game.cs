@@ -34,6 +34,15 @@ namespace Theasian_Diplomacy.GameLogic
             //{ 
             TheasianDiplomacyDBEntities db = new TheasianDiplomacyDBEntities();
 
+            LocationDB locationdb = new LocationDB();
+            locationdb.defenderAdvantage = 1;
+            locationdb.description = "asdf";
+            locationdb.name = "St-Schtroumpf";
+            db.LocationDB.Add(locationdb);
+            db.SaveChanges();
+
+
+
             SkillDB test = new SkillDB();
             test.name = "qwer";
             db.SkillDB.Add(test);
@@ -46,36 +55,36 @@ namespace Theasian_Diplomacy.GameLogic
             db.GoalDB.Add(goalDB);
             db.SaveChanges();
 
-            //FR_connexion FRBD = (from FR in ctxFR.Fr_Connexion select FR).FirstOrDefault();
-            GoalDB testgoal = (from goal in db.GoalDB select goal).FirstOrDefault();
-            testgoal.name = "";
+
+            FactionGoalDB factionGoalDB = new FactionGoalDB();
+            factionGoalDB.code = "pen";
+            factionGoalDB.description = "first penis goal";
+            factionGoalDB.name = "firstpenis";
+            db.FactionGoalDB.Add(factionGoalDB);
             db.SaveChanges();
 
-            //FactionGoalDB factionGoalDB = new FactionGoalDB();
-            //factionGoalDB.code = "penis";
-            //factionGoalDB.description = "first penis goal";
-            //factionGoalDB.name = "firstpenis";
-            //db.FactionGoalDB.Add(factionGoalDB);
-            //db.SaveChanges();
+            CharacterDB characterDB = new CharacterDB();
+            characterDB.firstName = "John";
+            characterDB.honor = 2;
+            characterDB.birthDate = new DateTime(1995, 5, 3);
+            characterDB.cGoalDBID = goalDB.GoalDBID;
+            characterDB.cLocationDBID = locationdb.LocationDBID;
+            characterDB.isDead = false;
+            characterDB.sex = "m";
+            characterDB.cmemberFactionDBID = null;
+            db.CharacterDB.Add(characterDB);
 
-            //CharacterDB characterDB = new CharacterDB();
-            //characterDB.firstName = "John";
-            //characterDB.honor = 2;
-            //characterDB.birthDate = new DateTime(1995, 5, 3);
-            //characterDB.cGoalDBID = goalDB.GoalDBID;
-            //db.CharacterDB.Add(characterDB);
-
-            ////Adds factions to the list, needs to come from a list
-            //FactionDB factionDb = new FactionDB();
-            //factionDb.name = "Barbarians";
-            //factionDb.gold = 0;
-            //factionDb.fFactionGoalID = factionGoalDB.FactionGoalID;//mettre vrai ID
-            //factionDb.fCharacterDBID = characterDB.CharacterDBID;//mettre vrai ID
+            //Adds factions to the list, needs to come from a list
+            FactionDB factionDb = new FactionDB();
+            factionDb.name = "Barbarians";
+            factionDb.gold = 0;
+            factionDb.fFactionGoalID = factionGoalDB.FactionGoalID;//mettre vrai ID
+            factionDb.fCharacterDBID = characterDB.CharacterDBID;//mettre vrai ID
             //characterDB.cmemberFactionDBID = factionDb.FactionDBID;
 
-            //db.FactionDB.Add(factionDb);
+            db.FactionDB.Add(factionDb);
 
-            //db.SaveChanges();
+            db.SaveChanges();
 
             Faction newFaction = new Faction("Barbarians");
 
