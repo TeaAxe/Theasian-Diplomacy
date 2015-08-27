@@ -121,6 +121,16 @@ namespace Theasian_Diplomacy.GameLogic
             newCity.Owner = newFaction;
             cities.Add(newCity);
             factions.Add(newFaction);
+
+            List<FactionDB> testAjoutFaction = (from fac in db.FactionDB select fac).ToList();
+
+            foreach(FactionDB factionToAdd in testAjoutFaction){
+                newFaction = new Faction(factionToAdd.name);
+                newFaction.addMember(new Character("TestBD", newFaction, new DateTime()), true);
+                factions.Add(newFaction);
+            }
+
+
             //}
         }
 
