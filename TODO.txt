@@ -1,1 +1,52 @@
-Le jeu entier!
+- [ ] : BD & Technique
+  - [ ] : Ajouter des données de test dans la BD et la lier avec le code
+  - [ ] : Ajouter des forms pour les autres options de menus (avec TODOs)
+  - [ ] : Meilleur affichage des villes que des bouttons sur une image
+  - [ ] : Faire le système des events
+
+- [ ] : Création de partie
+  - [ ] : Faire que le joueur choisi une fois son nom
+  - [ ] : Faire choisir les settings de game (durée des tours, difficultés)
+  - [ ] : Générer la liste d'events
+
+- [ ] : Système de dialogues
+  - [ ] : Rencontrer des visiteurs
+  - [ ] : Écrire, archiver et répondre à des lettres
+  - [ ] : Réponses influencées par relation
+  - [ ] : Personnalités (inclant tenir ses promesses/mentir) variantes
+  - [ ] : Possibilité de mariage et de kids
+  
+- [ ] : Armées et batailles
+  - [ ] : Afficher les armées
+  - [ ] : Déplacer des armées
+  - [ ] : Créer des armées
+  - [ ] : Garrison des armées
+  - [ ] : Disband des armées
+  - [ ] : Assigner un général à une armée (ou l'inverse)
+  - [ ] : Resolve un combat entre des armées
+  - [ ] : Upgrade des armées
+  - [ ] : COmbat singulier (pour opérations, duels, tournois, etc.)
+  
+- [ ] : Nouvelles
+  - [ ] : Pouvoir lire le journal générer à partir des events
+  
+- [ ] : Services secrets
+  - [ ] : Pouvoir lire les rapports d'espions
+  - [ ] : Pouvoir déplacer des agents
+  - [ ] : Pouvoir gérer la taille de sa garde personnelle
+  - [ ] : Pouvoir faire des opérations avec les agents secrets
+
+- [ ] : Temps
+  - [ ] : les personnages peuvent mourir de vieillesse
+  - [ ] : définir la durée d'un tour et faire changer les âges (pourrait être un setting)
+
+- [ ] : Gestion du royaume
+  - [ ] : Système de lois
+  - [ ] : Système de taxes
+  - [ ] : Système d'échange (trade) (taxes++)
+
+- [ ] : Miscelleneous
+  - [ ] : Tornades (de feu si possible)
+  - [ ] : Aimer les chats
+  - [ ] : Afficher la vrai carte
+  - [ ] : Qu'est-ce que t'a contre ma belle carte?
